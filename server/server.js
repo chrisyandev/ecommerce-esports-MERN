@@ -6,6 +6,7 @@ const noRouteHandler = require("./middleware/no-route-handler");
 const errorHandler = require("./middleware/error-handler");
 const morgan = require("morgan");
 const authRouter = require("./routes/authRoutes");
+const cookieParser = require("cookie-parser");
 
 // express
 const app = express();
@@ -17,10 +18,15 @@ const connectDB = require("./db/connect");
 // middleware
 app.use(morgan("tiny"));
 app.use(express.json());
+app.use(cookieParser(process.env.JWT_SECRET));
 
 // routes
 app.get("/", (req, res) => {
   res.send("e-commerce api");
+});
+app.get("/api/v1", (req, res) => {
+  console.log(req.signedCookies);
+  res.send("cookie test");
 });
 app.use("/api/v1/auth", authRouter);
 
