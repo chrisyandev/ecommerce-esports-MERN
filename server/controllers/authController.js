@@ -33,7 +33,33 @@ const register = async (req, res) => {
 };
 
 const login = async (req, res) => {
-  res.send("login user");
+  const { email, password } = req.body;
+
+  if (!email || !password) {
+    throw new CustomError.BadRequestError("please provide email and password");
+  }
+
+  const userFound = await User.findOne({ email });
+
+  if (!userFound) {
+    throw new CustomError.UnauthenticatedError("invalid email");
+  }
+
+  const isPasswordCorrect = await userFound.comparePassword(password);
+
+  if (!isPasswordCorrect) {
+    throw new CustomError.UnauthenticatedError("invalid password");
+  }
+
+  const tokenUser = {
+    name: userFound.name,
+    userId: userFound._id,
+    role: userFound.role,
+  };
+
+  attachTokenToResponse({ res: res, user: tokenUser });
+
+  res.status(StatusCodes.CREATED).json({ user: tokenUser });
 };
 
 const logout = async (req, res) => {
