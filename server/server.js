@@ -5,6 +5,7 @@ require("dotenv").config();
 const noRouteHandler = require("./middleware/no-route-handler");
 const errorHandler = require("./middleware/error-handler");
 const morgan = require("morgan");
+const authRouter = require("./routes/authRoutes");
 
 // express
 const app = express();
@@ -21,6 +22,7 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("e-commerce api");
 });
+app.use("/api/v1/auth", authRouter);
 
 // error middleware
 app.use(noRouteHandler);
