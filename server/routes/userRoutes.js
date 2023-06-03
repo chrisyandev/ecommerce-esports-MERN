@@ -1,11 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-const {
-  authenticateUser,
-  authorizePermissions,
-} = require("../middleware/authentication");
-
+const { authenticateUser } = require("../middleware/authentication");
+const { authorizePermissions } = require("../middleware/authorization");
 const {
   getAllUsersNotAdmin,
   getSingleUser,
@@ -16,7 +13,7 @@ const {
 
 router
   .route("/")
-  .get(authenticateUser, authorizePermissions, getAllUsersNotAdmin);
+  .get(authenticateUser, authorizePermissions("admin"), getAllUsersNotAdmin);
 
 router.route("/showMe").get(showCurrentUser);
 
