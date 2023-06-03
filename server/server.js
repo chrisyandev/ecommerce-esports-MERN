@@ -1,7 +1,7 @@
 // imports
-const express = require("express");
-require("express-async-errors");
 require("dotenv").config();
+require("express-async-errors");
+const express = require("express");
 const noRouteHandler = require("./middleware/no-route-handler");
 const errorHandler = require("./middleware/error-handler");
 const morgan = require("morgan");

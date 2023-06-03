@@ -1,6 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const { authenticateUser } = require("../middleware/authentication");
+
+const {
+  authenticateUser,
+  authorizePermissions,
+} = require("../middleware/authentication");
+
 const {
   getAllUsersNotAdmin,
   getSingleUser,
@@ -9,35 +14,17 @@ const {
   updateUserPassword,
 } = require("../controllers/userController");
 
-router.route("/").get(
-  (req, res, next) => {
-    authenticateUser(req, res, next);
-  },
-  (req, res) => {
-    getAllUsersNotAdmin(req, res);
-  }
-);
+router
+  .route("/")
+  .get(authenticateUser, authorizePermissions, getAllUsersNotAdmin);
 
-router.route("/showMe").get((req, res) => {
-  showCurrentUser(req, res);
-});
+router.route("/showMe").get(showCurrentUser);
 
 // must be below other GET requests with route "/<something>"
-router.route("/:id").get(
-  (req, res, next) => {
-    authenticateUser(req, res, next);
-  },
-  (req, res) => {
-    getSingleUser(req, res);
-  }
-);
+router.route("/:id").get(authenticateUser, getSingleUser);
 
-router.route("/updateUser").patch((req, res) => {
-  updateUser(req, res);
-});
+router.route("/updateUser").patch(updateUser);
 
-router.route("/updateUserPassword").patch((req, res) => {
-  updateUserPassword(req, res);
-});
+router.route("/updateUserPassword").patch(updateUserPassword);
 
 module.exports = router;
