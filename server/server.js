@@ -5,8 +5,9 @@ require("dotenv").config();
 const noRouteHandler = require("./middleware/no-route-handler");
 const errorHandler = require("./middleware/error-handler");
 const morgan = require("morgan");
-const authRouter = require("./routes/authRoutes");
 const cookieParser = require("cookie-parser");
+const authRouter = require("./routes/authRoutes");
+const userRouter = require("./routes/userRoutes");
 
 // express
 const app = express();
@@ -29,6 +30,7 @@ app.get("/api/v1", (req, res) => {
   res.send("cookie test");
 });
 app.use("/api/v1/auth", authRouter);
+app.use("/api/v1/users", userRouter);
 
 // error middleware
 app.use(noRouteHandler);
