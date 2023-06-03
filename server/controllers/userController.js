@@ -1,9 +1,21 @@
+const User = require("../models/User");
+const { StatusCodes } = require("http-status-codes");
+const CustomError = require("../errors");
+
 const getAllUsers = async (req, res) => {
-  res.send("get all users");
+  const users = await User.find({}).select("-password");
+  res.status(StatusCodes.OK).json({ users });
 };
 
 const getSingleUser = async (req, res) => {
-  res.send("get single user");
+  const { id } = req.params;
+  const user = await User.findOne({ _id: id }).select("-password");
+
+  if (!user) {
+    throw new CustomError.NotFoundError(`no user with id ${id}`);
+  }
+
+  res.status(StatusCodes.OK).json({ user });
 };
 
 const showCurrentUser = async (req, res) => {
