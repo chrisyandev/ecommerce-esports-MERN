@@ -1,13 +1,15 @@
 const jwt = require("jsonwebtoken");
 
 const createJWT = ({ payload }) => {
-  return jwt.sign(payload, process.env.JWT_SECRET, {
+  const token = jwt.sign(payload, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_LIFETIME,
   });
+  return token;
 };
 
 const isTokenValid = ({ token }) => {
-  return jwt.verify(token, process.env.JWT_SECRET);
+  const payload = jwt.verify(token, process.env.JWT_SECRET);
+  return payload;
 };
 
 const attachTokenToResponse = ({ res, user }) => {

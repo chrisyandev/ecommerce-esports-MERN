@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { authenticateUser } = require("../middleware/authentication");
 const {
-  getAllUsers,
+  getAllUsersNotAdmin,
   getSingleUser,
   showCurrentUser,
   updateUser,
@@ -14,7 +14,7 @@ router.route("/").get(
     authenticateUser(req, res, next);
   },
   (req, res) => {
-    getAllUsers(req, res);
+    getAllUsersNotAdmin(req, res);
   }
 );
 

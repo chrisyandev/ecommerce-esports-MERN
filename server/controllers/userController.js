@@ -2,8 +2,9 @@ const User = require("../models/User");
 const { StatusCodes } = require("http-status-codes");
 const CustomError = require("../errors");
 
-const getAllUsers = async (req, res) => {
-  const users = await User.find({}).select("-password");
+const getAllUsersNotAdmin = async (req, res) => {
+  console.log(req.user);
+  const users = await User.find({ role: "user" }).select("-password");
   res.status(StatusCodes.OK).json({ users });
 };
 
@@ -31,7 +32,7 @@ const updateUserPassword = async (req, res) => {
 };
 
 module.exports = {
-  getAllUsers,
+  getAllUsersNotAdmin,
   getSingleUser,
   showCurrentUser,
   updateUser,
