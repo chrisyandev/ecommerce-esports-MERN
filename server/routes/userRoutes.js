@@ -20,7 +20,7 @@ router.route("/showMe").get(authenticateUser, showCurrentUser);
 // must be below other GET requests with route "/<something>"
 router.route("/:id").get(authenticateUser, getSingleUser);
 
-router.route("/updateUser").patch(updateUser);
+router.route("/updateUser").patch(authenticateUser, updateUser);
 
 router.route("/updateUserPassword").patch(authenticateUser, updateUserPassword);
 

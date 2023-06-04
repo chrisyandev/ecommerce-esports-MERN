@@ -1,6 +1,7 @@
 const User = require("../models/User");
 const { StatusCodes } = require("http-status-codes");
 const CustomError = require("../errors");
+const { createTokenUser, attachTokenToResponse } = require("../utils");
 
 const getAllUsersNotAdmin = async (req, res) => {
   console.log(req.user);
@@ -24,7 +25,22 @@ const showCurrentUser = async (req, res) => {
 };
 
 const updateUser = async (req, res) => {
-  res.send(req.body);
+  const { email, name } = req.body;
+
+  if (!email || !name) {
+    throw new CustomError.BadRequestError("please provide both email and name");
+  }
+
+  const user = await User.findOneAndUpdate(
+    { _id: req.user.userId },
+    { email: email, name: name },
+    { new: true, runValidators: true }
+  );
+
+  const tokenUser = createTokenUser(user);
+  attachTokenToResponse({ res: res, user: tokenUser });
+
+  res.status(StatusCodes.OK).json({ user: tokenUser });
 };
 
 const updateUserPassword = async (req, res) => {
