@@ -1,7 +1,11 @@
 const User = require("../models/User");
 const { StatusCodes } = require("http-status-codes");
 const CustomError = require("../errors");
-const { createTokenUser, attachTokenToResponse } = require("../utils");
+const {
+  createTokenUser,
+  attachTokenToResponse,
+  checkPermissions,
+} = require("../utils");
 
 const getAllUsersNotAdmin = async (req, res) => {
   console.log(req.user);
@@ -16,6 +20,8 @@ const getSingleUser = async (req, res) => {
   if (!user) {
     throw new CustomError.NotFoundError(`no user with id ${id}`);
   }
+
+  checkPermissions(req.user, user._id);
 
   res.status(StatusCodes.OK).json({ user });
 };
