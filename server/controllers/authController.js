@@ -46,7 +46,7 @@ const login = async (req, res) => {
     throw new CustomError.UnauthenticatedError("invalid password");
   }
 
-  const tokenUser = createTokenUser(user);
+  const tokenUser = createTokenUser(userFound);
   attachTokenToResponse({ res: res, user: tokenUser });
 
   res.status(StatusCodes.OK).json({ user: tokenUser });

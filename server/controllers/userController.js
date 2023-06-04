@@ -31,11 +31,10 @@ const updateUser = async (req, res) => {
     throw new CustomError.BadRequestError("please provide both email and name");
   }
 
-  const user = await User.findOneAndUpdate(
-    { _id: req.user.userId },
-    { email: email, name: name },
-    { new: true, runValidators: true }
-  );
+  const user = await User.findOne({ _id: req.user.userId });
+  user.email = email;
+  user.name = name;
+  await user.save();
 
   const tokenUser = createTokenUser(user);
   attachTokenToResponse({ res: res, user: tokenUser });
