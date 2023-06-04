@@ -15,7 +15,7 @@ router
   .route("/")
   .get(authenticateUser, authorizePermissions("admin"), getAllUsersNotAdmin);
 
-router.route("/showMe").get(showCurrentUser);
+router.route("/showMe").get(authenticateUser, showCurrentUser);
 
 // must be below other GET requests with route "/<something>"
 router.route("/:id").get(authenticateUser, getSingleUser);
