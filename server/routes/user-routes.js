@@ -9,19 +9,21 @@ const {
   showCurrentUser,
   updateUser,
   updateUserPassword,
-} = require("../controllers/userController");
+} = require("../controllers/user-controller");
 
 router
   .route("/")
   .get(authenticateUser, authorizePermissions("admin"), getAllUsersNotAdmin);
 
-router.route("/showMe").get(authenticateUser, showCurrentUser);
+router.route("/show-me").get(authenticateUser, showCurrentUser);
 
 // must be below other GET requests with route "/<something>"
 router.route("/:id").get(authenticateUser, getSingleUser);
 
-router.route("/updateUser").patch(authenticateUser, updateUser);
+router.route("/update-user").patch(authenticateUser, updateUser);
 
-router.route("/updateUserPassword").patch(authenticateUser, updateUserPassword);
+router
+  .route("/update-user-password")
+  .patch(authenticateUser, updateUserPassword);
 
 module.exports = router;

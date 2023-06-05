@@ -10,7 +10,7 @@ const {
   updateProduct,
   deleteProduct,
   uploadImage,
-} = require("../controllers/productController");
+} = require("../controllers/product-controller");
 
 router
   .route("/")
@@ -18,7 +18,7 @@ router
   .post([authenticateUser, authorizePermissions("admin")], createProduct);
 
 router
-  .route("/uploadImage")
+  .route("/upload-image")
   .post([authenticateUser, authorizePermissions("admin")], uploadImage);
 
 router

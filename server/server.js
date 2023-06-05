@@ -6,9 +6,9 @@ const noRouteHandler = require("./middleware/no-route-handler");
 const errorHandler = require("./middleware/error-handler");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
-const authRouter = require("./routes/authRoutes");
-const userRouter = require("./routes/userRoutes");
-const productRouter = require("./routes/productRoutes");
+const authRouter = require("./routes/auth-routes");
+const userRouter = require("./routes/user-routes");
+const productRouter = require("./routes/product-routes");
 
 // express
 const app = express();
