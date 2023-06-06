@@ -22,7 +22,7 @@ router
   .post([authenticateUser, authorizePermissions("admin")], uploadImage);
 
 router
-  .route("/:id")
+  .route("/:productId")
   .get(getSingleProduct)
   .patch([authenticateUser, authorizePermissions("admin")], updateProduct)
   .delete([authenticateUser, authorizePermissions("admin")], deleteProduct);

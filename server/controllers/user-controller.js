@@ -14,16 +14,16 @@ const getAllUsersNotAdmin = async (req, res) => {
 };
 
 const getSingleUser = async (req, res) => {
-  const { id } = req.params;
-  const user = await User.findOne({ _id: id }).select("-password");
+  const { userId } = req.params;
+  const user = await User.findOne({ _id: userId }).select("-password");
 
   if (!user) {
-    throw new CustomError.NotFoundError(`no user with id ${id}`);
+    throw new CustomError.NotFoundError(`no user with id ${userId}`);
   }
 
   checkPermissions(req.user, user._id);
 
-  res.status(StatusCodes.OK).json({ user });
+  res.status(StatusCodes.OK).json({ user: user });
 };
 
 const showCurrentUser = async (req, res) => {

@@ -34,19 +34,19 @@ const login = async (req, res) => {
     throw new CustomError.BadRequestError("please provide email and password");
   }
 
-  const userFound = await User.findOne({ email });
+  const user = await User.findOne({ email });
 
-  if (!userFound) {
+  if (!user) {
     throw new CustomError.UnauthenticatedError("invalid email");
   }
 
-  const isPasswordCorrect = await userFound.comparePassword(password);
+  const isPasswordCorrect = await user.comparePassword(password);
 
   if (!isPasswordCorrect) {
     throw new CustomError.UnauthenticatedError("invalid password");
   }
 
-  const tokenUser = createTokenUser(userFound);
+  const tokenUser = createTokenUser(user);
   attachTokenToResponse({ res: res, user: tokenUser });
 
   res.status(StatusCodes.OK).json({ user: tokenUser });
