@@ -1,4 +1,5 @@
 const Product = require("../models/Product");
+const Review = require("../models/Review");
 const { StatusCodes } = require("http-status-codes");
 const CustomError = require("../errors");
 const path = require("path");
@@ -84,6 +85,14 @@ const uploadImage = async (req, res) => {
   res.status(StatusCodes.OK).json({ msg: "image uploaded", path: imagePath });
 };
 
+const getProductReviews = async (req, res) => {
+  const { productId } = req.params;
+
+  const reviews = await Review.find({ productId: productId });
+
+  res.status(StatusCodes.OK).json({ reviews: reviews, count: reviews.length });
+};
+
 module.exports = {
   createProduct,
   getAllProducts,
@@ -91,4 +100,5 @@ module.exports = {
   updateProduct,
   deleteProduct,
   uploadImage,
+  getProductReviews,
 };

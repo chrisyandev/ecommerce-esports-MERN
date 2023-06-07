@@ -87,6 +87,7 @@ const updateReview = async (req, res) => {
 
 const deleteReview = async (req, res) => {
   const { reviewId } = req.params;
+
   const review = await Review.findOne({ _id: reviewId });
 
   if (!review) {
