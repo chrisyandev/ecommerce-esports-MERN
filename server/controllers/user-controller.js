@@ -8,13 +8,14 @@ const {
 } = require("../utils");
 
 const getAllUsersNotAdmin = async (req, res) => {
-  console.log(req.user);
   const users = await User.find({ role: "user" }).select("-password");
+
   res.status(StatusCodes.OK).json({ users });
 };
 
 const getSingleUser = async (req, res) => {
   const { userId } = req.params;
+
   const user = await User.findOne({ _id: userId }).select("-password");
 
   if (!user) {

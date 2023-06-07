@@ -18,6 +18,7 @@ const getAllProducts = async (req, res) => {
 
 const getSingleProduct = async (req, res) => {
   const { productId } = req.params;
+
   const product = await Product.findOne({ _id: productId });
 
   if (!product) {
@@ -29,6 +30,7 @@ const getSingleProduct = async (req, res) => {
 
 const updateProduct = async (req, res) => {
   const { productId } = req.params;
+
   const product = await Product.findOneAndUpdate({ _id: productId }, req.body, {
     new: true,
     runValidators: true,
@@ -43,6 +45,7 @@ const updateProduct = async (req, res) => {
 
 const deleteProduct = async (req, res) => {
   const { productId } = req.params;
+
   const product = await Product.findOne({ _id: productId });
 
   if (!product) {
