@@ -13,7 +13,7 @@ const {
 router.route("/").get(getAllReviews).post(authenticateUser, createReview);
 
 router
-  .route("/:id")
+  .route("/:reviewId")
   .get(getSingleReview)
   .patch(authenticateUser, updateReview)
   .delete(authenticateUser, deleteReview);
