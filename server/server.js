@@ -11,6 +11,7 @@ const authRouter = require("./routes/auth-routes");
 const userRouter = require("./routes/user-routes");
 const productRouter = require("./routes/product-routes");
 const reviewRouter = require("./routes/review-routes");
+const orderRouter = require("./routes/order-routes");
 
 // express
 const app = express();
@@ -38,6 +39,7 @@ app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/products", productRouter);
 app.use("/api/v1/reviews", reviewRouter);
+app.use("/api/v1/orders", orderRouter);
 
 // error middleware
 app.use(noRouteHandler);

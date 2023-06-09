@@ -17,11 +17,14 @@ const CartItemSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  product: {
+  productId: {
     type: mongoose.Schema.ObjectId,
     ref: "Product",
     required: true,
   },
 });
 
-module.exports = mongoose.model("CartItem", CartItemSchema);
+module.exports = {
+  CartItem: mongoose.model("CartItem", CartItemSchema),
+  CartItemSchema: CartItemSchema,
+};
