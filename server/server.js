@@ -6,7 +6,12 @@ const noRouteHandler = require("./middleware/no-route-handler");
 const errorHandler = require("./middleware/error-handler");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
-const fileUpload = require("express-fileupload");
+const fileUploader = require("express-fileupload");
+const mongoSanitizer = require("express-mongo-sanitize");
+const rateLimiter = require("express-rate-limit");
+const xssCleaner = require("xss-clean");
+const helmet = require("helmet");
+const cors = require("cors");
 const authRouter = require("./routes/auth-routes");
 const userRouter = require("./routes/user-routes");
 const productRouter = require("./routes/product-routes");
@@ -15,17 +20,23 @@ const orderRouter = require("./routes/order-routes");
 
 // express
 const app = express();
+app.set("trust proxy", 1);
 const port = process.env.PORT || 5000;
 
 //database
 const connectDB = require("./db/connect");
 
 // middleware
+app.use(mongoSanitizer());
+app.use(rateLimiter({ windowMs: 600000, max: 50 }));
+app.use(xssCleaner());
+app.use(helmet());
+app.use(cors());
 app.use(express.static("./public/"));
 app.use(express.json());
 app.use(morgan("tiny"));
 app.use(cookieParser(process.env.JWT_SECRET));
-app.use(fileUpload());
+app.use(fileUploader());
 
 // routes
 app.get("/", (req, res) => {
