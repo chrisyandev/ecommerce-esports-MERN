@@ -45,7 +45,7 @@ const createOrder = async (req, res) => {
   const total = subtotal + tax + shippingFee;
 
   // mock Stripe API call
-  const paymentIntent = await fakeStripeAPI({
+  const paymentIntent = await fakeStripeAPIPay({
     amount: total,
     currency: "usd",
   });
@@ -67,7 +67,7 @@ const createOrder = async (req, res) => {
   });
 };
 
-const fakeStripeAPI = async ({ amount, currency }) => {
+const fakeStripeAPIPay = async ({ amount, currency }) => {
   // do something with amount and currency
 
   return {
@@ -78,19 +78,61 @@ const fakeStripeAPI = async ({ amount, currency }) => {
 };
 
 const getAllOrders = async (req, res) => {
-  res.send("get all orders");
+  const orders = await Order.find({});
+
+  res.status(StatusCodes.OK).json({ orders: orders, count: orders.length });
 };
 
 const getSingleOrder = async (req, res) => {
-  res.send("get single order");
+  const { orderId } = req.params;
+
+  const order = await Order.findOne({ _id: orderId });
+
+  if (!order) {
+    throw new CustomError.NotFoundError(`no order with id: ${orderId}`);
+  }
+
+  checkPermissions(req.user, order.userId);
+
+  res.status(StatusCodes.OK).json({ order: order });
 };
 
 const getCurrentUserOrders = async (req, res) => {
-  res.send("get current user orders");
+  const orders = await Order.find({ userId: req.user.userId });
+
+  res.status(StatusCodes.OK).json({ orders: orders, count: orders.length });
 };
 
 const updateOrder = async (req, res) => {
-  res.send("update order");
+  const { orderId } = req.params;
+  const { paymentIntentId } = req.body;
+
+  const order = await Order.findOne({ _id: orderId });
+
+  if (!order) {
+    throw new CustomError.NotFoundError(`no order with id: ${orderId}`);
+  }
+
+  // mock Stripe API call
+  const paymentIntent = await fakeStripeAPIRetrieveIntent(paymentIntentId);
+
+  if (!paymentIntent || paymentIntent.status != "succeeded") {
+    throw new CustomError.BadRequestError(`payment failed`);
+  }
+
+  checkPermissions(req.user, order.userId);
+
+  order.status = "paid";
+  await order.save();
+
+  res.status(StatusCodes.OK).json({ order: order });
+};
+
+const fakeStripeAPIRetrieveIntent = async (intentId) => {
+  return {
+    intentId: intentId,
+    status: "succeeded",
+  };
 };
 
 module.exports = {
