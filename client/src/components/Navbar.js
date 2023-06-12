@@ -1,10 +1,10 @@
 import React from "react";
-import styled from "styled-components";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.svg";
+import styled from "styled-components";
 import { FaBars } from "react-icons/fa";
-import { links } from "../utils/constants";
 import UserToolbar from "./UserToolbar";
+import logo from "../assets/logo.svg";
+import { links } from "../utils/constants";
 
 const Navbar = () => {
   return (
@@ -19,8 +19,7 @@ const Navbar = () => {
           </button>
         </div>
         <ul className="nav-links">
-          {links.map((link) => {
-            const { id, text, url } = link;
+          {links.map(({ id, text, url }) => {
             return (
               <li key={id}>
                 <Link to={url}>{text}</Link>

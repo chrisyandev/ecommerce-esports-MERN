@@ -1,7 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { FaShoppingCart, FaUserMinus, FaUserPlus } from "react-icons/fa";
-import { Link } from "react-router-dom";
 
 const UserToolbar = () => {
   return (
