@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { FaBars } from "react-icons/fa";
 import UserToolbar from "./UserToolbar";
+import { useVisibilityContext } from "../contexts/visibility-context";
 import logo from "../assets/logo.svg";
 import { links } from "../utils/constants";
 
 const Navbar = () => {
+  const { openSidebar } = useVisibilityContext();
+
   return (
     <StyledNav>
       <div className="nav-center">
@@ -14,7 +17,7 @@ const Navbar = () => {
           <Link to="/">
             <img src={logo} alt="Esports Shop" />
           </Link>
-          <button type="button" className="nav-toggle">
+          <button type="button" className="nav-toggle" onClick={openSidebar}>
             <FaBars />
           </button>
         </div>

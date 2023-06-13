@@ -2,13 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { FaTimes } from "react-icons/fa";
+import UserToolbar from "./UserToolbar";
+import { useVisibilityContext } from "../contexts/visibility-context";
 import logo from "../assets/logo.svg";
 import { links } from "../utils/constants";
-import { useVisibilityContext } from "../contexts/visibility-context";
 
 const Sidebar = () => {
-  const { isSidebarOpen } = useVisibilityContext();
-  console.log(isSidebarOpen);
+  const { isSidebarOpen, closeSidebar } = useVisibilityContext();
 
   return (
     <StyledDiv>
@@ -17,7 +17,7 @@ const Sidebar = () => {
       >
         <div className="sidebar-header">
           <img src={logo} className="logo" alt="Esports Shop" />
-          <button className="close-btn" type="button">
+          <button className="close-btn" type="button" onClick={closeSidebar}>
             <FaTimes />
           </button>
         </div>
@@ -25,14 +25,19 @@ const Sidebar = () => {
           {links.map(({ id, text, url }) => {
             return (
               <li key={id}>
-                <Link to={url}>{text}</Link>
+                <Link to={url} onClick={closeSidebar}>
+                  {text}
+                </Link>
               </li>
             );
           })}
           <li>
-            <Link to="/checkout">checkout</Link>
+            <Link to="/checkout" onClick={closeSidebar}>
+              checkout
+            </Link>
           </li>
         </ul>
+        <UserToolbar />
       </aside>
     </StyledDiv>
   );
@@ -99,7 +104,7 @@ const StyledDiv = styled.div`
     transform: translate(0);
     z-index: 999;
   }
-  .cart-btn-wrapper {
+  .user-toolbar-wrapper {
     margin: 2rem auto;
   }
   @media screen and (min-width: 992px) {

@@ -3,7 +3,7 @@ import visibilityReducer from "../reducers/visibility-reducer";
 import { SIDEBAR_OPEN, SIDEBAR_CLOSE } from "../actions/actions";
 
 const initialState = {
-  isSidebarOpen: true,
+  isSidebarOpen: false,
 };
 
 const VisibilityContext = createContext();

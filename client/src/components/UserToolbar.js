@@ -2,11 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { FaShoppingCart, FaUserMinus, FaUserPlus } from "react-icons/fa";
+import { useVisibilityContext } from "../contexts/visibility-context";
 
 const UserToolbar = () => {
+  const { closeSidebar } = useVisibilityContext();
+
   return (
     <StyledDiv className="user-toolbar-wrapper">
-      <Link to="/cart" className="cart-btn">
+      <Link to="/cart" className="cart-btn" onClick={closeSidebar}>
         Cart
         <span className="cart-container">
           <FaShoppingCart />
