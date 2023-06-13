@@ -4,13 +4,17 @@ import styled from "styled-components";
 import { FaTimes } from "react-icons/fa";
 import logo from "../assets/logo.svg";
 import { links } from "../utils/constants";
+import { useVisibilityContext } from "../contexts/visibility-context";
 
 const Sidebar = () => {
-  const isOpen = true;
+  const { isSidebarOpen } = useVisibilityContext();
+  console.log(isSidebarOpen);
 
   return (
     <StyledDiv>
-      <aside className={`${isOpen ? "sidebar show-sidebar" : "sidebar"}`}>
+      <aside
+        className={`${isSidebarOpen ? "sidebar show-sidebar" : "sidebar"}`}
+      >
         <div className="sidebar-header">
           <img src={logo} className="logo" alt="Esports Shop" />
           <button className="close-btn" type="button">
