@@ -11,11 +11,7 @@ import {
 } from "./pages";
 import { Footer, Navbar, Sidebar } from "./components";
 
-import PRODUCTS from "./utils/mock-data.json";
-
 function App() {
-  console.log(PRODUCTS);
-
   return (
     <Router>
       <Navbar />
