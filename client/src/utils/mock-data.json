@@ -1,0 +1,242 @@
+[
+  {
+    "name": "Playstation 5",
+    "price": 50000,
+    "image": "https://v5.airtableusercontent.com/v1/18/18/1686801600000/mN-xcjfKFLlvRDiTGoLxPg/j4nawc0Yixte_XtYR-qRoPzVmbZyq79J-J68-HwlBXWALD4fbSXS_PefgGXxP-o2drl2HndX2Iri6Pd1Fuhnrw/pB8E5qYGxNY7sExfnvvuc8W_r6EbA2AxUyrpgUxjmEY",
+    "colors": ["#000000", "#ffffff", "#808080"],
+    "company": "Sony",
+    "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+    "category": "console",
+    "shipping": true
+  },
+  {
+    "name": "Xbox One",
+    "price": 45000,
+    "image": "https://v5.airtableusercontent.com/v1/18/18/1686801600000/CiNJnIq_GmOwkyHmPjvvkA/wN5m93ZsHFFAM464OAtlmmVguRgSP2vqIkrzdnWzKUFmCH8A65iTjc0B2Go6V4Y8etACc9zE2oNfEJOEKqDurw/koiFvvPEaEZ3B9XCBWZ09y3XkscB-LZwcnZx06qdSrw",
+    "colors": ["#000000", "#ffffff", "#808080"],
+    "company": "Microsoft",
+    "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+    "category": "console",
+    "shipping": true
+  },
+  {
+    "name": "Nintendo Switch",
+    "price": 35000,
+    "image": "https://v5.airtableusercontent.com/v1/18/18/1686801600000/AWmN86yz9r0jWpZpLcMaiA/KbN5KRzwE0OKKqyQwV1h5r3Ck8HNBbA3KWeagzKufVEo7x0ZYOlzrCAlqUkMKA2nRMFAG6xrOxCPADkFe42fOw/YvEwmdrQnpdR3OvUJaOsyhlT1U_OJsinIZCAQRuucM0",
+    "colors": ["#000000", "#ffffff", "#808080"],
+    "company": "Nintendo",
+    "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+    "category": "console",
+    "shipping": true
+  },
+  {
+    "name": "Retro Controller",
+    "price": 5999,
+    "image": "https://v5.airtableusercontent.com/v1/18/18/1686801600000/18E5dd6UeoWVfd8y8kHgWA/zTfF5GXAGW3nUptG7IVH1oYX9mn8yf2vhoraOiPWDpVLGq34iKIiID09I93cbWOxmKpNJLwi5ggmw8UvbbOggg/a9sN2S2T5udldMTgpC7MWC1alrauIecVBXNS8m6scpw",
+    "colors": ["#000000", "#ffffff", "#808080"],
+    "company": "Nintendo",
+    "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+    "category": "controller",
+    "shipping": true
+  },
+  {
+    "name": "Xbox One Controller",
+    "price": 7499,
+    "image": "https://v5.airtableusercontent.com/v1/18/18/1686801600000/4LabHpkD7bgHGpc9d0PORQ/48UaGAKkqnk1tKSBU6xyOM53AxhWDeTXwdv_hD3s_uvIikvpwrRRA6HLbJnaauSfRzhsyEdQtmvxSQ6fkSK5qQ/s02XwpXYafjUYupQtzWeK-b_1iV8fRF-DAAKvGgV55E",
+    "colors": ["#000000", "#ffffff", "#808080"],
+    "company": "Microsoft",
+    "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+    "category": "controller",
+    "shipping": true
+  },
+  {
+    "name": "Playstation 4 Controller",
+    "price": 7999,
+    "image": "https://v5.airtableusercontent.com/v1/18/18/1686801600000/wA6TInhInL8BiQyy-hhWRg/M5KPlUF3_a9JEa1uMzbyYio0I7WCGA-AXDtOxKFrrfO-j2xIwWSGv6cL0LZzTGcDyJmvWE7EKjzUiQiH3gytjQ/5xfxbA7Qyn0W-4I_V0YnhbObHWB_F-3K_uulhhSEja8",
+    "colors": ["#000000", "#ffffff", "#808080"],
+    "company": "Sony",
+    "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+    "category": "controller",
+    "shipping": true
+  },
+  {
+    "name": "Astro A50",
+    "price": 34599,
+    "image": "https://v5.airtableusercontent.com/v1/18/18/1686801600000/j38eLecQbuk3ty5fyt4i4Q/1DJIltzt4WoiGMJGAb0o8d5vBy3i6luSNcjri5dvb0XMd-pRr63qpZ4P5Nrv5BexIAbBNCWmGKYlq2lfBZM_uQ/nqtHMQ62UCJXP8_uyn4utFnZPP41rLCTIdyQDZZ2UBQ",
+    "colors": ["#000000", "#ffffff", "#808080"],
+    "company": "Astro",
+    "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+    "category": "headset",
+    "shipping": true
+  },
+  {
+    "name": "Razer Kraken X",
+    "price": 7999,
+    "image": "https://v5.airtableusercontent.com/v1/18/18/1686808800000/zXSR0gVKx6vAbm89kOIvXg/T__ynuOStJ1ZFtJAUktL1H7J1AnAXg7ybLL5DOuAz4W7_qgmnm8rI6NlZ1Q8hXnz8zV6lJkRBCA-7IZGg_bZlg/VRkbDc3-qtDNkVC__yZCeACeQECPguv9h3SSC2oKB_E",
+    "colors": ["#000000", "#ffffff", "#808080"],
+    "company": "Razer",
+    "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+    "category": "headset",
+    "shipping": true
+  },
+  {
+    "name": "Generic Headset",
+    "price": 3500,
+    "image": "https://v5.airtableusercontent.com/v1/18/18/1686808800000/DuRMbn5BAA-NhOQ98jDhQw/Quhd9OvbWvW2VIPq44_GC0iK4Rj1IhKb98YdPfuMsq0JxB0MzctBughduU5zb-z2AWY8oz1khuKiZ02nm30qdw/4GuYDHPkC4WO2UVC__UnuHpNsr2McTMViguJkAPQ5nw",
+    "colors": ["#000000", "#ffffff", "#808080"],
+    "company": "Generic",
+    "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+    "category": "headset",
+    "shipping": true
+  },
+  {
+    "name": "Generic Keyboard",
+    "price": 4000,
+    "image": "https://v5.airtableusercontent.com/v1/18/18/1686801600000/3jOHl5j4tuf-iRRA6dLM8A/vtATVzIaOBI2CB4NxndtHQnM4WxdhEtvoOwcmKiaV2NQkhPQk8rsh2v6r925m7uYBUPgKFhBKOL3_LudNBLlkQ/YMFhrTtxxUr_uQlwXpEYIejNYamM1Tg8uoCx29ETzag",
+    "colors": ["#000000", "#ffffff", "#808080"],
+    "company": "Generic",
+    "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+    "category": "keyboard",
+    "shipping": true
+  },
+  {
+    "name": "Wireless Generic Keyboard",
+    "price": 4500,
+    "image": "https://v5.airtableusercontent.com/v1/18/18/1686801600000/Gpr9lxpa_THXH8XJiaTGxg/m3SlS9T8owmlhxH90aDqxCnpFrZ_tFQdJ3sikWbRSiFPaNEUudF4HNZKjGK5uXGo1hjm585RrX9zvqcmMOwEnQ/gOM32UETtRPwRqiWdfz0AN7ydolwASsETGyWblbrbuI",
+    "colors": ["#000000", "#ffffff", "#808080"],
+    "company": "Generic",
+    "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+    "category": "keyboard",
+    "shipping": true
+  },
+  {
+    "name": "Redragon K585",
+    "price": 5999,
+    "image": "https://v5.airtableusercontent.com/v1/18/18/1686801600000/ObMb2bqmXF43AAg_wuR44Q/e6uEiqc9UFMP7uG7WjWr4KkrxatZ3Z6jD_qq7aPe4o4vBXeJizHIwdWjIApM0HP7fwe3AtD-PbvWnjDjnRlReQ/oMaXf2yT3EQnt9I41NLpYXAGbzPpY49fndHT2KMkQB8",
+    "colors": ["#000000", "#ffffff", "#808080"],
+    "company": "Redragon",
+    "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+    "category": "keyboard",
+    "shipping": true
+  },
+  {
+    "name": "Wide Generic Monitor",
+    "price": 45999,
+    "image": "https://v5.airtableusercontent.com/v1/18/18/1686801600000/RFFL7QZ36qaOcFtgvZ0_4g/_Axu5aQabZ3_UnvDITVYqZkWGcV_w2R4kH6QbGPWG20CEky-uh01QN9kUQU3oR4412gIlX-NN-KOSCQLk_d8hQ/RCx9JMfiSf2gjt43xTfXXqbpm16DM-NZ2NbKZ9NwUWg",
+    "colors": ["#000000", "#ffffff", "#808080"],
+    "company": "Generic",
+    "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+    "category": "monitor",
+    "shipping": true
+  },
+  {
+    "name": "Generic Monitor",
+    "price": 32999,
+    "image": "https://v5.airtableusercontent.com/v1/18/18/1686801600000/4xv5ePgnDXllyaC2iAmVeA/znDFru7Fz5SWf4LELqMlnvb9x80TAiwK6lQBf77I04jsIE4dfvkYgXSUFQgs6tvELoWk0pn-ICUukrO89S8d_A/vu0xeArz9vaqmHadCW9OD_qYOU_J-C903_WIgJ-kDgI",
+    "colors": ["#000000", "#ffffff", "#808080"],
+    "company": "Generic",
+    "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+    "category": "monitor",
+    "shipping": true
+  },
+  {
+    "name": "ASUS ROG Strix",
+    "price": 67999,
+    "image": "https://v5.airtableusercontent.com/v1/18/18/1686801600000/LyRdVPWIbIY36GFKO3BZ0Q/kFpG-am5Ig4mIGmtMl33BPYNKNGlp6F-sfivSgQBi0NB-xKfSictZB3GpaK3gZjinOruwwYzzHKmoc6RL-ePwg/SLKs8sAdKFVMy-jiBG8E7XLSVrfcwCmunNk64tAP2kc",
+    "colors": ["#000000", "#ffffff", "#808080"],
+    "company": "Asus",
+    "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+    "category": "monitor",
+    "shipping": true
+  },
+  {
+    "name": "Pwnage Ultra Custom Wireless Ergo",
+    "price": 5999,
+    "image": "https://v5.airtableusercontent.com/v1/18/18/1686801600000/_rlNi7-8_d-tcjy3KZYPug/xUvKk0eerM7UWJE9YRUgqdhMNp2e4pRtzgDA74NHAtF5IgtaG0q_3IcpEEFTT6DuwLxn6OG28x3x23a9z8mbJA/EBsOS6AZu6GJvQ0FewZU4srbp1mFXI0NaOA27jJv8EI",
+    "colors": ["#000000", "#ffffff", "#808080"],
+    "company": "Pwnage",
+    "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+    "category": "mouse",
+    "shipping": true
+  },
+  {
+    "name": "Logitech G502",
+    "price": 6499,
+    "image": "https://v5.airtableusercontent.com/v1/18/18/1686801600000/mQiUdxMflYUOY1UeR0NEFw/FffsV02tlyNvVyxvFKHgl9hGU61CQeUH5Krmtr_asjcZvXVrHBb0wzVgXpHR8gDnYFumwpwnF0-Y7ZiPN3y-kg/pT-SsbLSnz21dUJP4eD8eB9K6nOilhuQivs8xPR3mOA",
+    "colors": ["#000000", "#ffffff", "#808080"],
+    "company": "Logitech",
+    "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+    "category": "mouse",
+    "shipping": true
+  },
+  {
+    "name": "Logitech G PRO X Superlight",
+    "price": 17999,
+    "image": "https://v5.airtableusercontent.com/v1/18/18/1686801600000/tjSJ1R1J2MQhiGi9LVCNyg/UsUBV56cO7RSh2NRzrbHWxMAymgAQQC3PXvPnJQF1td4mWTlPH263TafeiQGPilqo8T8oltKexA-p9170Gv6og/31t6BJdvlURWFtUkxxGy0k1F7KvrqbtQgnMS8e-ARq4",
+    "colors": ["#000000", "#ffffff", "#808080"],
+    "company": "Logitech",
+    "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+    "category": "mouse",
+    "shipping": true
+  },
+  {
+    "name": "SteelSeries QcK",
+    "price": 1499,
+    "image": "https://v5.airtableusercontent.com/v1/18/18/1686801600000/89bonvweUiOV0VWbcO_VoA/eyOC9cGdshLM60HCbsJl6LbFnpqTsV5yan249Mvc56GTzkLMIKFMPQk2uqAgXuuCI2QCIVOGVt1WaSUeXIlW_w/HYkAH-IJRK_A1H-KlUhxs3Ca5KdUjEG-JuoFgMxibTs",
+    "colors": ["#000000", "#ffffff", "#808080"],
+    "company": "SteelSeries",
+    "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+    "category": "mousepad",
+    "shipping": true
+  },
+  {
+    "name": "Razer Gigantus V2 - Pikachu Edition",
+    "price": 2499,
+    "image": "https://v5.airtableusercontent.com/v1/18/18/1686801600000/ryCY_Qwht9jI3I3lF5gJFg/oRq8nAbfEzxSMdsRvq1A9CdzjkP8so_xxr4E9LM841FLrU0V5sMv_7xSxJOHCSa-DznKlDsIcpeIz_H_oq9iqg/EGclkbNWpZBEoalJpKD6TLxzM9THo1Vv_xwCwbZeOiw",
+    "colors": ["#000000", "#ffffff", "#808080"],
+    "company": "Razer",
+    "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+    "category": "mousepad",
+    "shipping": true
+  },
+  {
+    "name": "Razer Gigantus V2 XXL",
+    "price": 3998,
+    "image": "https://v5.airtableusercontent.com/v1/18/18/1686801600000/GMBZ9ZuxppzsWpVN-xGdeA/kktffGLtk2abUHk6A7zvMmjItZ1slnFv-rqznR4gHTwDx4a0T4Pmccz4J-211shv0fppMIvkyvUC5w5Goghemg/8cRbPWyTWsQGZTsjzPT-VrIWs4Otl0-8V-gQhyTXEx4",
+    "colors": ["#000000", "#ffffff", "#808080"],
+    "company": "Razer",
+    "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+    "category": "mousepad",
+    "shipping": true
+  },
+  {
+    "name": "Oculus Rift",
+    "price": 49999,
+    "image": "https://v5.airtableusercontent.com/v1/18/18/1686801600000/vxHHGtJ0m6-KFSSFIO1g-g/1J8EYDbeEwaM98tXc_E-gs69hy1UkjEolpZpTMdEP77yxmVRzg8VRoyCp8RFJc0VI7gOzrWb6faZuWSi8H4lVw/7UauWoHEhBFKvXWgInfYLwOfk3aGCaDp37K8hZyh4sc",
+    "colors": ["#000000", "#ffffff", "#808080"],
+    "company": "Oculus",
+    "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+    "category": "vrheadset",
+    "shipping": true
+  },
+  {
+    "name": "Playstation VR Headset",
+    "price": 38999,
+    "image": "https://v5.airtableusercontent.com/v1/18/18/1686801600000/xeUyIGWEfbD61mGw3DdK7g/BcaUr45YNmgsQjMeFFJi2CW1mSVdZgm0ec-IZjWgQEddXSG9X-i_N2Op70FTUH8pdwyR3Zdj3be5r_Foha33IA/0tvQCamtTC-hCHfQxuqtAnECUlxyvg0FJ_22xPGx82w",
+    "colors": ["#000000", "#ffffff", "#808080"],
+    "company": "Sony",
+    "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+    "category": "vrheadset",
+    "shipping": true
+  },
+  {
+    "name": "Meta Quest 2",
+    "price": 41999,
+    "image": "https://v5.airtableusercontent.com/v1/18/18/1686801600000/Eh4iR3eb9gIik1EEcrgHzg/pizGuS0SoT0BqtIklvzm9V-6Lk05Wc1g1l5wyoMyBzO0AlYLwwoSvWBlUBDOxA__7aExioakB3Pj4-CGe6fsaQ/amIfLFjFFHN2zp-NWFiWclllhtJuB0gwX7-PELF38x8",
+    "colors": ["#000000", "#ffffff", "#808080"],
+    "company": "Meta",
+    "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+    "category": "vrheadset",
+    "shipping": true
+  }
+]
