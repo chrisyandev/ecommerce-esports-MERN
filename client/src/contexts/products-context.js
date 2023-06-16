@@ -10,7 +10,7 @@ import {
 import productsReducer from "../reducers/products-reducer";
 
 const initialState = {
-  productsLoading: false,
+  productsLoading: true,
   productsError: false,
   products: [],
   featureProducts: [],
@@ -23,17 +23,21 @@ const ProductsProvider = ({ children }) => {
 
   const fetchProducts = async () => {
     dispatch({ type: GET_PRODUCTS });
-    try {
-      fetch("/api/v1/products")
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          const { products } = data;
-          dispatch({ type: GET_PRODUCTS_SUCCESS, payload: products });
-        });
-    } catch (error) {
-      dispatch({ type: GET_PRODUCTS_ERROR });
-    }
+    fetch("/api/v1/products")
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(res.status);
+        }
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data);
+        const { products } = data;
+        dispatch({ type: GET_PRODUCTS_SUCCESS, payload: products });
+      })
+      .catch((error) => {
+        dispatch({ type: GET_PRODUCTS_ERROR, error });
+      });
   };
 
   useEffect(() => {

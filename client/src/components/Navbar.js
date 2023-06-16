@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { FaBars } from "react-icons/fa";
-import UserToolbar from "./UserToolbar";
+import { UserToolbar } from "../components";
 import { useVisibilityContext } from "../contexts/visibility-context";
 import logo from "../assets/logo.svg";
 import { links } from "../utils/constants";
