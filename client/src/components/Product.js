@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 import styled from "styled-components";
+import { formatPrice } from "../utils/helpers";
 
 const Product = ({ id, name, image, price }) => {
   return (
@@ -14,6 +15,7 @@ const Product = ({ id, name, image, price }) => {
       </div>
       <footer>
         <h5>{name}</h5>
+        <p>{formatPrice(price)}</p>
       </footer>
     </StyledArticle>
   );
@@ -63,13 +65,13 @@ const StyledArticle = styled.article`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
   }
   footer h5,
   footer p {
     margin-bottom: 0;
     font-weight: 400;
   }
-
   footer p {
     color: var(--clr-primary-5);
     letter-spacing: var(--spacing);
