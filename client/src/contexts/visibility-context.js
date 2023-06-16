@@ -1,6 +1,6 @@
 import { createContext, useContext, useReducer } from "react";
 import visibilityReducer from "../reducers/visibility-reducer";
-import { SIDEBAR_OPEN, SIDEBAR_CLOSE } from "../actions/actions";
+import { SIDEBAR_OPEN, SIDEBAR_CLOSE } from "../actions/visibility-actions";
 
 const initialState = {
   isSidebarOpen: false,
