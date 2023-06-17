@@ -8,7 +8,7 @@ const Product = ({ id, name, image, price }) => {
   return (
     <StyledArticle>
       <div className="container">
-        <img src={image} alt={name} />
+        <img src={image.url} alt={image.altText} />
         <Link to={`/products/${id}`} className="link">
           <FaSearch />
         </Link>

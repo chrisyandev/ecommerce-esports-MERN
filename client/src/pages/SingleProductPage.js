@@ -45,17 +45,18 @@ const SingleProductPage = () => {
     return <Error />;
   }
 
-  const { name, price, description, stock, company } = singleProduct;
+  const { name, price, description, stock, company, image, additionalImages } =
+    singleProduct;
 
   return (
     <StyledMain>
-      <PageHero title={name} product={singleProduct}></PageHero>
+      <PageHero title={name} product={singleProduct} />
       <div className="section section-center page">
         <Link to="/products" className="btn">
           Back To Products
         </Link>
-        <div className="products-center">
-          <ProductImages />
+        <div className="product-center">
+          <ProductImages images={[image, ...additionalImages]} />
           <section className="content">
             <h2>{name}</h2>
             <ProductRating />

@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const ImageSchema = require("./Image");
 
 const ProductSchema = new mongoose.Schema(
   {
@@ -18,10 +19,13 @@ const ProductSchema = new mongoose.Schema(
       maxlength: [1000, "description cannot exceed 1000 characters"],
     },
     image: {
-      type: String,
-      trim: true,
-      default: "/uploads/placeholder.png",
+      type: ImageSchema,
+      default: {
+        url: "/uploads/example.jpg",
+        altText: "Example Image",
+      },
     },
+    additionalImages: [ImageSchema],
     category: {
       type: String,
       trim: true,

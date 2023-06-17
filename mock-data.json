@@ -2,7 +2,28 @@
   {
     "name": "Playstation 5",
     "price": 50000,
-    "image": "https://drive.google.com/uc?id=1I7zb0vcx_FnvyaMqjUyCYAFy7oEqAcla",
+    "image": {
+      "url": "https://drive.google.com/uc?id=1I7zb0vcx_FnvyaMqjUyCYAFy7oEqAcla",
+      "altText": "Playstation 5"
+    },
+    "additionalImages": [
+      {
+        "url": "https://placehold.co/600x400/darkred/lightgray?text=Placeholder",
+        "altText": "Placeholder 1"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkgreen/lightgray?text=Placeholder",
+        "altText": "Placeholder 2"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkblue/lightgray?text=Placeholder",
+        "altText": "Placeholder 3"
+      },
+      {
+        "url": "https://placehold.co/600x400/gray/lightgray?text=Placeholder",
+        "altText": "Placeholder 4"
+      }
+    ],
     "colors": ["#000000", "#ffffff", "#808080"],
     "company": "Sony",
     "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
@@ -14,7 +35,28 @@
   {
     "name": "Xbox One",
     "price": 45000,
-    "image": "https://drive.google.com/uc?id=1OSbjGqoIb_GMG0HHjBosdcO33b4rTCQl",
+    "image": {
+      "url": "https://drive.google.com/uc?id=1OSbjGqoIb_GMG0HHjBosdcO33b4rTCQl",
+      "altText": "Xbox One"
+    },
+    "additionalImages": [
+      {
+        "url": "https://placehold.co/600x400/darkred/lightgray?text=Placeholder",
+        "altText": "Placeholder 1"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkgreen/lightgray?text=Placeholder",
+        "altText": "Placeholder 2"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkblue/lightgray?text=Placeholder",
+        "altText": "Placeholder 3"
+      },
+      {
+        "url": "https://placehold.co/600x400/gray/lightgray?text=Placeholder",
+        "altText": "Placeholder 4"
+      }
+    ],
     "colors": ["#000000", "#ffffff", "#808080"],
     "company": "Microsoft",
     "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
@@ -25,7 +67,28 @@
   {
     "name": "Nintendo Switch",
     "price": 35000,
-    "image": "https://drive.google.com/uc?id=14U1ZHD6TT2btagrdF2-73cAs2Rg5gNjb",
+    "image": {
+      "url": "https://drive.google.com/uc?id=14U1ZHD6TT2btagrdF2-73cAs2Rg5gNjb",
+      "altText": "Nintendo Switch"
+    },
+    "additionalImages": [
+      {
+        "url": "https://placehold.co/600x400/darkred/lightgray?text=Placeholder",
+        "altText": "Placeholder 1"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkgreen/lightgray?text=Placeholder",
+        "altText": "Placeholder 2"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkblue/lightgray?text=Placeholder",
+        "altText": "Placeholder 3"
+      },
+      {
+        "url": "https://placehold.co/600x400/gray/lightgray?text=Placeholder",
+        "altText": "Placeholder 4"
+      }
+    ],
     "colors": ["#000000", "#ffffff", "#808080"],
     "company": "Nintendo",
     "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
@@ -36,7 +99,28 @@
   {
     "name": "Retro Controller",
     "price": 5999,
-    "image": "https://drive.google.com/uc?id=1eT9OXS8Z8rCdOCsQUkUMM6srURZi2nca",
+    "image": {
+      "url": "https://drive.google.com/uc?id=1eT9OXS8Z8rCdOCsQUkUMM6srURZi2nca",
+      "altText": "Retro Controller"
+    },
+    "additionalImages": [
+      {
+        "url": "https://placehold.co/600x400/darkred/lightgray?text=Placeholder",
+        "altText": "Placeholder 1"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkgreen/lightgray?text=Placeholder",
+        "altText": "Placeholder 2"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkblue/lightgray?text=Placeholder",
+        "altText": "Placeholder 3"
+      },
+      {
+        "url": "https://placehold.co/600x400/gray/lightgray?text=Placeholder",
+        "altText": "Placeholder 4"
+      }
+    ],
     "colors": ["#000000", "#ffffff", "#808080"],
     "company": "Nintendo",
     "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
@@ -47,7 +131,28 @@
   {
     "name": "Xbox One Controller",
     "price": 7499,
-    "image": "https://drive.google.com/uc?id=1K0_9V3ThxIDNDrTbm6ptEMmEWUqHu7X-",
+    "image": {
+      "url": "https://drive.google.com/uc?id=1K0_9V3ThxIDNDrTbm6ptEMmEWUqHu7X-",
+      "altText": "Xbox One Controller"
+    },
+    "additionalImages": [
+      {
+        "url": "https://placehold.co/600x400/darkred/lightgray?text=Placeholder",
+        "altText": "Placeholder 1"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkgreen/lightgray?text=Placeholder",
+        "altText": "Placeholder 2"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkblue/lightgray?text=Placeholder",
+        "altText": "Placeholder 3"
+      },
+      {
+        "url": "https://placehold.co/600x400/gray/lightgray?text=Placeholder",
+        "altText": "Placeholder 4"
+      }
+    ],
     "colors": ["#000000", "#ffffff", "#808080"],
     "company": "Microsoft",
     "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
@@ -58,7 +163,28 @@
   {
     "name": "Playstation 4 Controller",
     "price": 7999,
-    "image": "https://drive.google.com/uc?id=1lRahEusZLq8LNlcBSmeMLMJSktV4s0YX",
+    "image": {
+      "url": "https://drive.google.com/uc?id=1lRahEusZLq8LNlcBSmeMLMJSktV4s0YX",
+      "altText": "Playstation 4 Controller"
+    },
+    "additionalImages": [
+      {
+        "url": "https://placehold.co/600x400/darkred/lightgray?text=Placeholder",
+        "altText": "Placeholder 1"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkgreen/lightgray?text=Placeholder",
+        "altText": "Placeholder 2"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkblue/lightgray?text=Placeholder",
+        "altText": "Placeholder 3"
+      },
+      {
+        "url": "https://placehold.co/600x400/gray/lightgray?text=Placeholder",
+        "altText": "Placeholder 4"
+      }
+    ],
     "colors": ["#000000", "#ffffff", "#808080"],
     "company": "Sony",
     "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
@@ -69,7 +195,28 @@
   {
     "name": "Astro A50",
     "price": 34599,
-    "image": "https://drive.google.com/uc?id=18crxvfWGFqNFW2U5B_aWMCyvsME6XZIh",
+    "image": {
+      "url": "https://drive.google.com/uc?id=18crxvfWGFqNFW2U5B_aWMCyvsME6XZIh",
+      "altText": "Astro A50"
+    },
+    "additionalImages": [
+      {
+        "url": "https://placehold.co/600x400/darkred/lightgray?text=Placeholder",
+        "altText": "Placeholder 1"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkgreen/lightgray?text=Placeholder",
+        "altText": "Placeholder 2"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkblue/lightgray?text=Placeholder",
+        "altText": "Placeholder 3"
+      },
+      {
+        "url": "https://placehold.co/600x400/gray/lightgray?text=Placeholder",
+        "altText": "Placeholder 4"
+      }
+    ],
     "colors": ["#000000", "#ffffff", "#808080"],
     "company": "Astro",
     "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
@@ -81,7 +228,28 @@
   {
     "name": "Razer Kraken X",
     "price": 7999,
-    "image": "https://drive.google.com/uc?id=1t94wgEb5euJ_fY_x67LQvGeYqqBxeyxm",
+    "image": {
+      "url": "https://drive.google.com/uc?id=1t94wgEb5euJ_fY_x67LQvGeYqqBxeyxm",
+      "altText": "Razer Kraken X"
+    },
+    "additionalImages": [
+      {
+        "url": "https://placehold.co/600x400/darkred/lightgray?text=Placeholder",
+        "altText": "Placeholder 1"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkgreen/lightgray?text=Placeholder",
+        "altText": "Placeholder 2"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkblue/lightgray?text=Placeholder",
+        "altText": "Placeholder 3"
+      },
+      {
+        "url": "https://placehold.co/600x400/gray/lightgray?text=Placeholder",
+        "altText": "Placeholder 4"
+      }
+    ],
     "colors": ["#000000", "#ffffff", "#808080"],
     "company": "Razer",
     "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
@@ -92,7 +260,28 @@
   {
     "name": "Generic Headset",
     "price": 3500,
-    "image": "https://drive.google.com/uc?id=14kXwiIprUOLSygZXdVmzIwhVkbLtib72",
+    "image": {
+      "url": "https://drive.google.com/uc?id=14kXwiIprUOLSygZXdVmzIwhVkbLtib72",
+      "altText": "Generic Headset"
+    },
+    "additionalImages": [
+      {
+        "url": "https://placehold.co/600x400/darkred/lightgray?text=Placeholder",
+        "altText": "Placeholder 1"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkgreen/lightgray?text=Placeholder",
+        "altText": "Placeholder 2"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkblue/lightgray?text=Placeholder",
+        "altText": "Placeholder 3"
+      },
+      {
+        "url": "https://placehold.co/600x400/gray/lightgray?text=Placeholder",
+        "altText": "Placeholder 4"
+      }
+    ],
     "colors": ["#000000", "#ffffff", "#808080"],
     "company": "Generic",
     "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
@@ -103,7 +292,28 @@
   {
     "name": "Generic Keyboard",
     "price": 4000,
-    "image": "https://drive.google.com/uc?id=1Xke5UAlJXkm5kD6x1Qsn7Y08VdMPJsqm",
+    "image": {
+      "url": "https://drive.google.com/uc?id=1Xke5UAlJXkm5kD6x1Qsn7Y08VdMPJsqm",
+      "altText": "Generic Keyboard"
+    },
+    "additionalImages": [
+      {
+        "url": "https://placehold.co/600x400/darkred/lightgray?text=Placeholder",
+        "altText": "Placeholder 1"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkgreen/lightgray?text=Placeholder",
+        "altText": "Placeholder 2"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkblue/lightgray?text=Placeholder",
+        "altText": "Placeholder 3"
+      },
+      {
+        "url": "https://placehold.co/600x400/gray/lightgray?text=Placeholder",
+        "altText": "Placeholder 4"
+      }
+    ],
     "colors": ["#000000", "#ffffff", "#808080"],
     "company": "Generic",
     "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
@@ -114,7 +324,28 @@
   {
     "name": "Wireless Generic Keyboard",
     "price": 4500,
-    "image": "https://drive.google.com/uc?id=1crNASdMDTPXsIRg5BilSRaOqwPzVyEux",
+    "image": {
+      "url": "https://drive.google.com/uc?id=1crNASdMDTPXsIRg5BilSRaOqwPzVyEux",
+      "altText": "Wireless Generic Keyboard"
+    },
+    "additionalImages": [
+      {
+        "url": "https://placehold.co/600x400/darkred/lightgray?text=Placeholder",
+        "altText": "Placeholder 1"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkgreen/lightgray?text=Placeholder",
+        "altText": "Placeholder 2"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkblue/lightgray?text=Placeholder",
+        "altText": "Placeholder 3"
+      },
+      {
+        "url": "https://placehold.co/600x400/gray/lightgray?text=Placeholder",
+        "altText": "Placeholder 4"
+      }
+    ],
     "colors": ["#000000", "#ffffff", "#808080"],
     "company": "Generic",
     "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
@@ -125,7 +356,28 @@
   {
     "name": "Redragon K585",
     "price": 5999,
-    "image": "https://drive.google.com/uc?id=1vh18_K6oOFPQSkoX33EXZVHFC9tEXjS9",
+    "image": {
+      "url": "https://drive.google.com/uc?id=1vh18_K6oOFPQSkoX33EXZVHFC9tEXjS9",
+      "altText": "Redragon K585"
+    },
+    "additionalImages": [
+      {
+        "url": "https://placehold.co/600x400/darkred/lightgray?text=Placeholder",
+        "altText": "Placeholder 1"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkgreen/lightgray?text=Placeholder",
+        "altText": "Placeholder 2"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkblue/lightgray?text=Placeholder",
+        "altText": "Placeholder 3"
+      },
+      {
+        "url": "https://placehold.co/600x400/gray/lightgray?text=Placeholder",
+        "altText": "Placeholder 4"
+      }
+    ],
     "colors": ["#000000", "#ffffff", "#808080"],
     "company": "Redragon",
     "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
@@ -136,7 +388,28 @@
   {
     "name": "Wide Generic Monitor",
     "price": 45999,
-    "image": "https://drive.google.com/uc?id=1hhUuPCIPl8SRwfQfFTqx4pzjJbukdXMo",
+    "image": {
+      "url": "https://drive.google.com/uc?id=1hhUuPCIPl8SRwfQfFTqx4pzjJbukdXMo",
+      "altText": "Wide Generic Monitor"
+    },
+    "additionalImages": [
+      {
+        "url": "https://placehold.co/600x400/darkred/lightgray?text=Placeholder",
+        "altText": "Placeholder 1"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkgreen/lightgray?text=Placeholder",
+        "altText": "Placeholder 2"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkblue/lightgray?text=Placeholder",
+        "altText": "Placeholder 3"
+      },
+      {
+        "url": "https://placehold.co/600x400/gray/lightgray?text=Placeholder",
+        "altText": "Placeholder 4"
+      }
+    ],
     "colors": ["#000000", "#ffffff", "#808080"],
     "company": "Generic",
     "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
@@ -147,7 +420,28 @@
   {
     "name": "Generic Monitor",
     "price": 32999,
-    "image": "https://drive.google.com/uc?id=1npBUJLBSEVSHjEf5Ak-0J2WFOxYoYpGA",
+    "image": {
+      "url": "https://drive.google.com/uc?id=1npBUJLBSEVSHjEf5Ak-0J2WFOxYoYpGA",
+      "altText": "Generic Monitor"
+    },
+    "additionalImages": [
+      {
+        "url": "https://placehold.co/600x400/darkred/lightgray?text=Placeholder",
+        "altText": "Placeholder 1"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkgreen/lightgray?text=Placeholder",
+        "altText": "Placeholder 2"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkblue/lightgray?text=Placeholder",
+        "altText": "Placeholder 3"
+      },
+      {
+        "url": "https://placehold.co/600x400/gray/lightgray?text=Placeholder",
+        "altText": "Placeholder 4"
+      }
+    ],
     "colors": ["#000000", "#ffffff", "#808080"],
     "company": "Generic",
     "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
@@ -158,7 +452,28 @@
   {
     "name": "ASUS ROG Strix",
     "price": 67999,
-    "image": "https://drive.google.com/uc?id=1npo0py2hndkqjrgOGHTC_e6Mmk1nnvuP",
+    "image": {
+      "url": "https://drive.google.com/uc?id=1npo0py2hndkqjrgOGHTC_e6Mmk1nnvuP",
+      "altText": "ASUS ROG Strix"
+    },
+    "additionalImages": [
+      {
+        "url": "https://placehold.co/600x400/darkred/lightgray?text=Placeholder",
+        "altText": "Placeholder 1"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkgreen/lightgray?text=Placeholder",
+        "altText": "Placeholder 2"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkblue/lightgray?text=Placeholder",
+        "altText": "Placeholder 3"
+      },
+      {
+        "url": "https://placehold.co/600x400/gray/lightgray?text=Placeholder",
+        "altText": "Placeholder 4"
+      }
+    ],
     "colors": ["#000000", "#ffffff", "#808080"],
     "company": "Asus",
     "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
@@ -169,7 +484,28 @@
   {
     "name": "Pwnage Ultra Custom Wireless Ergo",
     "price": 5999,
-    "image": "https://drive.google.com/uc?id=1M_uxFnDpeJb9dW6vJJ61ooV587yPoL3p",
+    "image": {
+      "url": "https://drive.google.com/uc?id=1M_uxFnDpeJb9dW6vJJ61ooV587yPoL3p",
+      "altText": "Pwnage Ultra Custom Wireless Ergo"
+    },
+    "additionalImages": [
+      {
+        "url": "https://placehold.co/600x400/darkred/lightgray?text=Placeholder",
+        "altText": "Placeholder 1"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkgreen/lightgray?text=Placeholder",
+        "altText": "Placeholder 2"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkblue/lightgray?text=Placeholder",
+        "altText": "Placeholder 3"
+      },
+      {
+        "url": "https://placehold.co/600x400/gray/lightgray?text=Placeholder",
+        "altText": "Placeholder 4"
+      }
+    ],
     "colors": ["#000000", "#ffffff", "#808080"],
     "company": "Pwnage",
     "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
@@ -181,7 +517,28 @@
   {
     "name": "Logitech G502",
     "price": 6499,
-    "image": "https://drive.google.com/uc?id=1AH45TaRzqWqtgmiJ_bqZUPH3wg6QVraY",
+    "image": {
+      "url": "https://drive.google.com/uc?id=1AH45TaRzqWqtgmiJ_bqZUPH3wg6QVraY",
+      "altText": "Logitech G502"
+    },
+    "additionalImages": [
+      {
+        "url": "https://placehold.co/600x400/darkred/lightgray?text=Placeholder",
+        "altText": "Placeholder 1"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkgreen/lightgray?text=Placeholder",
+        "altText": "Placeholder 2"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkblue/lightgray?text=Placeholder",
+        "altText": "Placeholder 3"
+      },
+      {
+        "url": "https://placehold.co/600x400/gray/lightgray?text=Placeholder",
+        "altText": "Placeholder 4"
+      }
+    ],
     "colors": ["#000000", "#ffffff", "#808080"],
     "company": "Logitech",
     "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
@@ -192,7 +549,28 @@
   {
     "name": "Logitech G PRO X Superlight",
     "price": 17999,
-    "image": "https://drive.google.com/uc?id=1-DEfv0gDZx_KNFBkAN0OZKfwceTgzh-f",
+    "image": {
+      "url": "https://drive.google.com/uc?id=1-DEfv0gDZx_KNFBkAN0OZKfwceTgzh-f",
+      "altText": "Logitech G PRO X Superlight"
+    },
+    "additionalImages": [
+      {
+        "url": "https://placehold.co/600x400/darkred/lightgray?text=Placeholder",
+        "altText": "Placeholder 1"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkgreen/lightgray?text=Placeholder",
+        "altText": "Placeholder 2"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkblue/lightgray?text=Placeholder",
+        "altText": "Placeholder 3"
+      },
+      {
+        "url": "https://placehold.co/600x400/gray/lightgray?text=Placeholder",
+        "altText": "Placeholder 4"
+      }
+    ],
     "colors": ["#000000", "#ffffff", "#808080"],
     "company": "Logitech",
     "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
@@ -203,7 +581,28 @@
   {
     "name": "SteelSeries QcK",
     "price": 1499,
-    "image": "https://drive.google.com/uc?id=1yOi0BQmL0rspYJMzJxqrtIRIOC4JCUK4",
+    "image": {
+      "url": "https://drive.google.com/uc?id=1yOi0BQmL0rspYJMzJxqrtIRIOC4JCUK4",
+      "altText": "SteelSeries QcK"
+    },
+    "additionalImages": [
+      {
+        "url": "https://placehold.co/600x400/darkred/lightgray?text=Placeholder",
+        "altText": "Placeholder 1"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkgreen/lightgray?text=Placeholder",
+        "altText": "Placeholder 2"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkblue/lightgray?text=Placeholder",
+        "altText": "Placeholder 3"
+      },
+      {
+        "url": "https://placehold.co/600x400/gray/lightgray?text=Placeholder",
+        "altText": "Placeholder 4"
+      }
+    ],
     "colors": ["#000000", "#ffffff", "#808080"],
     "company": "SteelSeries",
     "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
@@ -214,7 +613,28 @@
   {
     "name": "Razer Gigantus V2 - Pikachu Edition",
     "price": 2499,
-    "image": "https://drive.google.com/uc?id=13KGRo3ftiYxZRFh_vG3jMthQTwz1jVOA",
+    "image": {
+      "url": "https://drive.google.com/uc?id=13KGRo3ftiYxZRFh_vG3jMthQTwz1jVOA",
+      "altText": "Razer Gigantus V2 - Pikachu Edition"
+    },
+    "additionalImages": [
+      {
+        "url": "https://placehold.co/600x400/darkred/lightgray?text=Placeholder",
+        "altText": "Placeholder 1"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkgreen/lightgray?text=Placeholder",
+        "altText": "Placeholder 2"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkblue/lightgray?text=Placeholder",
+        "altText": "Placeholder 3"
+      },
+      {
+        "url": "https://placehold.co/600x400/gray/lightgray?text=Placeholder",
+        "altText": "Placeholder 4"
+      }
+    ],
     "colors": ["#000000", "#ffffff", "#808080"],
     "company": "Razer",
     "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
@@ -225,7 +645,28 @@
   {
     "name": "Razer Gigantus V2 XXL",
     "price": 3998,
-    "image": "https://drive.google.com/uc?id=11OQ630d2fQUkQJ6f0LsSQxGB1bl2njst",
+    "image": {
+      "url": "https://drive.google.com/uc?id=11OQ630d2fQUkQJ6f0LsSQxGB1bl2njst",
+      "altText": "Razer Gigantus V2 XXL"
+    },
+    "additionalImages": [
+      {
+        "url": "https://placehold.co/600x400/darkred/lightgray?text=Placeholder",
+        "altText": "Placeholder 1"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkgreen/lightgray?text=Placeholder",
+        "altText": "Placeholder 2"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkblue/lightgray?text=Placeholder",
+        "altText": "Placeholder 3"
+      },
+      {
+        "url": "https://placehold.co/600x400/gray/lightgray?text=Placeholder",
+        "altText": "Placeholder 4"
+      }
+    ],
     "colors": ["#000000", "#ffffff", "#808080"],
     "company": "Razer",
     "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
@@ -236,7 +677,28 @@
   {
     "name": "Oculus Rift",
     "price": 49999,
-    "image": "https://drive.google.com/uc?id=1XT46MObCcrcxTNfNPaCFLmitrtB6I7hF",
+    "image": {
+      "url": "https://drive.google.com/uc?id=1XT46MObCcrcxTNfNPaCFLmitrtB6I7hF",
+      "altText": "Oculus Rift"
+    },
+    "additionalImages": [
+      {
+        "url": "https://placehold.co/600x400/darkred/lightgray?text=Placeholder",
+        "altText": "Placeholder 1"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkgreen/lightgray?text=Placeholder",
+        "altText": "Placeholder 2"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkblue/lightgray?text=Placeholder",
+        "altText": "Placeholder 3"
+      },
+      {
+        "url": "https://placehold.co/600x400/gray/lightgray?text=Placeholder",
+        "altText": "Placeholder 4"
+      }
+    ],
     "colors": ["#000000", "#ffffff", "#808080"],
     "company": "Oculus",
     "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
@@ -247,7 +709,28 @@
   {
     "name": "Playstation VR Headset",
     "price": 38999,
-    "image": "https://drive.google.com/uc?id=1mOPixkYXJ4_B_6QNsz42g86nC8q6KwJt",
+    "image": {
+      "url": "https://drive.google.com/uc?id=1mOPixkYXJ4_B_6QNsz42g86nC8q6KwJt",
+      "altText": "Playstation VR Headset"
+    },
+    "additionalImages": [
+      {
+        "url": "https://placehold.co/600x400/darkred/lightgray?text=Placeholder",
+        "altText": "Placeholder 1"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkgreen/lightgray?text=Placeholder",
+        "altText": "Placeholder 2"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkblue/lightgray?text=Placeholder",
+        "altText": "Placeholder 3"
+      },
+      {
+        "url": "https://placehold.co/600x400/gray/lightgray?text=Placeholder",
+        "altText": "Placeholder 4"
+      }
+    ],
     "colors": ["#000000", "#ffffff", "#808080"],
     "company": "Sony",
     "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
@@ -258,7 +741,28 @@
   {
     "name": "Meta Quest 2",
     "price": 41999,
-    "image": "https://drive.google.com/uc?id=1SpsMbprxm3OWmRrA8wA-8v_49OLLSMd3",
+    "image": {
+      "url": "https://drive.google.com/uc?id=1SpsMbprxm3OWmRrA8wA-8v_49OLLSMd3",
+      "altText": "Meta Quest 2"
+    },
+    "additionalImages": [
+      {
+        "url": "https://placehold.co/600x400/darkred/lightgray?text=Placeholder",
+        "altText": "Placeholder 1"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkgreen/lightgray?text=Placeholder",
+        "altText": "Placeholder 2"
+      },
+      {
+        "url": "https://placehold.co/600x400/darkblue/lightgray?text=Placeholder",
+        "altText": "Placeholder 3"
+      },
+      {
+        "url": "https://placehold.co/600x400/gray/lightgray?text=Placeholder",
+        "altText": "Placeholder 4"
+      }
+    ],
     "colors": ["#000000", "#ffffff", "#808080"],
     "company": "Meta",
     "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
