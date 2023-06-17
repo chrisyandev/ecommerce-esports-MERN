@@ -50,9 +50,9 @@ const ProductSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
-    inventory: {
+    stock: {
       type: Number,
-      required: [true, "please provide product inventory"],
+      required: [true, "please provide product stock"],
     },
     numOfReviews: {
       type: Number,

@@ -20,7 +20,7 @@ const createOrder = async (req, res) => {
   let orderItems = [];
   let subtotal = 0; // in cents
 
-  // Note: frontend must provide id and count for each cart item
+  // Note: frontend must provide id and quantity for each cart item
 
   for (const item of cartItems) {
     const product = await Product.findOne({ _id: item.productId });
@@ -35,11 +35,11 @@ const createOrder = async (req, res) => {
       name: product.name,
       image: product.image,
       price: product.price,
-      count: item.count,
+      quantity: item.quantity,
       productId: product._id,
     });
 
-    subtotal += item.count * product.price;
+    subtotal += item.quantity * product.price;
   }
 
   const total = subtotal + tax + shippingFee;

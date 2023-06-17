@@ -1,8 +1,16 @@
 import { useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { Loading, Error } from "../components";
+import {
+  Loading,
+  Error,
+  PageHero,
+  ProductImages,
+  ProductRating,
+  AddToCart,
+} from "../components";
 import { useProductsContext } from "../contexts/products-context";
+import { formatPrice } from "../utils/helpers";
 
 const SingleProductPage = () => {
   const { id } = useParams();
@@ -37,9 +45,39 @@ const SingleProductPage = () => {
     return <Error />;
   }
 
+  const { name, price, description, stock, company } = singleProduct;
+
   return (
     <StyledMain>
-      <img src={singleProduct.image} alt={singleProduct.name} />
+      <PageHero title={name} product={singleProduct}></PageHero>
+      <div className="section section-center page">
+        <Link to="/products" className="btn">
+          Back To Products
+        </Link>
+        <div className="products-center">
+          <ProductImages />
+          <section className="content">
+            <h2>{name}</h2>
+            <ProductRating />
+            <h5 className="price">{formatPrice(price)}</h5>
+            <p className="desc">{description}</p>
+            <p className="info">
+              <span>SKU : </span>
+              {id}
+            </p>
+            <p className="info">
+              <span>Available : </span>
+              {stock > 0 ? "In Stock" : "Out Of Stock"}
+            </p>
+            <p className="info">
+              <span>Brand : </span>
+              {company}
+            </p>
+            <hr />
+            {stock > 0 && <AddToCart />}
+          </section>
+        </div>
+      </div>
     </StyledMain>
   );
 };
