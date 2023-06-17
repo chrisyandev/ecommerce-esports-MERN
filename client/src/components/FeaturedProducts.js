@@ -21,8 +21,8 @@ const FeaturedProducts = () => {
         <div className="underline" />
       </div>
       <div className="section-center featured">
-        {featuredProducts.map(({ id, ...rest }) => {
-          return <Product key={id} {...rest} />;
+        {featuredProducts.map((product) => {
+          return <Product key={product.id} {...product} />;
         })}
       </div>
     </StyledSection>

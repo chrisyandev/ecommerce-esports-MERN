@@ -1,4 +1,10 @@
-import { createContext, useContext, useEffect, useReducer } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useReducer,
+  useCallback,
+} from "react";
 import {
   GET_PRODUCTS,
   GET_PRODUCTS_SUCCESS,
@@ -14,6 +20,9 @@ const initialState = {
   productsError: false,
   products: [],
   featureProducts: [],
+  singleProductLoading: true,
+  singleProductError: false,
+  singleProduct: {},
 };
 
 const ProductsContext = createContext();
@@ -40,12 +49,30 @@ const ProductsProvider = ({ children }) => {
       });
   };
 
+  const fetchSingleProduct = useCallback(async (id) => {
+    dispatch({ type: GET_SINGLE_PRODUCT });
+    fetch(`/api/v1/products/${id}`)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(res.status);
+        }
+        return res.json();
+      })
+      .then((data) => {
+        const { product } = data;
+        dispatch({ type: GET_SINGLE_PRODUCT_SUCCESS, payload: product });
+      })
+      .catch((error) => {
+        dispatch({ type: GET_SINGLE_PRODUCT_ERROR, error });
+      });
+  }, []);
+
   useEffect(() => {
     fetchProducts();
   }, []);
 
   return (
-    <ProductsContext.Provider value={{ ...state }}>
+    <ProductsContext.Provider value={{ ...state, fetchSingleProduct }}>
       {children}
     </ProductsContext.Provider>
   );
