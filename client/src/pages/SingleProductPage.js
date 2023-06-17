@@ -1,11 +1,12 @@
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { Loading, Error } from "../components";
 import { useProductsContext } from "../contexts/products-context";
 
 const SingleProductPage = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const {
     singleProductLoading,
     singleProductError,
@@ -16,6 +17,18 @@ const SingleProductPage = () => {
   useEffect(() => {
     fetchSingleProduct(id);
   }, [id, fetchSingleProduct]);
+
+  useEffect(() => {
+    let timeoutHandle;
+    if (singleProductError) {
+      timeoutHandle = setTimeout(() => {
+        navigate("/");
+      }, 3000);
+    }
+    return () => {
+      clearTimeout(timeoutHandle);
+    };
+  }, [singleProductError, navigate]);
 
   if (singleProductLoading) {
     return <Loading />;
