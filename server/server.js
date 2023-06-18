@@ -24,7 +24,7 @@ app.set("trust proxy", 1);
 const port = process.env.PORT || 5000;
 
 //database
-const connectDB = require("./db/connect");
+const connectToDB = require("./db/connect");
 
 // middleware
 app.use(mongoSanitizer());
@@ -42,10 +42,6 @@ app.use(fileUploader());
 app.get("/", (req, res) => {
   res.send("e-commerce api");
 });
-app.get("/api/v1", (req, res) => {
-  console.log(req.signedCookies);
-  res.send("cookie test");
-});
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/products", productRouter);
@@ -58,7 +54,7 @@ app.use(errorHandler);
 
 const start = async () => {
   try {
-    await connectDB(process.env.MONGO_URL);
+    await connectToDB(process.env.MONGO_URL, process.env.DB_NAME);
     app.listen(port, () => {
       console.log(`listening on port ${port}...`);
     });

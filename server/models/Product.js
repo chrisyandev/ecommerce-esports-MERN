@@ -31,15 +31,23 @@ const ProductSchema = new mongoose.Schema(
       trim: true,
       required: [true, "please provide product category"],
       enum: {
-        values: ["office", "kitchen", "bedroom"],
-        message: "{VALUE} is not valid",
+        values: [
+          "console",
+          "controller",
+          "headset",
+          "keyboard",
+          "monitor",
+          "mouse",
+          "mousepad",
+          "vrheadset",
+        ],
+        message: "{VALUE} is not valid (check schema)",
       },
     },
     company: {
       type: String,
       trim: true,
       required: [true, "please provide product company"],
-      enum: ["ikea", "liddy", "marcos"],
     },
     colors: {
       type: [String],

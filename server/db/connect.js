@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
 
-const connectDB = (url) => {
-  return mongoose.connect(url);
+const connectToDB = (clusterUrl, dbName) => {
+  return mongoose.connect(`${clusterUrl}/${dbName}`, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
 };
 
-module.exports = connectDB;
+module.exports = connectToDB;
