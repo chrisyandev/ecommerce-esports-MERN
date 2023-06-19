@@ -45,8 +45,17 @@ const SingleProductPage = () => {
     return <Error />;
   }
 
-  const { name, price, description, stock, company, image, additionalImages } =
-    singleProduct;
+  const {
+    name,
+    price,
+    description,
+    stock,
+    company,
+    image,
+    additionalImages,
+    numOfReviews,
+    averageRating,
+  } = singleProduct;
 
   return (
     <StyledMain>
@@ -59,7 +68,10 @@ const SingleProductPage = () => {
           <ProductImages images={[image, ...additionalImages]} />
           <section className="content">
             <h2>{name}</h2>
-            <ProductRating />
+            <ProductRating
+              numOfReviews={numOfReviews}
+              averageRating={averageRating}
+            />
             <h5 className="price">{formatPrice(price)}</h5>
             <p className="desc">{description}</p>
             <p className="info">

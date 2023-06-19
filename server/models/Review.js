@@ -56,7 +56,7 @@ ReviewSchema.statics.calculateAverageRating = async function (productId) {
       },
       {
         numOfReviews: result[0]?.numOfReviews || 0,
-        averageRating: Math.round(result[0]?.averageRating / 0.5) * 0.5 || 0, // round to the nearest 0.5
+        averageRating: result[0]?.averageRating || 0,
       }
     );
   } catch (error) {
