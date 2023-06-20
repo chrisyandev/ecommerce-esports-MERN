@@ -2,13 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const PageHero = ({ title, product }) => {
+const PageHero = ({ title, isProductPage = false }) => {
   return (
     <StyledSection>
       <div className="section-center">
         <h3>
           <Link to="/">Home</Link>
-          {product && <Link to="/products">/ Products</Link>}/ {title}
+          {isProductPage && <Link to="/products">/ Products</Link>}/ {title}
         </h3>
       </div>
     </StyledSection>

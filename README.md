@@ -1,4 +1,4 @@
-# E-Commerce Esports MERN
+# Ecommerce Esports Website
 
 REST API Docs: https://documenter.getpostman.com/view/20219898/2s93sc5Czj
 

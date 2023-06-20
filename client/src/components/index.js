@@ -1,4 +1,3 @@
-import AddToCart from "./AddToCart";
 import ContactUs from "./ContactUs";
 import Error from "./Error";
 import FeaturedProducts from "./FeaturedProducts";
@@ -10,12 +9,14 @@ import OurServices from "./OurServices";
 import PageHero from "./PageHero";
 import Product from "./Product";
 import ProductImages from "./ProductImages";
+import ProductOptions from "./ProductOptions";
+import ProductOptionsColor from "./ProductOptionsColor";
+import ProductOptionsQuantity from "./ProductOptionsQuantity";
 import ProductRating from "./ProductRating";
 import Sidebar from "./Sidebar";
 import UserToolbar from "./UserToolbar";
 
 export {
-  AddToCart,
   ContactUs,
   Error,
   FeaturedProducts,
@@ -27,6 +28,9 @@ export {
   PageHero,
   Product,
   ProductImages,
+  ProductOptions,
+  ProductOptionsColor,
+  ProductOptionsQuantity,
   ProductRating,
   Sidebar,
   UserToolbar,

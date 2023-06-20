@@ -7,7 +7,7 @@ import {
   PageHero,
   ProductImages,
   ProductRating,
-  AddToCart,
+  ProductOptions,
 } from "../components";
 import { useProductsContext } from "../contexts/products-context";
 import { formatPrice } from "../utils/helpers";
@@ -59,7 +59,7 @@ const SingleProductPage = () => {
 
   return (
     <StyledMain>
-      <PageHero title={name} product={singleProduct} />
+      <PageHero title={name} isProductPage={true} />
       <div className="section section-center page">
         <Link to="/products" className="btn">
           Back To Products
@@ -87,7 +87,7 @@ const SingleProductPage = () => {
               {company}
             </p>
             <hr />
-            {stock > 0 && <AddToCart />}
+            {stock > 0 && <ProductOptions product={singleProduct} />}
           </section>
         </div>
       </div>

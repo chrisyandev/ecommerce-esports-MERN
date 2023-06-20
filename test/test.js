@@ -1,8 +1,6 @@
 const axios = require("axios");
-const fs = require("fs");
-
+const PRODUCTS = require("./mock-products.json");
 const BASE_URL = "http://localhost:5000/api/v1";
-const PRODUCTS = JSON.parse(fs.readFileSync("./mock-products.json"));
 
 const register = async (data) => {
   console.log(`registering... ${data.email}`);
