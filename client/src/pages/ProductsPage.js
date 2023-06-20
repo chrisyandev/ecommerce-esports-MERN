@@ -1,7 +1,40 @@
 import React from "react";
+import styled from "styled-components";
+import {
+  PageHero,
+  ProductListFilters,
+  ProductListSort,
+  ProductList,
+} from "../components";
 
 const ProductsPage = () => {
-  return <div>Products Page</div>;
+  return (
+    <main>
+      <PageHero title="Products" />
+      <StyledDiv className="page">
+        <div className="section-center products">
+          <ProductListFilters />
+          <div>
+            <ProductListSort />
+            <ProductList />
+          </div>
+        </div>
+      </StyledDiv>
+    </main>
+  );
 };
+
+const StyledDiv = styled.div`
+  .products {
+    display: grid;
+    gap: 3rem 1.5rem;
+    margin: 4rem auto;
+  }
+  @media (min-width: 768px) {
+    .products {
+      grid-template-columns: 200px 1fr;
+    }
+  }
+`;
 
 export default ProductsPage;
