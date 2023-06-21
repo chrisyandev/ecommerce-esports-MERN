@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Loading, Error, Product } from "../components";
+import { Loading, Error, ProductCard } from "../components";
 import { useProductsContext } from "../contexts/products-context";
 
 const FeaturedProducts = () => {
@@ -22,7 +22,7 @@ const FeaturedProducts = () => {
       </div>
       <div className="section-center featured">
         {featuredProducts.map((product) => {
-          return <Product key={product.id} {...product} />;
+          return <ProductCard key={product.id} product={product} />;
         })}
       </div>
     </StyledSection>

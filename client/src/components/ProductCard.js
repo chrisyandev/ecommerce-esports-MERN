@@ -4,7 +4,8 @@ import { FaSearch } from "react-icons/fa";
 import styled from "styled-components";
 import { formatPrice } from "../utils/helpers";
 
-const Product = ({ id, name, image, price }) => {
+const ProductCard = ({ product }) => {
+  const { id, name, image, price } = product;
   return (
     <StyledArticle>
       <div className="container">
@@ -78,4 +79,4 @@ const StyledArticle = styled.article`
   }
 `;
 
-export default Product;
+export default ProductCard;

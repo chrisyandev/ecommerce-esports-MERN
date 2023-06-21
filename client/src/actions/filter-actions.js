@@ -1,1 +1,1 @@
-export const LOAD_PRODUCTS = "LOAD_PRODUCTS";
+export const PRODUCT_LIST_LOAD = "PRODUCT_LIST_LOAD";
