@@ -3,15 +3,11 @@ import styled from "styled-components";
 import {
   PageHero,
   ProductListFilters,
-  ProductListSort,
+  ProductListHeader,
   ProductList,
 } from "../components";
-import { useVisibilityContext } from "../contexts/visibility-context";
 
 const ProductsPage = () => {
-  const { viewProductListAsGrid, viewProductListAsList } =
-    useVisibilityContext();
-
   return (
     <main>
       <PageHero title="Products" />
@@ -19,13 +15,7 @@ const ProductsPage = () => {
         <div className="section-center products">
           <ProductListFilters />
           <div>
-            <button type="button" onClick={viewProductListAsGrid}>
-              GRID
-            </button>
-            <button type="button" onClick={viewProductListAsList}>
-              LIST
-            </button>
-            <ProductListSort />
+            <ProductListHeader />
             <ProductList />
           </div>
         </div>

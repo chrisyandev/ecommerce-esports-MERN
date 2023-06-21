@@ -2,7 +2,7 @@ import ProductList from "./ProductList/ProductList";
 import ProductListFilters from "./ProductList/ProductListFilters";
 import ProductListGridView from "./ProductList/ProductListGridView";
 import ProductListListView from "./ProductList/ProductListListView";
-import ProductListSort from "./ProductList/ProductListSort";
+import ProductListHeader from "./ProductList/ProductListHeader";
 import ProductOptions from "./ProductOptions/ProductOptions";
 import ProductOptionsColor from "./ProductOptions/ProductOptionsColor";
 import ProductOptionsQuantity from "./ProductOptions/ProductOptionsQuantity";
@@ -26,7 +26,7 @@ export {
   ProductListFilters,
   ProductListGridView,
   ProductListListView,
-  ProductListSort,
+  ProductListHeader,
   ProductOptions,
   ProductOptionsColor,
   ProductOptionsQuantity,
