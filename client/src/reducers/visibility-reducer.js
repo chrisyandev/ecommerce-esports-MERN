@@ -4,7 +4,7 @@ import {
   PRODUCT_LIST_GRID_VIEW,
   PRODUCT_LIST_LIST_VIEW,
 } from "../actions/visibility-actions";
-import { listTypes } from "../utils/constants";
+import { productListTypes } from "../utils/constants";
 
 const visibilityReducer = (state, action) => {
   if (action.type === SIDEBAR_OPEN) {
@@ -16,11 +16,11 @@ const visibilityReducer = (state, action) => {
   }
 
   if (action.type === PRODUCT_LIST_GRID_VIEW) {
-    return { ...state, productListType: listTypes.GRID };
+    return { ...state, productListType: productListTypes.GRID };
   }
 
   if (action.type === PRODUCT_LIST_LIST_VIEW) {
-    return { ...state, productListType: listTypes.LIST };
+    return { ...state, productListType: productListTypes.LIST };
   }
 
   throw new Error(`no matching action type: ${action.type}`);

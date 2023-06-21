@@ -6,11 +6,11 @@ import {
   PRODUCT_LIST_GRID_VIEW,
   PRODUCT_LIST_LIST_VIEW,
 } from "../actions/visibility-actions";
-import { listTypes } from "../utils/constants";
+import { productListTypes } from "../utils/constants";
 
 const initialState = {
   isSidebarOpen: false,
-  productListType: listTypes.GRID,
+  productListType: productListTypes.GRID,
 };
 
 const VisibilityContext = createContext();

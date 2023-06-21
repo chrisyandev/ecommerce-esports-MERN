@@ -3,10 +3,12 @@ import { BsFillGridFill, BsList } from "react-icons/bs";
 import styled from "styled-components";
 import { useFilterContext } from "../../contexts/filter-context";
 import { useVisibilityContext } from "../../contexts/visibility-context";
-import { listTypes } from "../../utils/constants";
+import { productListTypes } from "../../utils/constants";
+import { productSortTypes } from "../../utils/constants";
 
 const ProductListHeader = () => {
-  const { filteredProducts } = useFilterContext();
+  const { filteredProducts, productSortType, updateProductSortType } =
+    useFilterContext();
   const { productListType, viewProductListAsGrid, viewProductListAsList } =
     useVisibilityContext();
 
@@ -15,14 +17,18 @@ const ProductListHeader = () => {
       <div className="btn-container">
         <button
           type="button"
-          className={`${productListType === listTypes.GRID ? "active" : null}`}
+          className={`${
+            productListType === productListTypes.GRID ? "active" : null
+          }`}
           onClick={viewProductListAsGrid}
         >
           <BsFillGridFill />
         </button>
         <button
           type="button"
-          className={`${productListType === listTypes.LIST ? "active" : null}`}
+          className={`${
+            productListType === productListTypes.LIST ? "active" : null
+          }`}
           onClick={viewProductListAsList}
         >
           <BsList />
@@ -32,11 +38,19 @@ const ProductListHeader = () => {
       <hr />
       <form>
         <label htmlFor="sort">Sort by: </label>
-        <select name="sort" id="sort" className="sort-input">
-          <option value="price-low-high">Price: Low to high</option>
-          <option value="price-high-low">Price: High to low</option>
-          <option value="name-a-z">Name: A-Z</option>
-          <option value="name-z-a">Name: Z-A</option>
+        <select
+          className="sort-input"
+          value={productSortType}
+          onChange={updateProductSortType}
+        >
+          <option value={productSortTypes.PRICE_LOW_TO_HIGH}>
+            Price: Low to high
+          </option>
+          <option value={productSortTypes.PRICE_HIGH_TO_LOW}>
+            Price: High to low
+          </option>
+          <option value={productSortTypes.NAME_A_TO_Z}>Name: A-Z</option>
+          <option value={productSortTypes.NAME_Z_TO_A}>Name: Z-A</option>
         </select>
       </form>
     </StyledSection>

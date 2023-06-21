@@ -40,4 +40,11 @@ export const services = [
   },
 ];
 
-export const listTypes = { GRID: "GRID", LIST: "LIST" };
+export const productListTypes = { GRID: "GRID", LIST: "LIST" };
+
+export const productSortTypes = {
+  PRICE_LOW_TO_HIGH: "PRICE_LOW_TO_HIGH",
+  PRICE_HIGH_TO_LOW: "PRICE_HIGH_TO_LOW",
+  NAME_A_TO_Z: "NAME_A_TO_Z",
+  NAME_Z_TO_A: "NAME_Z_TO_A",
+};

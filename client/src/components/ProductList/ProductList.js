@@ -2,7 +2,7 @@ import React from "react";
 import { ProductListGridView, ProductListListView } from "..";
 import { useFilterContext } from "../../contexts/filter-context";
 import { useVisibilityContext } from "../../contexts/visibility-context";
-import { listTypes } from "../../utils/constants";
+import { productListTypes } from "../../utils/constants";
 
 const ProductList = () => {
   const { filteredProducts } = useFilterContext();
@@ -16,7 +16,7 @@ const ProductList = () => {
     );
   }
 
-  if (productListType === listTypes.LIST) {
+  if (productListType === productListTypes.LIST) {
     return <ProductListListView products={filteredProducts} />;
   }
 
