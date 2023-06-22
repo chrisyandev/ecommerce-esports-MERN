@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { FaCheck } from "react-icons/fa";
 import { useFilterContext } from "../../contexts/filter-context";
-import { getDistinctValues } from "../../utils/helpers";
+import { formatPrice, getDistinctValues } from "../../utils/helpers";
 
 const ProductListFilters = () => {
   const {
@@ -123,6 +123,19 @@ const ProductListFilters = () => {
                 }
               })}
             </div>
+          </div>
+          {/* Price */}
+          <div className="form-control">
+            <h5>Price</h5>
+            <p className="price">{formatPrice(price)}</p>
+            <input
+              type="range"
+              name="price"
+              value={price}
+              min={minPrice}
+              max={maxPrice}
+              onChange={updateProductFilters}
+            />
           </div>
         </form>
       </div>

@@ -47,9 +47,14 @@ export const FilterProvider = ({ children }) => {
   };
 
   const updateProductFilters = (e) => {
+    let key = e.target.name;
+    let value = e.target.value;
+    if (key === "price") {
+      value = Number(value);
+    }
     dispatch({
       type: PRODUCT_FILTERS_UPDATE,
-      payload: { key: e.target.name, value: e.target.value },
+      payload: { key, value },
     });
   };
 

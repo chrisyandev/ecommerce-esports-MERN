@@ -16,7 +16,7 @@ const filterReducer = (state, action) => {
       ...state,
       allProducts: [...action.payload], // copies payload instead of pointing to payload
       filteredProducts: [...action.payload],
-      productFilters: { ...state.productFilters, maxPrice },
+      productFilters: { ...state.productFilters, maxPrice, price: maxPrice }, // overrides initial filters
     };
   }
 
