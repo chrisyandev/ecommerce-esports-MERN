@@ -49,8 +49,15 @@ export const FilterProvider = ({ children }) => {
   const updateProductFilters = (e) => {
     let key = e.target.name;
     let value = e.target.value;
-    if (key === "price") {
-      value = Number(value);
+    switch (key) {
+      case "price":
+        value = Number(value);
+        break;
+      case "freeShipping":
+        value = e.target.checked;
+        break;
+      default:
+        break;
     }
     dispatch({
       type: PRODUCT_FILTERS_UPDATE,
@@ -58,7 +65,9 @@ export const FilterProvider = ({ children }) => {
     });
   };
 
-  const clearProductFilters = () => {};
+  const clearProductFilters = () => {
+    dispatch({ type: PRODUCT_FILTERS_CLEAR });
+  };
 
   return (
     <FilterContext.Provider

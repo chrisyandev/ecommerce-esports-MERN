@@ -2,6 +2,7 @@ import {
   PRODUCTS_FILTER,
   PRODUCTS_LOAD,
   PRODUCTS_SORT,
+  PRODUCT_FILTERS_CLEAR,
   PRODUCT_FILTERS_UPDATE,
   PRODUCT_SORT_TYPE_UPDATE,
 } from "../actions/filter-actions";
@@ -50,6 +51,21 @@ const filterReducer = (state, action) => {
       productFilters: {
         ...state.productFilters,
         [key]: value,
+      },
+    };
+  }
+
+  if (action.type === PRODUCT_FILTERS_CLEAR) {
+    return {
+      ...state,
+      productFilters: {
+        ...state.productFilters,
+        text: "",
+        company: "any",
+        category: "any",
+        color: "any",
+        price: state.productFilters.maxPrice,
+        freeShipping: false,
       },
     };
   }

@@ -137,6 +137,25 @@ const ProductListFilters = () => {
               onChange={updateProductFilters}
             />
           </div>
+          {/* Free Shipping */}
+          <div className="form-control free-shipping">
+            <label htmlFor="free-shipping">Free Shipping</label>
+            <input
+              type="checkbox"
+              id="free-shipping"
+              name="freeShipping"
+              checked={freeShipping}
+              onChange={updateProductFilters}
+            />
+          </div>
+          {/* Clear Filters */}
+          <button
+            type="button"
+            className="clear-btn"
+            onClick={clearProductFilters}
+          >
+            Clear Filters
+          </button>
         </form>
       </div>
     </StyledSection>
@@ -220,7 +239,7 @@ const StyledSection = styled.section`
   .price {
     margin-bottom: 0.25rem;
   }
-  .shipping {
+  .free-shipping {
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
