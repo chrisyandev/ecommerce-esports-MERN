@@ -12,7 +12,9 @@ const register = async (data) => {
       "Content-Type": "application/json",
     },
   }).catch((err) => {
-    console.error(err.response.data || err.stack);
+    console.error(
+      err.response && err.response.data ? err.response.data : err.stack
+    );
   });
 };
 
@@ -33,7 +35,9 @@ const login = async (data) => {
       };
     })
     .catch((err) => {
-      console.error(err.response.data || err.stack);
+      console.error(
+        err.response && err.response.data ? err.response.data : err.stack
+      );
     });
 };
 
@@ -48,7 +52,9 @@ const reviewProduct = async (data, tokenCookie) => {
       cookie: tokenCookie,
     },
   }).catch((err) => {
-    console.error(err.response.data || err.stack);
+    console.error(
+      err.response && err.response.data ? err.response.data : err.stack
+    );
   });
 };
 
@@ -67,7 +73,39 @@ const getRandomProducts = async (count) => {
     }
     return randomProducts;
   } catch (err) {
-    console.error(err.response.data || err.stack);
+    console.error(
+      err.response && err.response.data ? err.response.data : err.stack
+    );
+  }
+};
+
+// updates fields of existing products in the DB
+const updateProducts = async (data, tokenCookie) => {
+  console.log(`updating products with... ${JSON.stringify(data)}`);
+  try {
+    const response = await axios({
+      method: "get",
+      url: `${BASE_URL}/products`,
+    });
+    const { products } = response.data;
+    for (const [index, product] of products.entries()) {
+      // change this condition as needed (currently picks every other product)
+      if (index % 2 === 0) {
+        await axios({
+          method: "patch",
+          url: `${BASE_URL}/products/${product.id}`,
+          data,
+          headers: {
+            "Content-Type": "application/json",
+            cookie: tokenCookie,
+          },
+        });
+      }
+    }
+  } catch (err) {
+    console.error(
+      err.response && err.response.data ? err.response.data : err.stack
+    );
   }
 };
 
@@ -91,7 +129,9 @@ const adminCreateMockProducts = async (tokenCookie) => {
     }
     process.stdout.write("\n...mock products created\n");
   } catch (err) {
-    console.error(err.response.data || err.stack);
+    console.error(
+      err.response && err.response.data ? err.response.data : err.stack
+    );
   }
 };
 
@@ -129,6 +169,7 @@ const adminCreateMockProducts = async (tokenCookie) => {
   })
     .then(async (data) => {
       //await adminCreateMockProducts(data.tokenCookie);
+      //await updateProducts({ freeShipping: true }, data.tokenCookie);
       const products = await getRandomProducts(5);
       return { products, ...data };
     })
@@ -147,7 +188,9 @@ const adminCreateMockProducts = async (tokenCookie) => {
       }
     })
     .catch((err) => {
-      console.error(err.response.data || err.stack);
+      console.error(
+        err.response && err.response.data ? err.response.data : err.stack
+      );
     });
 
   await login({
@@ -173,7 +216,9 @@ const adminCreateMockProducts = async (tokenCookie) => {
       }
     })
     .catch((err) => {
-      console.error(err.response.data || err.stack);
+      console.error(
+        err.response && err.response.data ? err.response.data : err.stack
+      );
     });
 
   await login({
@@ -199,7 +244,9 @@ const adminCreateMockProducts = async (tokenCookie) => {
       }
     })
     .catch((err) => {
-      console.error(err.response.data || err.stack);
+      console.error(
+        err.response && err.response.data ? err.response.data : err.stack
+      );
     });
 
   await login({
@@ -225,7 +272,9 @@ const adminCreateMockProducts = async (tokenCookie) => {
       }
     })
     .catch((err) => {
-      console.error(err.response.data || err.stack);
+      console.error(
+        err.response && err.response.data ? err.response.data : err.stack
+      );
     });
 
   await login({
@@ -251,6 +300,8 @@ const adminCreateMockProducts = async (tokenCookie) => {
       }
     })
     .catch((err) => {
-      console.error(err.response.data || err.stack);
+      console.error(
+        err.response && err.response.data ? err.response.data : err.stack
+      );
     });
 })();

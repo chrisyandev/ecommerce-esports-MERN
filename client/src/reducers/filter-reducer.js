@@ -103,7 +103,7 @@ const filterReducer = (state, action) => {
     );
     if (freeShipping) {
       filteredProducts = filteredProducts.filter(
-        (product) => product.shipping === true
+        (product) => product.freeShipping === true
       );
     }
 
