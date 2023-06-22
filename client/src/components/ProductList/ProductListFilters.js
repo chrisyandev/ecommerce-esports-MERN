@@ -52,10 +52,10 @@ const ProductListFilters = () => {
                 return (
                   <button
                     key={index}
-                    onClick={updateProductFilters}
                     type="button"
                     name="category"
                     value={cat}
+                    onClick={updateProductFilters}
                     className={`${cat === category ? "active" : null}`}
                   >
                     {catFormatted}
@@ -81,6 +81,48 @@ const ProductListFilters = () => {
                 );
               })}
             </select>
+          </div>
+          {/* Color */}
+          <div className="form-control">
+            <h5>Color</h5>
+            <div className="color">
+              {colors.map((clr, index) => {
+                if (clr === "any") {
+                  return (
+                    <button
+                      key={index}
+                      name="color"
+                      value="any"
+                      onClick={updateProductFilters}
+                      className={`${
+                        clr === color ? "any-color-btn active" : "any-color-btn"
+                      }`}
+                    >
+                      Any
+                    </button>
+                  );
+                } else {
+                  return (
+                    <button
+                      key={index}
+                      name="color"
+                      value={clr}
+                      onClick={updateProductFilters}
+                      className={`${
+                        clr === color ? "color-btn active" : "color-btn"
+                      }`}
+                      style={{ background: clr }}
+                    >
+                      {clr === color ? (
+                        <FaCheck
+                          color={clr === "#ffffff" ? "#000000" : "#ffffff"}
+                        />
+                      ) : null}
+                    </button>
+                  );
+                }
+              })}
+            </div>
           </div>
         </form>
       </div>
@@ -127,7 +169,7 @@ const StyledSection = styled.section`
     padding: 0.25rem;
     text-transform: capitalize;
   }
-  .colors {
+  .color {
     display: flex;
     align-items: center;
   }
@@ -138,7 +180,7 @@ const StyledSection = styled.section`
     border-radius: 50%;
     background: #222;
     margin-right: 0.5rem;
-    border: none;
+    border: 1px solid black;
     cursor: pointer;
     opacity: 0.5;
     display: flex;
@@ -149,7 +191,7 @@ const StyledSection = styled.section`
       color: var(--clr-white);
     }
   }
-  .any-btn {
+  .any-color-btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -159,7 +201,7 @@ const StyledSection = styled.section`
   .active {
     opacity: 1;
   }
-  .any-btn .active {
+  .any-color-btn .active {
     text-decoration: underline;
   }
   .price {
