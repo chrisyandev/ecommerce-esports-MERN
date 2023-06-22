@@ -15,6 +15,16 @@ const initialState = {
   allProducts: [],
   filteredProducts: [],
   productSortType: productSortTypes.PRICE_LOW_TO_HIGH,
+  productFilters: {
+    text: "",
+    company: "all",
+    category: "all",
+    color: "all",
+    minPrice: 0,
+    maxPrice: 0,
+    price: 0,
+    freeShipping: false,
+  },
 };
 
 const FilterContext = createContext();
@@ -28,16 +38,32 @@ export const FilterProvider = ({ children }) => {
   }, [products]);
 
   useEffect(() => {
+    dispatch({ type: PRODUCTS_FILTER });
     dispatch({ type: PRODUCTS_SORT });
-  }, [products, state.productSortType]);
+  }, [products, state.productSortType, state.productFilters]);
 
   const updateProductSortType = (e) => {
-    const value = e.target.value;
-    dispatch({ type: PRODUCT_SORT_TYPE_UPDATE, payload: value });
+    dispatch({ type: PRODUCT_SORT_TYPE_UPDATE, payload: e.target.value });
   };
 
+  const updateProductFilters = (e) => {
+    dispatch({
+      type: PRODUCT_FILTERS_UPDATE,
+      payload: { key: e.target.name, value: e.target.value },
+    });
+  };
+
+  const clearProductFilters = () => {};
+
   return (
-    <FilterContext.Provider value={{ ...state, updateProductSortType }}>
+    <FilterContext.Provider
+      value={{
+        ...state,
+        updateProductSortType,
+        updateProductFilters,
+        clearProductFilters,
+      }}
+    >
       {children}
     </FilterContext.Provider>
   );

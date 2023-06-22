@@ -1,16 +1,22 @@
 import {
+  PRODUCTS_FILTER,
   PRODUCTS_LOAD,
   PRODUCTS_SORT,
+  PRODUCT_FILTERS_UPDATE,
   PRODUCT_SORT_TYPE_UPDATE,
 } from "../actions/filter-actions";
 import { productSortTypes } from "../utils/constants";
 
 const filterReducer = (state, action) => {
   if (action.type === PRODUCTS_LOAD) {
+    const maxPrice = Math.max(
+      ...action.payload.map((product) => product.price)
+    );
     return {
       ...state,
       allProducts: [...action.payload], // copies payload instead of pointing to payload
       filteredProducts: [...action.payload],
+      productFilters: { ...state.productFilters, maxPrice },
     };
   }
 
@@ -34,6 +40,22 @@ const filterReducer = (state, action) => {
       filteredProducts.sort((a, b) => b.name.localeCompare(a.name));
     }
 
+    return { ...state };
+  }
+
+  if (action.type === PRODUCT_FILTERS_UPDATE) {
+    const { key, value } = action.payload;
+    return {
+      ...state,
+      productFilters: {
+        ...state.productFilters,
+        [key]: value,
+      },
+    };
+  }
+
+  if (action.type === PRODUCTS_FILTER) {
+    console.log("filtering products...");
     return { ...state };
   }
 
