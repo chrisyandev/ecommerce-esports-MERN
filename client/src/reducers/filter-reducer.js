@@ -71,8 +71,43 @@ const filterReducer = (state, action) => {
   }
 
   if (action.type === PRODUCTS_FILTER) {
-    console.log("filtering products...");
-    return { ...state };
+    const { allProducts, productFilters } = state;
+    const { text, company, category, color, price, freeShipping } =
+      productFilters;
+
+    let filteredProducts = [...allProducts];
+
+    if (text) {
+      filteredProducts = filteredProducts.filter((product) =>
+        product.name.toLowerCase().startsWith(text.toLowerCase())
+      );
+    }
+    if (company !== "any") {
+      filteredProducts = filteredProducts.filter(
+        (product) => product.company === company
+      );
+    }
+    if (category !== "any") {
+      filteredProducts = filteredProducts.filter(
+        (product) => product.category === category
+      );
+    }
+    if (color !== "any") {
+      filteredProducts = filteredProducts.filter((product) =>
+        product.colors.includes(color)
+      );
+    }
+    // price
+    filteredProducts = filteredProducts.filter(
+      (product) => product.price <= price
+    );
+    if (freeShipping) {
+      filteredProducts = filteredProducts.filter(
+        (product) => product.shipping === true
+      );
+    }
+
+    return { ...state, filteredProducts };
   }
 
   throw new Error(`no matching action type: ${action.type}`);
