@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { FaCheck } from "react-icons/fa";
 import { useFilterContext } from "../../contexts/filter-context";
+import { getDistinctValues } from "../../utils/helpers";
 
 const ProductListFilters = () => {
   const {
@@ -20,6 +21,10 @@ const ProductListFilters = () => {
     allProducts,
   } = useFilterContext();
 
+  const categories = getDistinctValues(allProducts, "category");
+  const companies = getDistinctValues(allProducts, "company");
+  const colors = getDistinctValues(allProducts, "colors");
+
   return (
     <StyledSection>
       <div className="content">
@@ -33,6 +38,29 @@ const ProductListFilters = () => {
               value={text}
               onChange={updateProductFilters}
             />
+          </div>
+          <div className="form-control">
+            <h5>Category</h5>
+            <div>
+              {categories.map((cat, index) => {
+                let catFormatted = cat.charAt(0).toUpperCase() + cat.slice(1);
+                if (cat === "vrheadset") {
+                  catFormatted = "VR Headset";
+                }
+                return (
+                  <button
+                    key={index}
+                    onClick={updateProductFilters}
+                    type="button"
+                    name="category"
+                    value={cat}
+                    className={`${cat === category ? "active" : null}`}
+                  >
+                    {catFormatted}
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </form>
       </div>
@@ -62,7 +90,6 @@ const StyledSection = styled.section`
     display: block;
     margin: 0.25em 0;
     padding: 0.25rem 0;
-    text-transform: capitalize;
     background: transparent;
     border: none;
     border-bottom: 1px solid transparent;
