@@ -10,5 +10,5 @@ export const getDistinctValues = (data, type) => {
     Array.isArray(item[type]) ? item[type] : [item[type]]
   ); // makes sure allValues is not an array of arrays
   const distinctValues = new Set(allValues);
-  return ["all", ...distinctValues];
+  return ["any", ...distinctValues];
 };

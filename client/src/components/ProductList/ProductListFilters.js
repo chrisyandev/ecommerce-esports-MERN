@@ -29,6 +29,7 @@ const ProductListFilters = () => {
     <StyledSection>
       <div className="content">
         <form onSubmit={(e) => e.preventDefault()}>
+          {/* Search */}
           <div className="form-control">
             <input
               type="text"
@@ -39,6 +40,7 @@ const ProductListFilters = () => {
               onChange={updateProductFilters}
             />
           </div>
+          {/* Category */}
           <div className="form-control">
             <h5>Category</h5>
             <div>
@@ -61,6 +63,24 @@ const ProductListFilters = () => {
                 );
               })}
             </div>
+          </div>
+          {/* Company */}
+          <div className="form-control">
+            <h5>Company</h5>
+            <select
+              name="company"
+              value={company}
+              onChange={updateProductFilters}
+              className="company"
+            >
+              {companies.map((co, index) => {
+                return (
+                  <option key={index} value={co}>
+                    {co}
+                  </option>
+                );
+              })}
+            </select>
           </div>
         </form>
       </div>
@@ -105,6 +125,7 @@ const StyledSection = styled.section`
     border-radius: var(--radius);
     border-color: transparent;
     padding: 0.25rem;
+    text-transform: capitalize;
   }
   .colors {
     display: flex;
@@ -128,7 +149,7 @@ const StyledSection = styled.section`
       color: var(--clr-white);
     }
   }
-  .all-btn {
+  .any-btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -138,7 +159,7 @@ const StyledSection = styled.section`
   .active {
     opacity: 1;
   }
-  .all-btn .active {
+  .any-btn .active {
     text-decoration: underline;
   }
   .price {

@@ -17,9 +17,9 @@ const initialState = {
   productSortType: productSortTypes.PRICE_LOW_TO_HIGH,
   productFilters: {
     text: "",
-    company: "all",
-    category: "all",
-    color: "all",
+    company: "any",
+    category: "any",
+    color: "any",
     minPrice: 0,
     maxPrice: 0,
     price: 0,
