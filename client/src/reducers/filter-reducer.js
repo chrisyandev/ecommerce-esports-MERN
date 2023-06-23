@@ -27,21 +27,26 @@ const filterReducer = (state, action) => {
 
   if (action.type === PRODUCTS_SORT) {
     const { productSortType, filteredProducts } = state;
+    const sortedProducts = [...filteredProducts];
 
-    if (productSortType === productSortTypes.PRICE_LOW_TO_HIGH) {
-      filteredProducts.sort((a, b) => a.price - b.price);
-    }
-    if (productSortType === productSortTypes.PRICE_HIGH_TO_LOW) {
-      filteredProducts.sort((a, b) => b.price - a.price);
-    }
-    if (productSortType === productSortTypes.NAME_A_TO_Z) {
-      filteredProducts.sort((a, b) => a.name.localeCompare(b.name));
-    }
-    if (productSortType === productSortTypes.NAME_Z_TO_A) {
-      filteredProducts.sort((a, b) => b.name.localeCompare(a.name));
+    switch (productSortType) {
+      case productSortTypes.PRICE_LOW_TO_HIGH:
+        sortedProducts.sort((a, b) => a.price - b.price);
+        break;
+      case productSortTypes.PRICE_HIGH_TO_LOW:
+        sortedProducts.sort((a, b) => b.price - a.price);
+        break;
+      case productSortTypes.NAME_A_TO_Z:
+        sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
+        break;
+      case productSortTypes.NAME_Z_TO_A:
+        sortedProducts.sort((a, b) => b.name.localeCompare(a.name));
+        break;
+      default:
+        return { ...state };
     }
 
-    return { ...state };
+    return { ...state, filteredProducts: sortedProducts };
   }
 
   if (action.type === PRODUCT_FILTERS_UPDATE) {

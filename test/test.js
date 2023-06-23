@@ -169,7 +169,10 @@ const adminCreateMockProducts = async (tokenCookie) => {
   })
     .then(async (data) => {
       //await adminCreateMockProducts(data.tokenCookie);
-      //await updateProducts({ freeShipping: true }, data.tokenCookie);
+      // await updateProducts(
+      //   { colors: ["#000000", "#ffffff", "#0000ff"] },
+      //   data.tokenCookie
+      // );
       const products = await getRandomProducts(5);
       return { products, ...data };
     })
