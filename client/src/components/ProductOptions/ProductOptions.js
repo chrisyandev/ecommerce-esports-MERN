@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { ProductOptionsColor, ProductOptionsQuantity } from "..";
+import { useCartContext } from "../../contexts/cart-context";
 
 const ProductOptions = ({ product }) => {
+  const { addToCart } = useCartContext();
   const { id, stock, colors } = product;
 
   const [color, setColor] = useState(colors[0]);
-  const [amount, setAmount] = useState(1);
+  const [quantity, setQuantity] = useState(1);
 
   return (
     <StyledSection>
@@ -18,15 +20,19 @@ const ProductOptions = ({ product }) => {
       />
       <div className="btn-container">
         <ProductOptionsQuantity
-          amount={amount}
+          quantity={quantity}
           increment={() =>
-            setAmount((prev) => (prev + 1 > stock ? prev : prev + 1))
+            setQuantity((prev) => (prev + 1 > stock ? prev : prev + 1))
           }
           decrement={() =>
-            setAmount((prev) => (prev - 1 < 1 ? prev : prev - 1))
+            setQuantity((prev) => (prev - 1 < 1 ? prev : prev - 1))
           }
         />
-        <Link to="/cart" className="btn">
+        <Link
+          to="/cart"
+          className="btn"
+          onClick={() => addToCart(id, color, quantity, product)}
+        >
           Add To Cart
         </Link>
       </div>

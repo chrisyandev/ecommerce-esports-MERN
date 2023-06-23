@@ -2,13 +2,13 @@ import React from "react";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import styled from "styled-components";
 
-const ProductOptionsQuantity = ({ amount, increment, decrement }) => {
+const ProductOptionsQuantity = ({ quantity, increment, decrement }) => {
   return (
     <StyledDiv>
       <button type="button" onClick={decrement}>
         <FaMinus />
       </button>
-      <h2 className="amount">{amount}</h2>
+      <h2>{quantity}</h2>
       <button type="button" onClick={increment}>
         <FaPlus />
       </button>

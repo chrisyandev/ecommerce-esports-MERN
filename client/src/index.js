@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { VisibilityProvider } from "./contexts/visibility-context";
 import { ProductsProvider } from "./contexts/products-context";
 import { FilterProvider } from "./contexts/filter-context";
+import { CartProvider } from "./contexts/cart-context";
 import "./index.css";
 import App from "./App";
 
@@ -13,7 +14,9 @@ root.render(
     <VisibilityProvider>
       <ProductsProvider>
         <FilterProvider>
-          <App />
+          <CartProvider>
+            <App />
+          </CartProvider>
         </FilterProvider>
       </ProductsProvider>
     </VisibilityProvider>
