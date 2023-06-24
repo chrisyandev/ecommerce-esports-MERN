@@ -2,9 +2,9 @@ import { createContext, useContext, useEffect, useReducer } from "react";
 import { useProductsContext } from "./products-context";
 import filterReducer from "../reducers/filter-reducer";
 import {
-  PRODUCTS_LOAD,
-  PRODUCTS_SORT,
-  PRODUCTS_FILTER,
+  PRODUCT_LIST_LOAD,
+  PRODUCT_LIST_SORT,
+  PRODUCT_LIST_FILTER,
   PRODUCT_SORT_TYPE_UPDATE,
   PRODUCT_FILTERS_UPDATE,
   PRODUCT_FILTERS_CLEAR,
@@ -34,12 +34,12 @@ export const FilterProvider = ({ children }) => {
   const [state, dispatch] = useReducer(filterReducer, initialState);
 
   useEffect(() => {
-    dispatch({ type: PRODUCTS_LOAD, payload: products });
+    dispatch({ type: PRODUCT_LIST_LOAD, payload: products });
   }, [products]);
 
   useEffect(() => {
-    dispatch({ type: PRODUCTS_FILTER });
-    dispatch({ type: PRODUCTS_SORT });
+    dispatch({ type: PRODUCT_LIST_FILTER });
+    dispatch({ type: PRODUCT_LIST_SORT });
   }, [products, state.productSortType, state.productFilters]);
 
   const updateProductSortType = (e) => {

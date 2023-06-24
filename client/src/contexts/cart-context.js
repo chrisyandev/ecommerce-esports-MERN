@@ -4,7 +4,7 @@ import cartReducer from "../reducers/cart-reducer";
 
 const initialState = {
   cart: [],
-  cartItemsCount: 0,
+  totalQuantity: 0,
   totalAmount: 0,
   shippingFee: 999,
 };
@@ -23,8 +23,22 @@ const CartProvider = ({ children }) => {
     });
   };
 
+  const removeFromCart = (id) => {};
+
+  const stepCartItemQuantity = (id, type) => {};
+
+  const clearCart = () => {};
+
   return (
-    <CartContext.Provider value={{ ...state, addToCart }}>
+    <CartContext.Provider
+      value={{
+        ...state,
+        addToCart,
+        removeFromCart,
+        stepCartItemQuantity,
+        clearCart,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

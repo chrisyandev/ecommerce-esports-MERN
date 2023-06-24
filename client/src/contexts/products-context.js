@@ -30,6 +30,10 @@ const ProductsContext = createContext();
 const ProductsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(productsReducer, initialState);
 
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
   const fetchProducts = async () => {
     dispatch({ type: GET_PRODUCTS });
     fetch("/api/v1/products")
@@ -65,10 +69,6 @@ const ProductsProvider = ({ children }) => {
       .catch((error) => {
         dispatch({ type: GET_SINGLE_PRODUCT_ERROR, error });
       });
-  }, []);
-
-  useEffect(() => {
-    fetchProducts();
   }, []);
 
   return (

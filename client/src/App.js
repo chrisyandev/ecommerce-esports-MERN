@@ -6,8 +6,8 @@ import {
   CheckoutPage,
   ErrorPage,
   HomePage,
-  ProductsPage,
-  SingleProductPage,
+  ProductListPage,
+  ProductPage,
 } from "./pages";
 import { Footer, Navbar, Sidebar } from "./components";
 
@@ -19,8 +19,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="about" element={<AboutPage />} />
-        <Route path="products" element={<ProductsPage />} />
-        <Route path="products/:id" element={<SingleProductPage />} />
+        <Route path="products" element={<ProductListPage />} />
+        <Route path="products/:id" element={<ProductPage />} />
         <Route path="cart" element={<CartPage />} />
         <Route path="checkout" element={<CheckoutPage />} />
         <Route path="*" element={<ErrorPage />} />

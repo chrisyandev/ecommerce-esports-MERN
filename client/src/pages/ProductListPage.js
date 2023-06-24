@@ -7,7 +7,7 @@ import {
   ProductList,
 } from "../components";
 
-const ProductsPage = () => {
+const ProductListPage = () => {
   return (
     <main>
       <PageHero title="Products" />
@@ -37,4 +37,4 @@ const StyledDiv = styled.div`
   }
 `;
 
-export default ProductsPage;
+export default ProductListPage;

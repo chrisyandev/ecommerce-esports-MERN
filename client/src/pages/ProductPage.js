@@ -12,7 +12,7 @@ import {
 import { useProductsContext } from "../contexts/products-context";
 import { formatPrice } from "../utils/helpers";
 
-const SingleProductPage = () => {
+const ProductPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const {
@@ -129,4 +129,4 @@ const StyledMain = styled.main`
   }
 `;
 
-export default SingleProductPage;
+export default ProductPage;

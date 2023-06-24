@@ -3,8 +3,8 @@ import CartPage from "./CartPage";
 import CheckoutPage from "./CheckoutPage";
 import ErrorPage from "./ErrorPage";
 import HomePage from "./HomePage";
-import ProductsPage from "./ProductsPage";
-import SingleProductPage from "./SingleProductPage";
+import ProductListPage from "./ProductListPage";
+import ProductPage from "./ProductPage";
 
 export {
   AboutPage,
@@ -12,6 +12,6 @@ export {
   CheckoutPage,
   ErrorPage,
   HomePage,
-  ProductsPage,
-  SingleProductPage,
+  ProductListPage,
+  ProductPage,
 };

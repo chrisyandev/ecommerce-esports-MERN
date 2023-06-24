@@ -1,7 +1,7 @@
 import {
-  PRODUCTS_FILTER,
-  PRODUCTS_LOAD,
-  PRODUCTS_SORT,
+  PRODUCT_LIST_FILTER,
+  PRODUCT_LIST_LOAD,
+  PRODUCT_LIST_SORT,
   PRODUCT_FILTERS_CLEAR,
   PRODUCT_FILTERS_UPDATE,
   PRODUCT_SORT_TYPE_UPDATE,
@@ -9,7 +9,7 @@ import {
 import { productSortTypes } from "../utils/constants";
 
 const filterReducer = (state, action) => {
-  if (action.type === PRODUCTS_LOAD) {
+  if (action.type === PRODUCT_LIST_LOAD) {
     const maxPrice = Math.max(
       ...action.payload.map((product) => product.price)
     );
@@ -25,7 +25,7 @@ const filterReducer = (state, action) => {
     return { ...state, productSortType: action.payload };
   }
 
-  if (action.type === PRODUCTS_SORT) {
+  if (action.type === PRODUCT_LIST_SORT) {
     const { productSortType, filteredProducts } = state;
     const sortedProducts = [...filteredProducts];
 
@@ -75,7 +75,7 @@ const filterReducer = (state, action) => {
     };
   }
 
-  if (action.type === PRODUCTS_FILTER) {
+  if (action.type === PRODUCT_LIST_FILTER) {
     const { allProducts, productFilters } = state;
     const { text, company, category, color, price, freeShipping } =
       productFilters;
