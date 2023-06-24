@@ -1,4 +1,7 @@
 import Cart from "./Cart/Cart";
+import CartColumns from "./Cart/CartColumns";
+import CartItem from "./Cart/CartItem";
+import CartTotals from "./Cart/CartTotals";
 import ProductImages from "./Product/ProductImages";
 import ProductOptions from "./Product/ProductOptions";
 import ProductOptionsColor from "./Product/ProductOptionsColor";
@@ -24,6 +27,9 @@ import UserToolbar from "./UserToolbar";
 
 export {
   Cart,
+  CartColumns,
+  CartItem,
+  CartTotals,
   ProductImages,
   ProductOptions,
   ProductOptionsColor,
