@@ -3,6 +3,7 @@ import {
   CART_ITEM_QUANTITY_STEP,
   CART_REMOVE_ITEM,
   CART_CLEAR,
+  CART_TOTALS_UPDATE,
 } from "../actions/cart-actions";
 
 const cartReducer = (state, action) => {
@@ -77,6 +78,19 @@ const cartReducer = (state, action) => {
   // clear cart
   if (action.type === CART_CLEAR) {
     return { ...state, cart: [] };
+  }
+
+  // update totals
+  if (action.type === CART_TOTALS_UPDATE) {
+    const { totalQuantity, totalAmount } = state.cart.reduce(
+      (totals, item) => {
+        totals.totalQuantity += item.quantity;
+        totals.totalAmount += item.price * item.quantity;
+        return totals;
+      },
+      { totalQuantity: 0, totalAmount: 0 }
+    );
+    return { ...state, totalQuantity, totalAmount };
   }
 
   throw new Error(`no matching action type: ${action.type}`);

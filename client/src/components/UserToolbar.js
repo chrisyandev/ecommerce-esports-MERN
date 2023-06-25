@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { FaShoppingCart, FaUserMinus, FaUserPlus } from "react-icons/fa";
 import { useVisibilityContext } from "../contexts/visibility-context";
+import { useCartContext } from "../contexts/cart-context";
 
 const UserToolbar = () => {
   const { closeSidebar } = useVisibilityContext();
+  const { totalQuantity } = useCartContext();
 
   return (
     <StyledDiv className="user-toolbar-wrapper">
@@ -13,7 +15,7 @@ const UserToolbar = () => {
         Cart
         <span className="cart-container">
           <FaShoppingCart />
-          <span className="cart-value">12</span>
+          <span className="cart-value">{totalQuantity}</span>
         </span>
       </Link>
       <button type="button" className="auth-btn">

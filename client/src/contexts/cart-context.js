@@ -4,6 +4,7 @@ import {
   CART_ITEM_QUANTITY_STEP,
   CART_REMOVE_ITEM,
   CART_CLEAR,
+  CART_TOTALS_UPDATE,
 } from "../actions/cart-actions";
 import cartReducer from "../reducers/cart-reducer";
 
@@ -31,6 +32,7 @@ const CartProvider = ({ children }) => {
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(state.cart));
+    dispatch({ type: CART_TOTALS_UPDATE });
   }, [state.cart]);
 
   const addToCart = (id, color, quantity, product) => {
