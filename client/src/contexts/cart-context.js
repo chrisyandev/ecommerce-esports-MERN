@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import {
   CART_ADD_ITEM,
+  CART_ITEM_QUANTITY_STEP,
   CART_REMOVE_ITEM,
   CART_CLEAR,
 } from "../actions/cart-actions";
@@ -39,7 +40,12 @@ const CartProvider = ({ children }) => {
     });
   };
 
-  const stepCartItemQuantity = (cartItemId, type) => {};
+  const stepCartItemQuantity = (cartItemId, stepType) => {
+    dispatch({
+      type: CART_ITEM_QUANTITY_STEP,
+      payload: { cartItemId, stepType },
+    });
+  };
 
   const removeFromCart = (cartItemId) => {
     dispatch({ type: CART_REMOVE_ITEM, payload: cartItemId });

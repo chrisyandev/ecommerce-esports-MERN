@@ -1,15 +1,16 @@
 import {
   CART_ADD_ITEM,
+  CART_ITEM_QUANTITY_STEP,
   CART_REMOVE_ITEM,
   CART_CLEAR,
 } from "../actions/cart-actions";
 
 const cartReducer = (state, action) => {
+  // add item
   if (action.type === CART_ADD_ITEM) {
     const { id, color, quantity, product } = action.payload;
 
     const cartItem = state.cart.find((item) => item.cartItemId === id + color);
-
     if (cartItem) {
       const newQuantity =
         cartItem.quantity + quantity > cartItem.maxQuantity
@@ -36,6 +37,36 @@ const cartReducer = (state, action) => {
     return { ...state, cart: [...state.cart, newCartItem] };
   }
 
+  // step item quantity
+  if (action.type === CART_ITEM_QUANTITY_STEP) {
+    const { cartItemId, stepType } = action.payload;
+
+    const updatedCart = state.cart.map((item) => {
+      if (item.cartItemId === cartItemId) {
+        switch (stepType) {
+          case "+":
+            return {
+              ...item,
+              quantity:
+                item.quantity + 1 > item.maxQuantity
+                  ? item.maxQuantity
+                  : item.quantity + 1,
+            };
+          case "-":
+            return {
+              ...item,
+              quantity: item.quantity - 1 < 1 ? 1 : item.quantity - 1,
+            };
+          default:
+            break;
+        }
+      }
+      return item;
+    });
+    return { ...state, cart: updatedCart };
+  }
+
+  // remove item
   if (action.type === CART_REMOVE_ITEM) {
     const updatedCart = state.cart.filter(
       (item) => item.cartItemId !== action.payload
@@ -43,6 +74,7 @@ const cartReducer = (state, action) => {
     return { ...state, cart: updatedCart };
   }
 
+  // clear cart
   if (action.type === CART_CLEAR) {
     return { ...state, cart: [] };
   }
