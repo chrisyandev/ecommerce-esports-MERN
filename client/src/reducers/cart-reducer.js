@@ -4,7 +4,7 @@ const cartReducer = (state, action) => {
   if (action.type === CART_ADD_ITEM) {
     const { id, color, quantity, product } = action.payload;
 
-    const cartItem = state.cart.find((item) => item.cartId === id + color);
+    const cartItem = state.cart.find((item) => item.cartItemId === id + color);
 
     if (cartItem) {
       const newQuantity =
@@ -21,7 +21,7 @@ const cartReducer = (state, action) => {
     }
 
     const newCartItem = {
-      cartId: id + color,
+      cartItemId: id + color,
       name: product.name,
       color,
       quantity,

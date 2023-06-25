@@ -2,11 +2,12 @@ import Cart from "./Cart/Cart";
 import CartColumns from "./Cart/CartColumns";
 import CartItem from "./Cart/CartItem";
 import CartTotals from "./Cart/CartTotals";
+import ProductColorPicker from "./Product/ProductColorPicker";
 import ProductImages from "./Product/ProductImages";
 import ProductOptions from "./Product/ProductOptions";
-import ProductOptionsColor from "./Product/ProductOptionsColor";
-import ProductOptionsQuantity from "./Product/ProductOptionsQuantity";
+import ProductQuantityPicker from "./Product/ProductQuantityPicker";
 import ProductRating from "./Product/ProductRating";
+import ProductCard from "./ProductList/ProductCard";
 import ProductList from "./ProductList/ProductList";
 import ProductListFilters from "./ProductList/ProductListFilters";
 import ProductListGridView from "./ProductList/ProductListGridView";
@@ -21,7 +22,6 @@ import Loading from "./Loading";
 import Navbar from "./Navbar";
 import OurServices from "./OurServices";
 import PageHero from "./PageHero";
-import ProductCard from "./ProductCard";
 import Sidebar from "./Sidebar";
 import UserToolbar from "./UserToolbar";
 
@@ -30,11 +30,12 @@ export {
   CartColumns,
   CartItem,
   CartTotals,
+  ProductColorPicker,
   ProductImages,
   ProductOptions,
-  ProductOptionsColor,
-  ProductOptionsQuantity,
+  ProductQuantityPicker,
   ProductRating,
+  ProductCard,
   ProductList,
   ProductListFilters,
   ProductListGridView,
@@ -49,7 +50,6 @@ export {
   Navbar,
   OurServices,
   PageHero,
-  ProductCard,
   Sidebar,
   UserToolbar,
 };

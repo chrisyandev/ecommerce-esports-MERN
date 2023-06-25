@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { ProductOptionsColor, ProductOptionsQuantity } from "..";
+import { ProductColorPicker, ProductQuantityPicker } from "..";
 import { useCartContext } from "../../contexts/cart-context";
 
 const ProductOptions = ({ product }) => {
@@ -13,13 +13,13 @@ const ProductOptions = ({ product }) => {
 
   return (
     <StyledSection>
-      <ProductOptionsColor
+      <ProductColorPicker
         availableColors={colors}
         currentColor={color}
         setCurrentColor={(newColor) => setColor(newColor)}
       />
       <div className="btn-container">
-        <ProductOptionsQuantity
+        <ProductQuantityPicker
           quantity={quantity}
           increment={() =>
             setQuantity((prev) => (prev + 1 > stock ? prev : prev + 1))

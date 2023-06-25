@@ -1,12 +1,12 @@
 import React from "react";
 import { FaTrash } from "react-icons/fa";
 import styled from "styled-components";
-import { ProductOptionsQuantity } from "..";
+import { ProductQuantityPicker } from "..";
 import { useCartContext } from "../../contexts/cart-context";
 import { formatPrice } from "../../utils/helpers";
 
 const CartItem = ({ cartItem }) => {
-  const { cartId, color, image, name, price, quantity } = cartItem;
+  const { cartItemId, color, image, name, price, quantity } = cartItem;
   const { removeFromCart, stepCartItemQuantity } = useCartContext();
 
   return (
@@ -22,16 +22,16 @@ const CartItem = ({ cartItem }) => {
         </div>
       </div>
       <h5 className="price">{formatPrice(price)}</h5>
-      <ProductOptionsQuantity
+      <ProductQuantityPicker
         quantity={quantity}
-        increment={() => stepCartItemQuantity(cartId, "+")}
-        decrement={() => stepCartItemQuantity(cartId, "-")}
+        increment={() => stepCartItemQuantity(cartItemId, "+")}
+        decrement={() => stepCartItemQuantity(cartItemId, "-")}
       />
       <h5 className="subtotal">{formatPrice(price * quantity)}</h5>
       <button
         type="button"
         className="remove-btn"
-        onClick={() => removeFromCart(cartId)}
+        onClick={() => removeFromCart(cartItemId)}
       >
         <FaTrash />
       </button>

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 import styled from "styled-components";
-import { formatPrice } from "../utils/helpers";
+import { formatPrice } from "../../utils/helpers";
 
 const ProductCard = ({ product }) => {
   const { id, name, image, price } = product;

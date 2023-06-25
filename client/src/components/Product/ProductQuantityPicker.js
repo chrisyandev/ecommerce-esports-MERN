@@ -2,7 +2,7 @@ import React from "react";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import styled from "styled-components";
 
-const ProductOptionsQuantity = ({ quantity, increment, decrement }) => {
+const ProductQuantityPicker = ({ quantity, increment, decrement }) => {
   return (
     <StyledDiv>
       <button type="button" onClick={decrement}>
@@ -39,4 +39,4 @@ const StyledDiv = styled.div`
   }
 `;
 
-export default ProductOptionsQuantity;
+export default ProductQuantityPicker;
