@@ -1,4 +1,8 @@
-import { CART_ADD_ITEM, CART_REMOVE_ITEM } from "../actions/cart-actions";
+import {
+  CART_ADD_ITEM,
+  CART_REMOVE_ITEM,
+  CART_CLEAR,
+} from "../actions/cart-actions";
 
 const cartReducer = (state, action) => {
   if (action.type === CART_ADD_ITEM) {
@@ -30,6 +34,17 @@ const cartReducer = (state, action) => {
       maxQuantity: product.stock,
     };
     return { ...state, cart: [...state.cart, newCartItem] };
+  }
+
+  if (action.type === CART_REMOVE_ITEM) {
+    const updatedCart = state.cart.filter(
+      (item) => item.cartItemId !== action.payload
+    );
+    return { ...state, cart: updatedCart };
+  }
+
+  if (action.type === CART_CLEAR) {
+    return { ...state, cart: [] };
   }
 
   throw new Error(`no matching action type: ${action.type}`);

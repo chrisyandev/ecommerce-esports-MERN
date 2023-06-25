@@ -1,5 +1,9 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
-import { CART_ADD_ITEM, CART_REMOVE_ITEM } from "../actions/cart-actions";
+import {
+  CART_ADD_ITEM,
+  CART_REMOVE_ITEM,
+  CART_CLEAR,
+} from "../actions/cart-actions";
 import cartReducer from "../reducers/cart-reducer";
 
 const getLocalStorageCart = () => {
@@ -35,19 +39,23 @@ const CartProvider = ({ children }) => {
     });
   };
 
-  const removeFromCart = (id) => {};
+  const stepCartItemQuantity = (cartItemId, type) => {};
 
-  const stepCartItemQuantity = (id, type) => {};
+  const removeFromCart = (cartItemId) => {
+    dispatch({ type: CART_REMOVE_ITEM, payload: cartItemId });
+  };
 
-  const clearCart = () => {};
+  const clearCart = () => {
+    dispatch({ type: CART_CLEAR });
+  };
 
   return (
     <CartContext.Provider
       value={{
         ...state,
         addToCart,
-        removeFromCart,
         stepCartItemQuantity,
+        removeFromCart,
         clearCart,
       }}
     >

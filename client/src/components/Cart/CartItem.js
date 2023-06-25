@@ -88,7 +88,8 @@ const StyledArticle = styled.article`
       height: 0.5rem;
       background: red;
       margin-left: 0.5rem;
-      border-radius: var(--radius);
+      border-radius: 0.5rem;
+      border: 1px solid black;
     }
   }
   .price-small {
