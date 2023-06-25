@@ -10,7 +10,7 @@ const Cart = () => {
     <StyledSection className="section section-center">
       <CartColumns />
       {cart.map((item) => {
-        return <CartItem key={item.cartId} {...item} />;
+        return <CartItem key={item.cartId} cartItem={item} />;
       })}
       <hr />
       <div className="link-container">
