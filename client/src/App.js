@@ -8,6 +8,7 @@ import {
   HomePage,
   ProductListPage,
   ProductPage,
+  LoginRegisterPage,
 } from "./pages";
 import { Footer, Navbar, Sidebar } from "./components";
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="cart" element={<CartPage />} />
         <Route path="checkout" element={<CheckoutPage />} />
         <Route path="*" element={<ErrorPage />} />
+        <Route path="login" element={<LoginRegisterPage />} />
       </Routes>
       <Footer />
     </Router>

@@ -3,6 +3,7 @@ import CartPage from "./CartPage";
 import CheckoutPage from "./CheckoutPage";
 import ErrorPage from "./ErrorPage";
 import HomePage from "./HomePage";
+import LoginRegisterPage from "./LoginRegisterPage";
 import ProductListPage from "./ProductListPage";
 import ProductPage from "./ProductPage";
 
@@ -12,6 +13,7 @@ export {
   CheckoutPage,
   ErrorPage,
   HomePage,
+  LoginRegisterPage,
   ProductListPage,
   ProductPage,
 };

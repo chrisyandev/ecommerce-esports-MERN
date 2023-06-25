@@ -18,9 +18,11 @@ const UserToolbar = () => {
           <span className="cart-value">{totalQuantity}</span>
         </span>
       </Link>
-      <button type="button" className="auth-btn">
-        Login <FaUserPlus />
-      </button>
+      <Link to="/login" onClick={closeSidebar}>
+        <button type="button" className="auth-btn">
+          Login <FaUserPlus />
+        </button>
+      </Link>
     </StyledDiv>
   );
 };
