@@ -15,7 +15,7 @@ const initialState = {
 
 const LoginRegisterPage = () => {
   const [form, setForm] = useState(initialState);
-  const { user, userLoading, registerUser } = useUserContext();
+  const { user, userLoading, registerUser, loginUser } = useUserContext();
   const { isAlertShown, alertType, alertText, showAlert, hideAlert } =
     useVisibilityContext();
 
@@ -33,14 +33,14 @@ const LoginRegisterPage = () => {
     const { name, email, password, isLogin } = form;
 
     if (!email || !password || (!isLogin && !name)) {
-      showAlert(alertTypes.ERROR, "Please fill out required fields");
+      showAlert(alertTypes.ERROR, "Please fill out all fields");
       return;
     }
 
     const userData = { name, email, password };
 
     if (isLogin) {
-      console.log("login");
+      loginUser(userData);
     } else {
       registerUser(userData);
     }

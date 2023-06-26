@@ -5,6 +5,9 @@ import {
   USER_REGISTER,
   USER_REGISTER_SUCCESS,
   USER_REGISTER_ERROR,
+  USER_LOGIN,
+  USER_LOGIN_SUCCESS,
+  USER_LOGIN_ERROR,
 } from "../actions/user-actions";
 import { useVisibilityContext } from "./visibility-context";
 import { alertTypes } from "../utils/constants";
@@ -31,12 +34,32 @@ const UserProvider = ({ children }) => {
       })
       .catch((error) => {
         dispatch({ type: USER_REGISTER_ERROR, error });
-        showAlert(alertTypes.ERROR, "Could not register");
+        const msg = error.response.data.msg;
+        showAlert(alertTypes.ERROR, msg.charAt(0).toUpperCase() + msg.slice(1));
+      });
+  };
+
+  const loginUser = async (userData) => {
+    dispatch({ type: USER_LOGIN });
+    axios
+      .post("/api/v1/auth/login", userData)
+      .then((res) => {
+        const { user } = res.data;
+        dispatch({ type: USER_LOGIN_SUCCESS, payload: user });
+        showAlert(alertTypes.SUCCESS, "You logged in!");
+      })
+      .catch((error) => {
+        dispatch({ type: USER_LOGIN_ERROR, error });
+        if (error.response.status === 401) {
+          showAlert(alertTypes.ERROR, "Invalid email or password");
+        } else {
+          showAlert(alertTypes.ERROR, "Could not login");
+        }
       });
   };
 
   return (
-    <UserContext.Provider value={{ ...state, registerUser }}>
+    <UserContext.Provider value={{ ...state, registerUser, loginUser }}>
       {children}
     </UserContext.Provider>
   );
