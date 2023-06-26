@@ -7,12 +7,16 @@ const initialState = {
   name: "",
   email: "",
   password: "",
-  isMember: true,
+  isLogin: true,
   showAlert: true,
 };
 
 const LoginRegisterPage = () => {
   const [values, setValues] = useState(initialState);
+
+  const toggleLoginRegister = () => {
+    setValues({ ...values, isLogin: !values.isLogin });
+  };
 
   const handleChange = (e) => {
     console.log(e.target);
@@ -27,16 +31,18 @@ const LoginRegisterPage = () => {
     <StyledSection className="page-100">
       <form className="form" onSubmit={onSubmit}>
         <img src={logo} alt="Esports Shop" className="logo" />
-        <h3>Login</h3>
+        <h3>{values.isLogin ? "Login" : "Register"}</h3>
         {values.showAlert && <FormAlert />}
         {/* Name */}
-        <FormInput
-          type="text"
-          name="name"
-          value={values.name}
-          handleChange={handleChange}
-          labelText="Name"
-        />
+        {!values.isLogin && (
+          <FormInput
+            type="text"
+            name="name"
+            value={values.name}
+            handleChange={handleChange}
+            labelText="Name"
+          />
+        )}
         {/* Email */}
         <FormInput
           type="email"
@@ -56,6 +62,17 @@ const LoginRegisterPage = () => {
         <button type="submit" className="btn btn-block">
           Submit
         </button>
+        <p>
+          {values.isLogin ? "Not a member?" : "Already a member?"}
+          &nbsp;
+          <button
+            type="button"
+            onClick={toggleLoginRegister}
+            className="member-btn"
+          >
+            {values.isLogin ? "Register" : "Login"}
+          </button>
+        </p>
       </form>
     </StyledSection>
   );
