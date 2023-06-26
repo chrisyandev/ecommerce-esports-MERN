@@ -58,7 +58,7 @@ const createOrder = async (req, res) => {
     total: total,
     orderItems: orderItems,
     clientSecret: paymentIntent.clientSecret,
-    userId: req.user.userId,
+    userId: req.user.id,
   });
 
   res.status(StatusCodes.CREATED).json({
@@ -98,7 +98,7 @@ const getSingleOrder = async (req, res) => {
 };
 
 const getCurrentUserOrders = async (req, res) => {
-  const orders = await Order.find({ userId: req.user.userId });
+  const orders = await Order.find({ userId: req.user.id });
 
   res.status(StatusCodes.OK).json({ orders: orders, count: orders.length });
 };

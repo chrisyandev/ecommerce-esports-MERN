@@ -6,15 +6,19 @@ import {
 
 const userReducer = (state, action) => {
   if (action.type === USER_REGISTER) {
-    console.log(action);
+    return { ...state, userLoading: true };
   }
 
   if (action.type === USER_REGISTER_SUCCESS) {
-    console.log(action);
+    return {
+      ...state,
+      user: action.payload.user,
+      userLoading: false,
+    };
   }
 
   if (action.type === USER_REGISTER_ERROR) {
-    console.log(action);
+    return { ...state, userLoading: false };
   }
 
   throw new Error(`no matching action type: ${action.type}`);

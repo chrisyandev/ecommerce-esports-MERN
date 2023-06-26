@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { FormInput, FormAlert } from "../components";
+import { useUserContext } from "../contexts/user-context";
+import { useVisibilityContext } from "../contexts/visibility-context";
 import logo from "../assets/logo.svg";
 import { alertTypes } from "../utils/constants";
 
@@ -9,30 +11,17 @@ const initialState = {
   email: "",
   password: "",
   isLogin: true,
-  isAlertShown: false,
-  alertType: alertTypes.ERROR,
-  alertText: "",
 };
 
 const LoginRegisterPage = () => {
   const [form, setForm] = useState(initialState);
+  const { user, userLoading, registerUser } = useUserContext();
+  const { isAlertShown, alertType, alertText, showAlert, hideAlert } =
+    useVisibilityContext();
 
   const toggleLoginRegister = () => {
     hideAlert();
     setForm((prev) => ({ ...prev, isLogin: !form.isLogin }));
-  };
-
-  const showAlert = (type, text) => {
-    setForm((prev) => ({
-      ...prev,
-      isAlertShown: true,
-      alertType: type,
-      alertText: text,
-    }));
-  };
-
-  const hideAlert = () => {
-    setForm((prev) => ({ ...prev, isAlertShown: false, alertText: "" }));
   };
 
   const handleFormInputChange = (e) => {
@@ -48,7 +37,13 @@ const LoginRegisterPage = () => {
       return;
     }
 
-    console.log("form submitted!");
+    const userData = { name, email, password };
+
+    if (isLogin) {
+      console.log("login");
+    } else {
+      registerUser(userData);
+    }
   };
 
   return (
@@ -56,9 +51,7 @@ const LoginRegisterPage = () => {
       <form className="form" onSubmit={handleFormSubmit}>
         <img src={logo} alt="Esports Shop" className="logo" />
         <h3>{form.isLogin ? "Login" : "Register"}</h3>
-        {form.isAlertShown && (
-          <FormAlert type={form.alertType} text={form.alertText} />
-        )}
+        {isAlertShown && <FormAlert type={alertType} text={alertText} />}
         {/* Name */}
         {!form.isLogin && (
           <FormInput
@@ -88,7 +81,7 @@ const LoginRegisterPage = () => {
           labelText="Password"
           onClick={hideAlert}
         />
-        <button type="submit" className="btn btn-block">
+        <button type="submit" className="btn btn-block" disabled={userLoading}>
           Submit
         </button>
         <p>

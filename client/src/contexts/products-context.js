@@ -5,6 +5,7 @@ import {
   useReducer,
   useCallback,
 } from "react";
+import axios from "axios";
 import {
   GET_PRODUCTS,
   GET_PRODUCTS_SUCCESS,
@@ -36,16 +37,10 @@ const ProductsProvider = ({ children }) => {
 
   const fetchProducts = async () => {
     dispatch({ type: GET_PRODUCTS });
-    fetch("/api/v1/products")
+    axios
+      .get("/api/v1/products")
       .then((res) => {
-        if (!res.ok) {
-          throw new Error(res.status);
-        }
-        return res.json();
-      })
-      .then((data) => {
-        console.log(data);
-        const { products } = data;
+        const { products } = res.data;
         dispatch({ type: GET_PRODUCTS_SUCCESS, payload: products });
       })
       .catch((error) => {
@@ -55,15 +50,10 @@ const ProductsProvider = ({ children }) => {
 
   const fetchSingleProduct = useCallback(async (id) => {
     dispatch({ type: GET_SINGLE_PRODUCT });
-    fetch(`/api/v1/products/${id}`)
+    axios
+      .get(`/api/v1/products/${id}`)
       .then((res) => {
-        if (!res.ok) {
-          throw new Error(res.status);
-        }
-        return res.json();
-      })
-      .then((data) => {
-        const { product } = data;
+        const { product } = res.data;
         dispatch({ type: GET_SINGLE_PRODUCT_SUCCESS, payload: product });
       })
       .catch((error) => {

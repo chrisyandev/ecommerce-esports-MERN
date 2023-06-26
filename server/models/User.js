@@ -20,7 +20,25 @@ const UserSchema = new mongoose.Schema({
   password: {
     type: String,
     required: [true, "please provide password"],
-    minlength: 6,
+    validate: {
+      validator: (value) => {
+        return validator.isStrongPassword(value, {
+          minLength: 6,
+          minLowercase: 0,
+          minUppercase: 0,
+          minNumbers: 0,
+          minSymbols: 0,
+          returnScore: false,
+          pointsPerUnique: 1,
+          pointsPerRepeat: 0.5,
+          pointsForContainingLower: 10,
+          pointsForContainingUpper: 10,
+          pointsForContainingNumber: 10,
+          pointsForContainingSymbol: 10,
+        });
+      },
+      message: "password must be at least 6 characters",
+    },
   },
   role: {
     type: String,

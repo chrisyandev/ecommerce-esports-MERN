@@ -38,7 +38,7 @@ const updateUser = async (req, res) => {
     throw new CustomError.BadRequestError("please provide both email and name");
   }
 
-  const user = await User.findOne({ _id: req.user.userId });
+  const user = await User.findOne({ _id: req.user.id });
   user.email = email;
   user.name = name;
   await user.save();
@@ -59,7 +59,7 @@ const updateUserPassword = async (req, res) => {
   }
 
   // user should exist if authentication passes
-  const user = await User.findOne({ _id: req.user.userId });
+  const user = await User.findOne({ _id: req.user.id });
   const isPasswordCorrect = await user.comparePassword(oldPassword);
 
   if (!isPasswordCorrect) {

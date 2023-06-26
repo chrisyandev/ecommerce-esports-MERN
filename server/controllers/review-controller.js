@@ -6,7 +6,7 @@ const { checkPermissions } = require("../utils");
 
 const createReview = async (req, res) => {
   const { productId } = req.body;
-  const { userId } = req.user;
+  const { user } = req;
 
   const product = await Product.findOne({ _id: productId });
 
@@ -16,7 +16,7 @@ const createReview = async (req, res) => {
 
   const review = await Review.findOne({
     productId: productId,
-    userId: userId,
+    userId: user.id,
   });
 
   if (review) {
@@ -25,7 +25,7 @@ const createReview = async (req, res) => {
     );
   }
 
-  req.body.userId = userId;
+  req.body.userId = user.id;
   const newReview = await Review.create(req.body);
 
   res.status(StatusCodes.CREATED).json({ review: newReview });
