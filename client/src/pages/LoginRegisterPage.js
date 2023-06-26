@@ -2,75 +2,104 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { FormInput, FormAlert } from "../components";
 import logo from "../assets/logo.svg";
+import { alertTypes } from "../utils/constants";
 
 const initialState = {
   name: "",
   email: "",
   password: "",
   isLogin: true,
-  showAlert: true,
+  isAlertShown: false,
+  alertType: alertTypes.ERROR,
+  alertText: "",
 };
 
 const LoginRegisterPage = () => {
-  const [values, setValues] = useState(initialState);
+  const [form, setForm] = useState(initialState);
 
   const toggleLoginRegister = () => {
-    setValues({ ...values, isLogin: !values.isLogin });
+    hideAlert();
+    setForm((prev) => ({ ...prev, isLogin: !form.isLogin }));
   };
 
-  const handleChange = (e) => {
-    console.log(e.target);
+  const showAlert = (type, text) => {
+    setForm((prev) => ({
+      ...prev,
+      isAlertShown: true,
+      alertType: type,
+      alertText: text,
+    }));
   };
 
-  const onSubmit = (e) => {
+  const hideAlert = () => {
+    setForm((prev) => ({ ...prev, isAlertShown: false, alertText: "" }));
+  };
+
+  const handleFormInputChange = (e) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log(e.target);
+    const { name, email, password, isLogin } = form;
+
+    if (!email || !password || (!isLogin && !name)) {
+      showAlert(alertTypes.ERROR, "Please fill out required fields");
+      return;
+    }
+
+    console.log("form submitted!");
   };
 
   return (
     <StyledSection className="page-100">
-      <form className="form" onSubmit={onSubmit}>
+      <form className="form" onSubmit={handleFormSubmit}>
         <img src={logo} alt="Esports Shop" className="logo" />
-        <h3>{values.isLogin ? "Login" : "Register"}</h3>
-        {values.showAlert && <FormAlert />}
+        <h3>{form.isLogin ? "Login" : "Register"}</h3>
+        {form.isAlertShown && (
+          <FormAlert type={form.alertType} text={form.alertText} />
+        )}
         {/* Name */}
-        {!values.isLogin && (
+        {!form.isLogin && (
           <FormInput
             type="text"
             name="name"
-            value={values.name}
-            handleChange={handleChange}
+            value={form.name}
+            handleChange={handleFormInputChange}
             labelText="Name"
+            onClick={hideAlert}
           />
         )}
         {/* Email */}
         <FormInput
           type="email"
           name="email"
-          value={values.email}
-          handleChange={handleChange}
+          value={form.email}
+          handleChange={handleFormInputChange}
           labelText="Email"
+          onClick={hideAlert}
         />
         {/* Password */}
         <FormInput
           type="password"
           name="password"
-          value={values.password}
-          handleChange={handleChange}
+          value={form.password}
+          handleChange={handleFormInputChange}
           labelText="Password"
+          onClick={hideAlert}
         />
         <button type="submit" className="btn btn-block">
           Submit
         </button>
         <p>
-          {values.isLogin ? "Not a member?" : "Already a member?"}
+          {form.isLogin ? "Not a member?" : "Already a member?"}
           &nbsp;
           <button
             type="button"
             onClick={toggleLoginRegister}
             className="member-btn"
           >
-            {values.isLogin ? "Register" : "Login"}
+            {form.isLogin ? "Register" : "Login"}
           </button>
         </p>
       </form>

@@ -48,3 +48,8 @@ export const productSortTypes = {
   NAME_A_TO_Z: "NAME_A_TO_Z",
   NAME_Z_TO_A: "NAME_Z_TO_A",
 };
+
+export const alertTypes = {
+  SUCCESS: "SUCCESS",
+  ERROR: "ERROR",
+};
