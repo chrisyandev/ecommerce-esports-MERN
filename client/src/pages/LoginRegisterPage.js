@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { FormInput, FormAlert } from "../components";
 import logo from "../assets/logo.svg";
 
 const initialState = {
@@ -7,6 +8,7 @@ const initialState = {
   email: "",
   password: "",
   isMember: true,
+  showAlert: true,
 };
 
 const LoginRegisterPage = () => {
@@ -26,19 +28,31 @@ const LoginRegisterPage = () => {
       <form className="form" onSubmit={onSubmit}>
         <img src={logo} alt="Esports Shop" className="logo" />
         <h3>Login</h3>
+        {values.showAlert && <FormAlert />}
         {/* Name */}
-        <div className="form-row">
-          <label htmlFor="name" className="form-label">
-            Name
-          </label>
-          <input
-            type="text"
-            value={values.name}
-            name="name"
-            onChange={handleChange}
-            className="form-input"
-          />
-        </div>
+        <FormInput
+          type="text"
+          name="name"
+          value={values.name}
+          handleChange={handleChange}
+          labelText="Name"
+        />
+        {/* Email */}
+        <FormInput
+          type="email"
+          name="email"
+          value={values.email}
+          handleChange={handleChange}
+          labelText="Email"
+        />
+        {/* Password */}
+        <FormInput
+          type="password"
+          name="password"
+          value={values.password}
+          handleChange={handleChange}
+          labelText="Password"
+        />
         <button type="submit" className="btn btn-block">
           Submit
         </button>
