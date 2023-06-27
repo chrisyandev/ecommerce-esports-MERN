@@ -4,10 +4,12 @@ import styled from "styled-components";
 import { FaShoppingCart, FaUserMinus, FaUserPlus } from "react-icons/fa";
 import { useVisibilityContext } from "../contexts/visibility-context";
 import { useCartContext } from "../contexts/cart-context";
+import { useUserContext } from "../contexts/user-context";
 
 const UserToolbar = () => {
   const { closeSidebar } = useVisibilityContext();
   const { totalQuantity } = useCartContext();
+  const { isLoggedIn, logoutUser } = useUserContext();
 
   return (
     <StyledDiv className="user-toolbar-wrapper">
@@ -18,11 +20,24 @@ const UserToolbar = () => {
           <span className="cart-value">{totalQuantity}</span>
         </span>
       </Link>
-      <Link to="/login" onClick={closeSidebar}>
-        <button type="button" className="auth-btn">
-          Login <FaUserPlus />
+      {isLoggedIn ? (
+        <button
+          type="button"
+          className="auth-btn"
+          onClick={() => {
+            closeSidebar();
+            logoutUser();
+          }}
+        >
+          Logout <FaUserMinus />
         </button>
-      </Link>
+      ) : (
+        <Link to="/login" onClick={closeSidebar}>
+          <button type="button" className="auth-btn">
+            Login <FaUserPlus />
+          </button>
+        </Link>
+      )}
     </StyledDiv>
   );
 };

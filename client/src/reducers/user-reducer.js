@@ -5,7 +5,14 @@ import {
   USER_LOGIN,
   USER_LOGIN_SUCCESS,
   USER_LOGIN_ERROR,
+  USER_LOGOUT,
+  USER_LOGOUT_SUCCESS,
+  USER_LOGOUT_ERROR,
+  USER_GET_CURRENT,
+  USER_GET_CURRENT_SUCCESS,
+  USER_GET_CURRENT_ERROR,
 } from "../actions/user-actions";
+import { initialState } from "../contexts/user-context";
 
 const userReducer = (state, action) => {
   if (action.type === USER_REGISTER) {
@@ -16,6 +23,7 @@ const userReducer = (state, action) => {
     return {
       ...state,
       user: action.payload.user,
+      isLoggedIn: true,
       userLoading: false,
     };
   }
@@ -32,11 +40,41 @@ const userReducer = (state, action) => {
     return {
       ...state,
       user: action.payload.user,
+      isLoggedIn: true,
       userLoading: false,
     };
   }
 
   if (action.type === USER_LOGIN_ERROR) {
+    return { ...state, userLoading: false };
+  }
+
+  if (action.type === USER_LOGOUT) {
+    return { ...state, userLoading: true };
+  }
+
+  if (action.type === USER_LOGOUT_SUCCESS) {
+    return { ...initialState, userLoading: false };
+  }
+
+  if (action.type === USER_LOGOUT_ERROR) {
+    return { ...state, userLoading: false };
+  }
+
+  if (action.type === USER_GET_CURRENT) {
+    return { ...state, userLoading: true };
+  }
+
+  if (action.type === USER_GET_CURRENT_SUCCESS) {
+    return {
+      ...state,
+      user: action.payload.user,
+      isLoggedIn: true,
+      userLoading: false,
+    };
+  }
+
+  if (action.type === USER_GET_CURRENT_ERROR) {
     return { ...state, userLoading: false };
   }
 

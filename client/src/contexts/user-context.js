@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
 import axios from "axios";
 import userReducer from "../reducers/user-reducer";
 import {
@@ -8,12 +8,19 @@ import {
   USER_LOGIN,
   USER_LOGIN_SUCCESS,
   USER_LOGIN_ERROR,
+  USER_LOGOUT,
+  USER_LOGOUT_SUCCESS,
+  USER_LOGOUT_ERROR,
+  USER_GET_CURRENT,
+  USER_GET_CURRENT_SUCCESS,
+  USER_GET_CURRENT_ERROR,
 } from "../actions/user-actions";
 import { useVisibilityContext } from "./visibility-context";
 import { alertTypes } from "../utils/constants";
 
-const initialState = {
+export const initialState = {
   user: null,
+  isLoggedIn: false,
   userLoading: false,
 };
 
@@ -22,6 +29,11 @@ const UserContext = createContext();
 const UserProvider = ({ children }) => {
   const [state, dispatch] = useReducer(userReducer, initialState);
   const { showAlert } = useVisibilityContext();
+
+  useEffect(() => {
+    checkIsUserLoggedIn();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const registerUser = async (userData) => {
     dispatch({ type: USER_REGISTER });
@@ -58,8 +70,39 @@ const UserProvider = ({ children }) => {
       });
   };
 
+  const logoutUser = async () => {
+    dispatch({ type: USER_LOGOUT });
+    axios
+      .get("/api/v1/auth/logout")
+      .then(() => {
+        dispatch({ type: USER_LOGOUT_SUCCESS });
+        window.location.replace(window.location.origin);
+      })
+      .catch((error) => {
+        dispatch({ type: USER_LOGOUT_ERROR, error });
+      });
+  };
+
+  const checkIsUserLoggedIn = async () => {
+    dispatch({ type: USER_GET_CURRENT });
+    axios
+      .get("/api/v1/users/show-me")
+      .then((res) => {
+        const { user } = res.data;
+        dispatch({ type: USER_GET_CURRENT_SUCCESS, payload: user });
+      })
+      .catch((error) => {
+        if (error.response.status !== 401) {
+          logoutUser();
+        }
+        dispatch({ type: USER_GET_CURRENT_ERROR, error });
+      });
+  };
+
   return (
-    <UserContext.Provider value={{ ...state, registerUser, loginUser }}>
+    <UserContext.Provider
+      value={{ ...state, registerUser, loginUser, logoutUser }}
+    >
       {children}
     </UserContext.Provider>
   );
