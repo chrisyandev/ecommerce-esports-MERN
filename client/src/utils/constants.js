@@ -1,25 +1,34 @@
 import React from "react";
 import { GiCompass, GiDiamondHard, GiStabbedNote } from "react-icons/gi";
 
-export const links = [
+export const navLinks = [
   {
     id: 1,
-    text: "home",
+    text: "Home",
     url: "/",
+    isProtected: false,
   },
   {
     id: 2,
-    text: "about",
+    text: "About",
     url: "/about",
+    isProtected: false,
   },
   {
     id: 3,
-    text: "products",
+    text: "Products",
     url: "/products",
+    isProtected: false,
+  },
+  {
+    id: 4,
+    text: "Orders",
+    url: "/orders",
+    isProtected: true,
   },
 ];
 
-export const services = [
+export const ourServices = [
   {
     id: 1,
     icon: <GiCompass />,

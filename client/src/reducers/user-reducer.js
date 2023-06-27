@@ -54,7 +54,7 @@ const userReducer = (state, action) => {
   }
 
   if (action.type === USER_LOGOUT_SUCCESS) {
-    return { ...initialState, userLoading: false };
+    return { ...initialState };
   }
 
   if (action.type === USER_LOGOUT_ERROR) {

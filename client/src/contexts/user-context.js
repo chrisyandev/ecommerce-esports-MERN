@@ -21,7 +21,7 @@ import { alertTypes } from "../utils/constants";
 export const initialState = {
   user: null,
   isLoggedIn: false,
-  userLoading: false,
+  userLoading: true,
 };
 
 const UserContext = createContext();
