@@ -11,6 +11,7 @@ import {
   USER_GET_CURRENT,
   USER_GET_CURRENT_SUCCESS,
   USER_GET_CURRENT_ERROR,
+  POST_LOGIN_PATH_UPDATE,
 } from "../actions/user-actions";
 import { initialState } from "../contexts/user-context";
 
@@ -76,6 +77,10 @@ const userReducer = (state, action) => {
 
   if (action.type === USER_GET_CURRENT_ERROR) {
     return { ...state, userLoading: false };
+  }
+
+  if (action.type === POST_LOGIN_PATH_UPDATE) {
+    return { ...state, postLoginPath: action.payload };
   }
 
   throw new Error(`no matching action type: ${action.type}`);

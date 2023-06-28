@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useResolvedPath } from "react-router-dom";
 import styled from "styled-components";
 import { FaShoppingCart, FaUserMinus, FaUserPlus } from "react-icons/fa";
 import { useVisibilityContext } from "../contexts/visibility-context";
@@ -9,7 +9,8 @@ import { useUserContext } from "../contexts/user-context";
 const UserToolbar = () => {
   const { closeSidebar } = useVisibilityContext();
   const { totalQuantity } = useCartContext();
-  const { isLoggedIn, logoutUser } = useUserContext();
+  const { isLoggedIn, logoutUser, updatePostLoginPath } = useUserContext();
+  const resolvedPath = useResolvedPath();
 
   return (
     <StyledDiv className="user-toolbar-wrapper">
@@ -32,7 +33,15 @@ const UserToolbar = () => {
           Logout <FaUserMinus />
         </button>
       ) : (
-        <Link to="/login" onClick={closeSidebar}>
+        <Link
+          to="/login"
+          onClick={() => {
+            closeSidebar();
+            if (resolvedPath.pathname !== "/login") {
+              updatePostLoginPath(resolvedPath.pathname);
+            } // invokes before Link navigates
+          }}
+        >
           <button type="button" className="auth-btn">
             Login <FaUserPlus />
           </button>

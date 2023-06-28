@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { FormInput, FormAlert } from "../components";
 import { useUserContext } from "../contexts/user-context";
@@ -15,9 +16,18 @@ const initialState = {
 
 const LoginRegisterPage = () => {
   const [form, setForm] = useState(initialState);
-  const { user, userLoading, registerUser, loginUser } = useUserContext();
+  const { isLoggedIn, userLoading, postLoginPath, registerUser, loginUser } =
+    useUserContext();
   const { isAlertShown, alertType, alertText, showAlert, hideAlert } =
     useVisibilityContext();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate(postLoginPath);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isLoggedIn]);
 
   const toggleLoginRegister = () => {
     hideAlert();

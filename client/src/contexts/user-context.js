@@ -14,6 +14,7 @@ import {
   USER_GET_CURRENT,
   USER_GET_CURRENT_SUCCESS,
   USER_GET_CURRENT_ERROR,
+  POST_LOGIN_PATH_UPDATE,
 } from "../actions/user-actions";
 import { useVisibilityContext } from "./visibility-context";
 import { alertTypes } from "../utils/constants";
@@ -22,6 +23,7 @@ export const initialState = {
   user: null,
   isLoggedIn: false,
   userLoading: true,
+  postLoginPath: "/",
 };
 
 const UserContext = createContext();
@@ -99,9 +101,19 @@ const UserProvider = ({ children }) => {
       });
   };
 
+  const updatePostLoginPath = (path) => {
+    dispatch({ type: POST_LOGIN_PATH_UPDATE, payload: path });
+  };
+
   return (
     <UserContext.Provider
-      value={{ ...state, registerUser, loginUser, logoutUser }}
+      value={{
+        ...state,
+        registerUser,
+        loginUser,
+        logoutUser,
+        updatePostLoginPath,
+      }}
     >
       {children}
     </UserContext.Provider>
