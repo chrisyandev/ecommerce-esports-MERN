@@ -8,6 +8,9 @@ import {
   HomePage,
   ProductListPage,
   ProductPage,
+  LoginRegisterPage,
+  OrderListPage,
+  ProtectedRoutes,
 } from "./pages";
 import { Footer, Navbar, Sidebar } from "./components";
 
@@ -22,7 +25,11 @@ function App() {
         <Route path="products" element={<ProductListPage />} />
         <Route path="products/:id" element={<ProductPage />} />
         <Route path="cart" element={<CartPage />} />
-        <Route path="checkout" element={<CheckoutPage />} />
+        <Route path="login" element={<LoginRegisterPage />} />
+        <Route element={<ProtectedRoutes />}>
+          <Route path="checkout" element={<CheckoutPage />} />
+          <Route path="orders" element={<OrderListPage />} />
+        </Route>
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />

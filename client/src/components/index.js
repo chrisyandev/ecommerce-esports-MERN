@@ -2,6 +2,8 @@ import Cart from "./Cart/Cart";
 import CartColumns from "./Cart/CartColumns";
 import CartItem from "./Cart/CartItem";
 import CartTotals from "./Cart/CartTotals";
+import FormAlert from "./Form/FormAlert";
+import FormInput from "./Form/FormInput";
 import ProductColorPicker from "./Product/ProductColorPicker";
 import ProductImages from "./Product/ProductImages";
 import ProductOptions from "./Product/ProductOptions";
@@ -30,6 +32,8 @@ export {
   CartColumns,
   CartItem,
   CartTotals,
+  FormAlert,
+  FormInput,
   ProductColorPicker,
   ProductImages,
   ProductOptions,

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { services } from "../utils/constants";
+import { ourServices } from "../utils/constants";
 
 const OurServices = () => {
   return (
@@ -19,7 +19,7 @@ const OurServices = () => {
           </p>
         </article>
         <div className="services-center">
-          {services.map(({ id, icon, title, text }) => {
+          {ourServices.map(({ id, icon, title, text }) => {
             return (
               <article key={id} className="service">
                 <span className="icon">{icon}</span>

@@ -4,11 +4,13 @@ import styled from "styled-components";
 import { FaTimes } from "react-icons/fa";
 import UserToolbar from "./UserToolbar";
 import { useVisibilityContext } from "../contexts/visibility-context";
+import { useUserContext } from "../contexts/user-context";
 import logo from "../assets/logo.svg";
-import { links } from "../utils/constants";
+import { navLinks } from "../utils/constants";
 
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = useVisibilityContext();
+  const { isLoggedIn } = useUserContext();
 
   return (
     <StyledDiv>
@@ -22,20 +24,18 @@ const Sidebar = () => {
           </button>
         </div>
         <ul className="links">
-          {links.map(({ id, text, url }) => {
-            return (
-              <li key={id}>
-                <Link to={url} onClick={closeSidebar}>
-                  {text}
-                </Link>
-              </li>
-            );
+          {navLinks.map(({ id, text, url, isProtected }) => {
+            if (!isProtected || isLoggedIn) {
+              return (
+                <li key={id}>
+                  <Link to={url} onClick={closeSidebar}>
+                    {text}
+                  </Link>
+                </li>
+              );
+            }
+            return null;
           })}
-          <li>
-            <Link to="/checkout" onClick={closeSidebar}>
-              checkout
-            </Link>
-          </li>
         </ul>
         <UserToolbar />
       </aside>
