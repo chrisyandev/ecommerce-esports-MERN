@@ -2,6 +2,8 @@ import Cart from "./Cart/Cart";
 import CartColumns from "./Cart/CartColumns";
 import CartItem from "./Cart/CartItem";
 import CartTotals from "./Cart/CartTotals";
+import CheckoutForm from "./Checkout/CheckoutForm";
+import StripeCheckout from "./Checkout/StripeCheckout";
 import FormAlert from "./Form/FormAlert";
 import FormInput from "./Form/FormInput";
 import ProductColorPicker from "./Product/ProductColorPicker";
@@ -32,6 +34,8 @@ export {
   CartColumns,
   CartItem,
   CartTotals,
+  CheckoutForm,
+  StripeCheckout,
   FormAlert,
   FormInput,
   ProductColorPicker,

@@ -11,7 +11,7 @@ const CartPage = () => {
     return (
       <StyledMain className="page-100">
         <div className="empty">
-          <h2>You cart is empty</h2>
+          <h2>Your cart is empty</h2>
           <Link to="/products" className="btn">
             Shop
           </Link>
@@ -31,6 +31,10 @@ const CartPage = () => {
 };
 
 const StyledMain = styled.main`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   .empty {
     text-align: center;
     h2 {
