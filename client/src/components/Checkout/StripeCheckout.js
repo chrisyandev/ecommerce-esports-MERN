@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import axios from "axios";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import { CheckoutForm } from "..";
@@ -14,13 +15,17 @@ const StripeCheckout = () => {
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    fetch("/create-payment-intent", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ items: [{ id: "xl-tshirt" }] }),
-    })
-      .then((res) => res.json())
-      .then((data) => setClientSecret(data.clientSecret));
+    const body = JSON.stringify({ items: [{ id: "xl-tshirt" }] });
+    axios
+      .post("/create-payment-intent", body)
+      .then((res) => {
+        const { clientSecret } = res.data;
+        console.log(clientSecret);
+        setClientSecret(clientSecret);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
   const appearance = {
@@ -34,7 +39,7 @@ const StripeCheckout = () => {
   return (
     <StyledSection>
       {clientSecret && (
-        <Elements options={options} stripe={stripePromise}>
+        <Elements key={clientSecret} options={options} stripe={stripePromise}>
           <CheckoutForm />
         </Elements>
       )}

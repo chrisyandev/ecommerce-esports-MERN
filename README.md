@@ -13,15 +13,16 @@ Add mock products
 Start the server
 
 1. Navigate into /server
-2. Run `npm install`
-3. Create a .env file in /server and set: MONGO_URL, DB_NAME, JWT_SECRET, JWT_LIFETIME
+2. Create a .env file and set: MONGO_URL, DB_NAME, JWT_SECRET, JWT_LIFETIME, STRIPE_SECRET_KEY
+3. Run `npm install`
 4. Run `npm start`
 
 Start the client
 
 1. Navigate into /client
-2. Run `npm install`
-3. Run `npm start`
+2. Create a .env file and set: REACT_APP_STRIPE_PUBLIC_KEY
+3. Run `npm install`
+4. Run `npm start`
 
 Run script to automate registering users and making reviews
 

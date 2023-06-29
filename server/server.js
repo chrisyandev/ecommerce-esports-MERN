@@ -2,8 +2,6 @@
 require("dotenv").config();
 require("express-async-errors");
 const express = require("express");
-const noRouteHandler = require("./middleware/no-route-handler");
-const errorHandler = require("./middleware/error-handler");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const fileUploader = require("express-fileupload");
@@ -12,19 +10,22 @@ const rateLimiter = require("express-rate-limit");
 const xssCleaner = require("xss-clean");
 const helmet = require("helmet");
 const cors = require("cors");
+
+// local imports
+const noRouteHandler = require("./middleware/no-route-handler");
+const errorHandler = require("./middleware/error-handler");
 const authRouter = require("./routes/auth-routes");
 const userRouter = require("./routes/user-routes");
 const productRouter = require("./routes/product-routes");
 const reviewRouter = require("./routes/review-routes");
 const orderRouter = require("./routes/order-routes");
+const createPaymentIntent = require("./utils/create-payment-intent");
+const connectToDB = require("./db/connect");
 
 // express
 const app = express();
 app.set("trust proxy", 1);
 const port = process.env.PORT || 5000;
-
-//database
-const connectToDB = require("./db/connect");
 
 // middleware
 app.use(mongoSanitizer());
@@ -32,7 +33,7 @@ app.use(rateLimiter({ windowMs: 600000, max: 50 }));
 app.use(xssCleaner());
 app.use(helmet());
 app.use(cors());
-app.use(express.static("./public/"));
+app.use(express.static("./public"));
 app.use(express.json());
 app.use(morgan("tiny"));
 app.use(cookieParser(process.env.JWT_SECRET));
@@ -42,6 +43,7 @@ app.use(fileUploader());
 app.get("/", (req, res) => {
   res.send("e-commerce api");
 });
+app.post("/create-payment-intent", createPaymentIntent);
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/products", productRouter);
