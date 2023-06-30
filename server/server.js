@@ -19,7 +19,6 @@ const userRouter = require("./routes/user-routes");
 const productRouter = require("./routes/product-routes");
 const reviewRouter = require("./routes/review-routes");
 const orderRouter = require("./routes/order-routes");
-const createPaymentIntent = require("./utils/create-payment-intent");
 const connectToDB = require("./db/connect");
 
 // express
@@ -52,7 +51,6 @@ app.use(fileUploader());
 app.get("/", (req, res) => {
   res.send("e-commerce api");
 });
-app.post("/create-payment-intent", createPaymentIntent);
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/products", productRouter);

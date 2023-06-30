@@ -28,6 +28,7 @@ const cartReducer = (state, action) => {
 
     const newCartItem = {
       cartItemId: id + color,
+      productId: id,
       name: product.name,
       color,
       quantity,

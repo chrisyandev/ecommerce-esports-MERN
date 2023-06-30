@@ -4,6 +4,7 @@ import axios from "axios";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import { CheckoutForm } from "..";
+import { useCartContext } from "../../contexts/cart-context";
 
 // Make sure to call loadStripe outside of a component’s render to avoid
 // recreating the Stripe object on every render.
@@ -12,12 +13,16 @@ const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
 const StripeCheckout = () => {
   const [clientSecret, setClientSecret] = useState("");
+  const { cart, shippingFee } = useCartContext();
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    const body = JSON.stringify({ items: [{ id: "xl-tshirt" }] });
     axios
-      .post("/create-payment-intent", body)
+      .post("/api/v1/orders", {
+        cartItems: cart,
+        shippingFee,
+        tax: 1234,
+      })
       .then((res) => {
         const { clientSecret } = res.data;
         console.log(clientSecret);

@@ -28,8 +28,6 @@ const CartContext = createContext();
 const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(cartReducer, initialState);
 
-  console.log(state);
-
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(state.cart));
     dispatch({ type: CART_TOTALS_UPDATE });

@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const ImageSchema = require("./Image");
 
 const OrderItemSchema = new mongoose.Schema({
   name: {
@@ -6,8 +7,11 @@ const OrderItemSchema = new mongoose.Schema({
     required: true,
   },
   image: {
-    type: String,
-    required: true,
+    type: ImageSchema,
+    default: {
+      url: "/uploads/example.jpg",
+      altText: "Example Image",
+    },
   },
   price: {
     type: Number,
