@@ -13,7 +13,7 @@ const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
 const StripeCheckout = () => {
   const [clientSecret, setClientSecret] = useState("");
-  const { cart, shippingFee } = useCartContext();
+  const { cart, shippingFee, tax } = useCartContext();
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
@@ -21,7 +21,7 @@ const StripeCheckout = () => {
       .post("/api/v1/orders", {
         cartItems: cart,
         shippingFee,
-        tax: 1234,
+        tax,
       })
       .then((res) => {
         const { clientSecret } = res.data;

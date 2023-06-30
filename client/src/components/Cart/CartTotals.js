@@ -5,7 +5,7 @@ import { useCartContext } from "../../contexts/cart-context";
 import { formatPrice } from "../../utils/helpers";
 
 const CartTotals = () => {
-  const { totalAmount, shippingFee } = useCartContext();
+  const { totalAmount, shippingFee, tax } = useCartContext();
 
   return (
     <StyledSection>
@@ -16,10 +16,12 @@ const CartTotals = () => {
           </h5>
           <p>
             Shipping Fee : <span>{formatPrice(shippingFee)}</span>
+            Tax : <span>{formatPrice(tax)}</span>
           </p>
           <hr />
           <h4>
-            Order Total : <span>{formatPrice(totalAmount + shippingFee)}</span>
+            Order Total :{" "}
+            <span>{formatPrice(totalAmount + shippingFee + tax)}</span>
           </h4>
         </article>
         <Link to="/checkout" className="btn">

@@ -21,6 +21,7 @@ const initialState = {
   totalQuantity: 0,
   totalAmount: 0,
   shippingFee: 999,
+  tax: 1234,
 };
 
 const CartContext = createContext();
