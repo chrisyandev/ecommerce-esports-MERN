@@ -21,14 +21,25 @@ const OrderListPage = () => {
 
   return (
     <main>
-      <PageHero title={"Orders"} />
+      <PageHero title="Orders" />
       <StyledDiv className="page">
-        <OrderList orders={orders} />
+        <div className="section-center orders">
+          <OrderList orders={orders} />
+        </div>
       </StyledDiv>
     </main>
   );
 };
 
-const StyledDiv = styled.div``;
+const StyledDiv = styled.div`
+  .orders {
+    padding: 1rem 0rem;
+  }
+  @media (min-width: 768px) {
+    .orders {
+      padding: 1rem 5rem;
+    }
+  }
+`;
 
 export default OrderListPage;
