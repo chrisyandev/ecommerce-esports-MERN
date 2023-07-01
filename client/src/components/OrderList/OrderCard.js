@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { formatPrice } from "../../utils/helpers";
+import { formatPrice, formatDate } from "../../utils/helpers";
 
 const OrderCard = ({ order }) => {
-  const { _id, total, orderItems, status } = order;
+  const { _id, dateCreated, total, orderItems, status } = order;
 
   return (
     <StyledSection>
       <div className="card-header">
         <div>
           <h6>Order Placed</h6>
-          <span>January 1, 2023</span>
+          <span>{formatDate(dateCreated)}</span>
         </div>
         <div>
           <h6>Status</h6>

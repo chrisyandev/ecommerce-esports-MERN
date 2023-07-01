@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 const OrderItemSchema = require("./OrderItem");
 
 const OrderSchema = new mongoose.Schema({
+  dateCreated: {
+    type: Date,
+    default: Date.now,
+  },
   tax: {
     type: Number,
     required: true,
