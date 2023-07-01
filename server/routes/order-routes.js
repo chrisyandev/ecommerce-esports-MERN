@@ -9,6 +9,7 @@ const {
   getSingleOrder,
   getCurrentUserOrders,
   updateOrder,
+  createPaymentIntent,
 } = require("../controllers/order-controller");
 
 router
@@ -22,5 +23,7 @@ router
   .route("/:orderId")
   .get(authenticateUser, getSingleOrder)
   .patch(authenticateUser, updateOrder);
+
+router.route("/create-payment-intent").post(createPaymentIntent);
 
 module.exports = router;

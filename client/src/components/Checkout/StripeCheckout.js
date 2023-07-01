@@ -18,7 +18,7 @@ const StripeCheckout = () => {
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
     axios
-      .post("/api/v1/orders", {
+      .post("/api/v1/orders/create-payment-intent", {
         cartItems: cart,
         shippingFee,
         tax,
@@ -31,7 +31,7 @@ const StripeCheckout = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [cart, shippingFee, tax]);
 
   const appearance = {
     theme: "stripe",
