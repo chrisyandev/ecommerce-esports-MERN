@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import {
   PaymentElement,
@@ -11,6 +12,7 @@ import { useCartContext } from "../../contexts/cart-context";
 const CheckoutForm = () => {
   const stripe = useStripe();
   const elements = useElements();
+  const navigate = useNavigate();
 
   const [, setEmail] = useState("");
   const [message, setMessage] = useState(null);
@@ -70,12 +72,15 @@ const CheckoutForm = () => {
 
     if (!error) {
       setMessage("Payment succeeded!");
-      // Create an order
+      // Create an order then redirect
       axios
         .post("/api/v1/orders/", {
           cartItems: cart,
           shippingFee,
           tax,
+        })
+        .then(() => {
+          navigate("/orders?success=true");
         })
         .catch((error) => {
           console.log(error);
