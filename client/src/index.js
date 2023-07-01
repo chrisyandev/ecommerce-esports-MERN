@@ -5,6 +5,7 @@ import { UserProvider } from "./contexts/user-context";
 import { ProductsProvider } from "./contexts/products-context";
 import { FilterProvider } from "./contexts/filter-context";
 import { CartProvider } from "./contexts/cart-context";
+import { OrdersProvider } from "./contexts/orders-context";
 import "./index.css";
 import App from "./App";
 
@@ -15,11 +16,13 @@ root.render(
     <VisibilityProvider>
       <UserProvider>
         <ProductsProvider>
-          <FilterProvider>
-            <CartProvider>
-              <App />
-            </CartProvider>
-          </FilterProvider>
+          <OrdersProvider>
+            <FilterProvider>
+              <CartProvider>
+                <App />
+              </CartProvider>
+            </FilterProvider>
+          </OrdersProvider>
         </ProductsProvider>
       </UserProvider>
     </VisibilityProvider>

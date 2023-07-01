@@ -6,6 +6,8 @@ import CheckoutForm from "./Checkout/CheckoutForm";
 import StripeCheckout from "./Checkout/StripeCheckout";
 import FormAlert from "./Form/FormAlert";
 import FormInput from "./Form/FormInput";
+import OrderCard from "./OrderList/OrderCard";
+import OrderList from "./OrderList/OrderList";
 import ProductColorPicker from "./Product/ProductColorPicker";
 import ProductImages from "./Product/ProductImages";
 import ProductOptions from "./Product/ProductOptions";
@@ -38,6 +40,8 @@ export {
   StripeCheckout,
   FormAlert,
   FormInput,
+  OrderCard,
+  OrderList,
   ProductColorPicker,
   ProductImages,
   ProductOptions,

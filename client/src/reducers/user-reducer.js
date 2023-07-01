@@ -23,7 +23,7 @@ const userReducer = (state, action) => {
   if (action.type === USER_REGISTER_SUCCESS) {
     return {
       ...state,
-      user: action.payload.user,
+      user: action.payload,
       isLoggedIn: true,
       userLoading: false,
     };
@@ -40,7 +40,7 @@ const userReducer = (state, action) => {
   if (action.type === USER_LOGIN_SUCCESS) {
     return {
       ...state,
-      user: action.payload.user,
+      user: action.payload,
       isLoggedIn: true,
       userLoading: false,
     };
@@ -69,7 +69,7 @@ const userReducer = (state, action) => {
   if (action.type === USER_GET_CURRENT_SUCCESS) {
     return {
       ...state,
-      user: action.payload.user,
+      user: action.payload,
       isLoggedIn: true,
       userLoading: false,
     };
