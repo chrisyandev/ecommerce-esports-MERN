@@ -13,10 +13,12 @@ import {
   ProtectedRoutes,
 } from "./pages";
 import { Footer, Navbar, Sidebar } from "./components";
+import ScrollToTop from "./utils/ScrollToTop";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <Sidebar />
       <Routes>

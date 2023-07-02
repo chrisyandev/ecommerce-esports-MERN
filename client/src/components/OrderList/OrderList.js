@@ -5,7 +5,7 @@ import { OrderCard } from "..";
 const OrderList = ({ orders }) => {
   return (
     <StyledDiv>
-      {orders.map((order) => {
+      {orders.toReversed().map((order) => {
         return <OrderCard key={order._id} order={order} />;
       })}
     </StyledDiv>
