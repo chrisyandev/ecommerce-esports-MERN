@@ -18,7 +18,9 @@ const ProductListHeader = () => {
         <button
           type="button"
           className={`${
-            productListType === productListTypes.GRID ? "active" : null
+            productListType === productListTypes.GRID
+              ? "active grid-btn"
+              : "grid-btn"
           }`}
           onClick={viewProductListAsGrid}
         >
@@ -27,7 +29,9 @@ const ProductListHeader = () => {
         <button
           type="button"
           className={`${
-            productListType === productListTypes.LIST ? "active" : null
+            productListType === productListTypes.LIST
+              ? "active list-btn"
+              : "list-btn"
           }`}
           onClick={viewProductListAsList}
         >
@@ -37,7 +41,7 @@ const ProductListHeader = () => {
       <p>{filteredProducts.length} products found</p>
       <hr />
       <form>
-        <label htmlFor="sort">Sort by: </label>
+        <label htmlFor="sort">Sort by</label>
         <select
           className="sort-input"
           value={productSortType}
@@ -70,7 +74,9 @@ const StyledSection = styled.section`
   label {
     font-size: 1rem;
     font-weight: bold;
-    font-family: Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    margin-right: 0.5rem;
   }
 
   .btn-container {
@@ -79,8 +85,7 @@ const StyledSection = styled.section`
     column-gap: 0.5rem;
     button {
       background: transparent;
-      border: 1px solid var(--clr-black);
-      color: var(--clr-black);
+      border: none;
       width: 1.5rem;
       border-radius: var(--radius);
       height: 1.5rem;
@@ -92,15 +97,29 @@ const StyledSection = styled.section`
         font-size: 1rem;
       }
     }
-    .active {
-      background: var(--clr-black);
+    .grid-btn {
+      color: var(--clr-grey-8);
+    }
+    .list-btn {
+      color: var(--clr-grey-5);
+    }
+    .grid-btn.active {
+      color: var(--clr-grey-5);
+    }
+    .list-btn.active {
       color: var(--clr-white);
+    }
+    .active {
+      border: 1px solid var(--clr-white);
     }
   }
   .sort-input {
-    border-color: transparent;
-    font-size: 1rem;
+    color: var(--clr-grey-1);
+    background: var(--clr-grey-8);
+    border: none;
+    border-radius: var(--radius);
     padding: 0.25rem 0.5rem;
+    text-transform: capitalize;
   }
 
   @media (max-width: 576px) {

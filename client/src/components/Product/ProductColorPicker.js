@@ -55,7 +55,7 @@ const StyledDiv = styled.div`
     border-radius: 50%;
     background: black;
     margin-right: 0.5rem;
-    border: 1px solid black;
+    border: 2px solid var(--clr-white);
     cursor: pointer;
     opacity: 0.5;
     display: flex;

@@ -59,12 +59,12 @@ const StyledDiv = styled.div`
 
   .cart-btn {
     color: var(--clr-grey-1);
-    font-size: 1.5rem;
+    font-size: 1rem;
     letter-spacing: var(--spacing);
     color: var(--clr-grey-1);
     display: flex;
-
     align-items: center;
+    justify-content: center;
   }
   .cart-container {
     display: flex;
@@ -79,7 +79,7 @@ const StyledDiv = styled.div`
     position: absolute;
     top: -10px;
     right: -16px;
-    background: var(--clr-primary-5);
+    background: var(--clr-primary-6);
     width: 16px;
     height: 16px;
     display: flex;
@@ -93,15 +93,22 @@ const StyledDiv = styled.div`
   .auth-btn {
     display: flex;
     align-items: center;
+    justify-content: center;
     background: transparent;
     border-color: transparent;
-    font-size: 1.5rem;
+    font-size: 1rem;
     cursor: pointer;
     color: var(--clr-grey-1);
     letter-spacing: var(--spacing);
     svg {
       margin-left: 5px;
     }
+  }
+  .cart-btn:hover {
+    color: var(--clr-primary-6);
+  }
+  .auth-btn:hover {
+    color: var(--clr-primary-6);
   }
 `;
 

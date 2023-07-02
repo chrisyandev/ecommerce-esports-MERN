@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const ProductQuantityPicker = ({ quantity, increment, decrement }) => {
   return (
-    <StyledDiv>
+    <StyledDiv className="amount-btns">
       <button type="button" onClick={decrement}>
         <FaMinus />
       </button>
@@ -27,6 +27,7 @@ const StyledDiv = styled.div`
     margin-bottom: 0;
   }
   button {
+    color: var(--clr-grey-1);
     background: transparent;
     border-color: transparent;
     cursor: pointer;

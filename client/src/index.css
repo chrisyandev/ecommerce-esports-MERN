@@ -5,30 +5,30 @@ Variables
 */
 :root {
   /* dark shades of primary color*/
-  --clr-primary-1: hsl(22, 28%, 21%);
-  --clr-primary-2: hsl(22, 28%, 29%);
-  --clr-primary-3: hsl(22, 28%, 37%);
-  --clr-primary-4: hsl(22, 28%, 45%);
+  --clr-primary-10: #312e81;
+  --clr-primary-9: #3730a3;
+  --clr-primary-8: #4338ca;
+  --clr-primary-7: #4f46e5;
   /* primary/main color */
-  --clr-primary-5: hsl(22, 31%, 52%);
+  --clr-primary-6: #6366f1;
   /* lighter shades of primary color */
-  --clr-primary-6: hsl(22, 31%, 60%);
-  --clr-primary-7: hsl(22, 31%, 67%);
-  --clr-primary-8: hsl(20, 31%, 74%);
-  --clr-primary-9: hsl(22, 31%, 81%);
-  --clr-primary-10: hsl(22, 31%, 88%);
+  --clr-primary-5: #818cf8;
+  --clr-primary-4: #a5b4fc;
+  --clr-primary-3: #c7d2fe;
+  --clr-primary-2: #e0e7ff;
+  --clr-primary-1: #eef2ff;
   /* darkest grey - used for headings */
-  --clr-grey-1: hsl(209, 61%, 16%);
-  --clr-grey-2: hsl(211, 39%, 23%);
-  --clr-grey-3: hsl(209, 34%, 30%);
-  --clr-grey-4: hsl(209, 28%, 39%);
+  --clr-grey-10: #1c1917;
+  --clr-grey-9: #292524;
+  --clr-grey-8: #44403c;
+  --clr-grey-7: #57534e;
   /* grey used for paragraphs */
-  --clr-grey-5: hsl(210, 22%, 49%);
-  --clr-grey-6: hsl(209, 23%, 60%);
-  --clr-grey-7: hsl(211, 27%, 70%);
-  --clr-grey-8: hsl(210, 31%, 80%);
-  --clr-grey-9: hsl(212, 33%, 89%);
-  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-grey-6: #78716c;
+  --clr-grey-5: #a8a29e;
+  --clr-grey-4: #d6d3d1;
+  --clr-grey-3: #e7e5e4;
+  --clr-grey-2: #f5f5f4;
+  --clr-grey-1: #fafaf9;
   --clr-white: #fff;
   --clr-red-dark: hsl(360, 67%, 44%);
   --clr-red-light: hsl(360, 71%, 66%);
@@ -76,7 +76,7 @@ Global Styles
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  background: var(--clr-white);
+  background: var(--clr-grey-10);
   color: var(--clr-grey-1);
   line-height: 1.5;
   font-size: 0.875rem;
@@ -122,6 +122,16 @@ p {
 }
 button:disabled {
   cursor: not-allowed;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px var(--clr-grey-8) inset !important;
+}
+input:-webkit-autofill {
+  -webkit-text-fill-color: var(--clr-white) !important;
+  caret-color: var(--clr-white);
 }
 @media screen and (min-width: 800px) {
   h1 {
@@ -188,8 +198,8 @@ button:disabled {
 
 .btn {
   text-transform: uppercase;
-  background: var(--clr-primary-5);
-  color: var(--clr-primary-10);
+  background: var(--clr-primary-6);
+  color: var(--clr-white);
   padding: 0.375rem 0.75rem;
   letter-spacing: var(--spacing);
   display: inline-block;
@@ -202,7 +212,6 @@ button:disabled {
   border-color: transparent;
 }
 .btn:hover {
-  color: var(--clr-primary-1);
   background: var(--clr-primary-7);
 }
 .btn-block {
@@ -233,7 +242,7 @@ button:disabled {
 .form {
   width: 90vw;
   max-width: var(--fixed-width);
-  background: var(--clr-white);
+  background: var(--clr-grey-9);
   border-radius: var(--radius);
   box-shadow: var(--shadow-2);
   padding: 2rem 2.5rem;
@@ -258,6 +267,7 @@ button:disabled {
   border-radius: var(--radius);
   background: var(--clr-grey-10);
   border: 1px solid var(--clr-grey-8);
+  color: var(--clr-white);
 }
 .form-input,
 .form-select {

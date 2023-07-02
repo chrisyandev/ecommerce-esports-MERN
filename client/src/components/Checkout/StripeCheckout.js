@@ -34,7 +34,7 @@ const StripeCheckout = () => {
   }, [cart, shippingFee, tax]);
 
   const appearance = {
-    theme: "stripe",
+    theme: "night",
   };
   const options = {
     clientSecret,

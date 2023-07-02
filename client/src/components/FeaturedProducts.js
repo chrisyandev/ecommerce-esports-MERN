@@ -30,7 +30,8 @@ const FeaturedProducts = () => {
 };
 
 const StyledSection = styled.section`
-  background: var(--clr-grey-10);
+  background: var(--clr-grey-9);
+
   .featured {
     margin: 4rem auto;
     display: grid;

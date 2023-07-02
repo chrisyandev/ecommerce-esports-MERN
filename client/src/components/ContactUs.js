@@ -22,7 +22,7 @@ const ContactUs = () => {
               placeholder="Enter Email"
               name="_replyto"
             />
-            <button type="submit" className="submit-btn">
+            <button type="submit" className="btn submit-btn">
               Subscribe
             </button>
           </form>
@@ -53,32 +53,17 @@ const StyledSection = styled.section`
   .submit-btn {
     font-size: 1rem;
     padding: 0.5rem 1rem;
-    border: 2px solid var(--clr-black);
   }
   .form-input {
-    border-right: none;
-    color: var(--clr-grey-3);
-    border-top-left-radius: var(--radius);
-    border-bottom-left-radius: var(--radius);
+    border-top-right-radius: 0rem;
+    border-bottom-right-radius: 0rem;
   }
   .submit-btn {
-    border-top-right-radius: var(--radius);
-    border-bottom-right-radius: var(--radius);
-  }
-  .form-input::placeholder {
-    color: var(--clr-black);
-    text-transform: capitalize;
-  }
-  .submit-btn {
-    background: var(--clr-primary-5);
+    border: none;
+    border-top-left-radius: 0rem;
+    border-bottom-left-radius: 0rem;
     text-transform: capitalize;
     letter-spacing: var(--spacing);
-    cursor: pointer;
-    transition: var(--transition);
-    color: var(--clr-black);
-  }
-  .submit-btn:hover {
-    color: var(--clr-white);
   }
   @media (min-width: 992px) {
     .content {

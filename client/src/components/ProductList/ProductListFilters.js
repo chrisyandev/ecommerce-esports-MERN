@@ -76,7 +76,7 @@ const ProductListFilters = () => {
               {companies.map((co, index) => {
                 return (
                   <option key={index} value={co}>
-                    {co}
+                    &nbsp;{co}
                   </option>
                 );
               })}
@@ -171,9 +171,10 @@ const StyledSection = styled.section`
   }
   .search-input {
     padding: 0.5rem;
-    background: var(--clr-grey-10);
+    color: var(--clr-grey-1);
+    background: var(--clr-grey-8);
+    border: none;
     border-radius: var(--radius);
-    border-color: transparent;
     letter-spacing: var(--spacing);
   }
   .search-input::placeholder {
@@ -188,16 +189,18 @@ const StyledSection = styled.section`
     border: none;
     border-bottom: 1px solid transparent;
     letter-spacing: var(--spacing);
-    color: var(--clr-grey-5);
+    color: var(--clr-grey-4);
     cursor: pointer;
   }
   .active {
-    border-color: var(--clr-grey-5);
+    color: var(--clr-white);
+    border-color: var(--clr-white);
   }
   .company {
-    background: var(--clr-grey-10);
+    color: var(--clr-grey-1);
+    background: var(--clr-grey-8);
+    border: none;
     border-radius: var(--radius);
-    border-color: transparent;
     padding: 0.25rem;
     text-transform: capitalize;
   }
@@ -212,7 +215,7 @@ const StyledSection = styled.section`
     border-radius: 50%;
     background: #222;
     margin-right: 0.5rem;
-    border: 1px solid black;
+    border: 2px solid var(--clr-white);
     cursor: pointer;
     opacity: 0.5;
     display: flex;

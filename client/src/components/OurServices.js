@@ -35,14 +35,13 @@ const OurServices = () => {
 };
 
 const StyledSection = styled.section`
+  padding: 5rem 0;
+  background: var(--clr-primary-10);
+
   h3,
   h4 {
     color: var(--clr-primary-1);
   }
-  padding: 5rem 0;
-
-  background: var(--clr-primary-10);
-
   .header h3 {
     margin-bottom: 2rem;
   }

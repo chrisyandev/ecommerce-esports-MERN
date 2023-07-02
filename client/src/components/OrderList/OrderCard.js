@@ -54,7 +54,7 @@ const StyledSection = styled.section`
   border-radius: 0.5rem;
   padding: 0rem;
   margin-bottom: 1rem;
-  background-color: #f9f9f9;
+  background-color: var(--clr-grey-9);
 
   .card-header {
     display: flex;

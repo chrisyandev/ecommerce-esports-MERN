@@ -89,7 +89,7 @@ const StyledArticle = styled.article`
       background: red;
       margin-left: 0.5rem;
       border-radius: 0.5rem;
-      border: 1px solid black;
+      border: 2px solid var(--clr-white);
     }
   }
   .price-small {

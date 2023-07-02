@@ -14,14 +14,10 @@ const Cart = () => {
       })}
       <hr />
       <div className="link-container">
-        <Link to="/products" className="link-btn">
+        <Link to="/products" className="btn">
           Continue Shopping
         </Link>
-        <button
-          type="button"
-          className="link-btn clear-btn"
-          onClick={clearCart}
-        >
+        <button type="button" className="btn clear-btn" onClick={clearCart}>
           Clear
         </button>
       </div>
@@ -36,20 +32,12 @@ const StyledSection = styled.section`
     justify-content: space-between;
     margin-top: 2rem;
   }
-  .link-btn {
-    background: transparent;
-    border-color: transparent;
-    text-transform: capitalize;
-    padding: 0.25rem 0.5rem;
-    background: var(--clr-primary-5);
-    color: var(--clr-white);
-    border-radius: var(--radius);
-    letter-spacing: var(--spacing);
-    font-weight: 400;
-    cursor: pointer;
-  }
   .clear-btn {
-    background: var(--clr-black);
+    color: var(--clr-white);
+    background: var(--clr-grey-9);
+  }
+  .clear-btn:hover {
+    background: var(--clr-grey-8);
   }
 `;
 
