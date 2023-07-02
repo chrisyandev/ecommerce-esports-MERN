@@ -83,7 +83,7 @@ const CheckoutForm = () => {
           navigate("/orders?success=true");
         })
         .catch((error) => {
-          console.log(error);
+          console.error(error);
         });
     } else {
       if (error.type === "card_error" || error.type === "validation_error") {

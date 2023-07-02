@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import React, { createContext, useContext, useReducer } from "react";
 import axios from "axios";
 import {
   GET_ORDERS,
@@ -27,7 +27,6 @@ const OrdersProvider = ({ children }) => {
         dispatch({ type: GET_ORDERS_SUCCESS, payload: orders });
       })
       .catch((error) => {
-        console.error(error);
         dispatch({ type: GET_ORDERS_ERROR, error });
       });
   };

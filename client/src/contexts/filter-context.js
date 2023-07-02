@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useReducer } from "react";
+import React, { createContext, useContext, useEffect, useReducer } from "react";
 import { useProductsContext } from "./products-context";
 import filterReducer from "../reducers/filter-reducer";
 import {
@@ -29,7 +29,7 @@ const initialState = {
 
 const FilterContext = createContext();
 
-export const FilterProvider = ({ children }) => {
+const FilterProvider = ({ children }) => {
   const { products } = useProductsContext();
   const [state, dispatch] = useReducer(filterReducer, initialState);
 
@@ -83,6 +83,8 @@ export const FilterProvider = ({ children }) => {
   );
 };
 
-export const useFilterContext = () => {
+const useFilterContext = () => {
   return useContext(FilterContext);
 };
+
+export { FilterProvider, useFilterContext };

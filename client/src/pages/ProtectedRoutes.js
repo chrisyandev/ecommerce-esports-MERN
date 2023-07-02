@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { Outlet, Navigate, useResolvedPath } from "react-router-dom";
 import { Loading } from "../components";
 import { useUserContext } from "../contexts/user-context";

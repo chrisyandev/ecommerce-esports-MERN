@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useReducer } from "react";
+import React, { createContext, useContext, useEffect, useReducer } from "react";
 import {
   CART_ADD_ITEM,
   CART_ITEM_QUANTITY_STEP,

@@ -25,11 +25,10 @@ const StripeCheckout = () => {
       })
       .then((res) => {
         const { clientSecret } = res.data;
-        console.log(clientSecret);
         setClientSecret(clientSecret);
       })
       .catch((error) => {
-        console.log(error);
+        console.error(error);
       });
   }, [cart, shippingFee, tax]);
 
