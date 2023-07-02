@@ -243,12 +243,15 @@ const StyledSection = styled.section`
     margin-bottom: 0.25rem;
   }
   .free-shipping {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
     text-transform: capitalize;
-    column-gap: 0.5rem;
     font-size: 1rem;
+  }
+  .free-shipping label {
+    padding-right: 1rem;
+  }
+  .free-shipping label,
+  .free-shipping input {
+    vertical-align: middle;
   }
   .clear-btn {
     background: var(--clr-red-dark);

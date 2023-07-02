@@ -1,6 +1,9 @@
 # Ecommerce Esports Website
 
-REST API Docs: https://documenter.getpostman.com/view/20219898/2s93sc5Czj
+![Demo](./demo.png)
+
+- Demo of completed project: https://youtu.be/qb_d843aLsU
+- REST API Docs: https://documenter.getpostman.com/view/20219898/2s93sc5Czj
 
 # Setup
 
@@ -29,3 +32,7 @@ Run script to automate registering users and making reviews
 1. Navigate into /test
 2. Run `npm install`
 3. Run `node test.js`
+
+## For testing checkout and payment
+
+Use Stripe's test cards: https://stripe.com/docs/testing

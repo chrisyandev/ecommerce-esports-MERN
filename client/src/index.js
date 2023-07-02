@@ -12,19 +12,19 @@ import App from "./App";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  <React.StrictMode>
-    <VisibilityProvider>
-      <UserProvider>
-        <ProductsProvider>
-          <OrdersProvider>
-            <FilterProvider>
-              <CartProvider>
-                <App />
-              </CartProvider>
-            </FilterProvider>
-          </OrdersProvider>
-        </ProductsProvider>
-      </UserProvider>
-    </VisibilityProvider>
-  </React.StrictMode>
+  //<React.StrictMode>
+  <VisibilityProvider>
+    <UserProvider>
+      <ProductsProvider>
+        <OrdersProvider>
+          <FilterProvider>
+            <CartProvider>
+              <App />
+            </CartProvider>
+          </FilterProvider>
+        </OrdersProvider>
+      </ProductsProvider>
+    </UserProvider>
+  </VisibilityProvider>
+  //</React.StrictMode>
 );
